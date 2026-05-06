@@ -1,0 +1,64 @@
+import { useState, useEffect } from 'react'
+import { Header } from './components/Header'
+import { Home } from './components/Home'
+import { Projects } from './components/Projects'
+import { AllProjects } from './components/AllProjects'
+import { ProjectDetail } from './components/ProjectDetail'
+import { AllArticles } from './components/AllArticles'
+import { ArticleDetail } from './components/ArticleDetail'
+import { Printing3D } from './components/Printing3D'
+import { About } from './components/About'
+import { AboutDetail } from './components/AboutDetail'
+import { Resume } from './components/Resume'
+import { Contact } from './components/Contact'
+import { Footer } from './components/Footer'
+import './styles/globals.css'
+
+export default function App() {
+  const [currentSection, setCurrentSection] = useState('home')
+  const [selectedProjectId, setSelectedProjectId] = useState(null)
+  const [selectedArticleId, setSelectedArticleId] = useState(null)
+  const [viewMode, setViewMode] = useState('section') // 'section' o 'detail'
+
+  const handleProjectSelect = (projectId) => {
+    setSelectedProjectId(projectId)
+    setViewMode('detail')
+  }
+
+  const handleArticleSelect = (articleId) => {
+    setSelectedArticleId(articleId)
+    setViewMode('detail')
+  }
+
+  const handleBackFromDetail = () => {
+    setViewMode('section')
+    setSelectedProjectId(null)
+    setSelectedArticleId(null)
+  }
+
+  return (
+    <div className="app">
+      <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
+      
+      <main className="main-content">
+        {viewMode === 'detail' && selectedProjectId ? (
+          <ProjectDetail projectId={selectedProjectId} onBack={handleBackFromDetail} onSelectProject={handleProjectSelect} />
+        ) : viewMode === 'detail' && selectedArticleId ? (
+          <ArticleDetail articleId={selectedArticleId} onBack={handleBackFromDetail} />
+        ) : (
+          <>
+            {currentSection === 'home' && <Home onNavigate={setCurrentSection} onProjectSelect={handleProjectSelect} />}
+            {currentSection === 'all-projects' && <AllProjects onProjectSelect={handleProjectSelect} />}
+            {currentSection === 'articles' && <AllArticles onArticleSelect={handleArticleSelect} />}
+            {currentSection === 'printing-3d' && <Printing3D />}
+            {currentSection === 'about-detail' && <AboutDetail onNavigate={setCurrentSection} />}
+            {currentSection === 'resume' && <Resume />}
+            {currentSection === 'contact' && <Contact />}
+          </>
+        )}
+      </main>
+
+      <Footer />
+    </div>
+  )
+}

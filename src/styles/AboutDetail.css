@@ -1,0 +1,375 @@
+/* AboutDetail.css - Página completa de Sobre Mí */
+
+.about-detail {
+  min-height: calc(100vh - 120px);
+  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  padding: 60px 20px;
+  color: #e0e0e0;
+}
+
+.about-detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: 1px solid #3498db;
+  color: #3498db;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-bottom: 40px;
+  transition: all 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(52, 152, 219, 0.1);
+  transform: translateX(-4px);
+}
+
+.about-detail-content {
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-bottom: 60px;
+  padding: 30px;
+  background: rgba(52, 152, 219, 0.05);
+  border-radius: 12px;
+  border-left: 4px solid #3498db;
+}
+
+.profile-img-large {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #3498db;
+  box-shadow: 0 8px 32px rgba(52, 152, 219, 0.2);
+  flex-shrink: 0;
+}
+
+.header-text {
+  flex: 1;
+}
+
+.about-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-subtitle {
+  font-size: 18px;
+  color: #5dade2;
+  margin: 0;
+  font-weight: 500;
+}
+
+.about-sections {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.about-section {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 8px;
+  border: 1px solid rgba(52, 152, 219, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-section:hover {
+  border-color: rgba(52, 152, 219, 0.3);
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+}
+
+.section-heading {
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  color: #3498db;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.section-heading::before {
+  content: '';
+  width: 4px;
+  height: 24px;
+  background: linear-gradient(135deg, #3498db, #5dade2);
+  border-radius: 2px;
+}
+
+.about-section p {
+  margin: 15px 0;
+  line-height: 1.8;
+  color: #d0d0d0;
+}
+
+.education-item {
+  margin: 20px 0;
+  padding: 15px;
+  background: rgba(52, 152, 219, 0.05);
+  border-left: 3px solid #3498db;
+  border-radius: 4px;
+}
+
+.education-item h3 {
+  margin: 0 0 5px 0;
+  color: #5dade2;
+  font-size: 16px;
+}
+
+.education-detail {
+  margin: 0;
+  color: #a0a0a0;
+  font-size: 14px;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skill-list li {
+  padding-left: 20px;
+  position: relative;
+  color: #d0d0d0;
+}
+
+.skill-list li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.expertise-card {
+  padding: 25px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(93, 173, 226, 0.02));
+  border: 1px solid rgba(52, 152, 219, 0.15);
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.expertise-card:hover {
+  border-color: #3498db;
+  box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
+  transform: translateY(-4px);
+}
+
+.expertise-card h3 {
+  margin: 0 0 12px 0;
+  color: #3498db;
+  font-size: 18px;
+}
+
+.expertise-card p {
+  margin: 0;
+  font-size: 14px;
+  color: #b0b0b0;
+  line-height: 1.6;
+}
+
+.skills-columns {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.skills-column {
+  padding: 20px;
+  background: rgba(52, 152, 219, 0.03);
+  border-radius: 8px;
+  border: 1px solid rgba(52, 152, 219, 0.1);
+}
+
+.skills-column h4 {
+  margin: 0 0 15px 0;
+  color: #3498db;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.principle-list {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.principle-list li {
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+  color: #d0d0d0;
+}
+
+.principle-list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #3498db;
+  font-weight: bold;
+}
+
+.philosophy-content p {
+  margin: 15px 0;
+  line-height: 1.8;
+}
+
+.about-cta {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(93, 173, 226, 0.05));
+  border-radius: 12px;
+  border: 1px solid rgba(52, 152, 219, 0.2);
+}
+
+.about-cta p {
+  font-size: 18px;
+  margin: 0 0 20px 0;
+  color: #d0d0d0;
+}
+
+.btn-contact {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-contact:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(52, 152, 219, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-detail {
+    padding: 40px 15px;
+  }
+
+  .about-detail-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .profile-img-large {
+    width: 150px;
+    height: 150px;
+  }
+
+  .about-title {
+    font-size: 32px;
+  }
+
+  .about-subtitle {
+    font-size: 16px;
+  }
+
+  .section-heading {
+    font-size: 20px;
+  }
+
+  .expertise-grid,
+  .skills-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .about-section {
+    padding: 20px;
+  }
+
+  .about-cta {
+    padding: 25px 15px;
+  }
+
+  .about-cta p {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-detail {
+    padding: 30px 10px;
+  }
+
+  .about-detail-header {
+    padding: 20px;
+  }
+
+  .profile-img-large {
+    width: 120px;
+    height: 120px;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .about-subtitle {
+    font-size: 14px;
+  }
+
+  .section-heading {
+    font-size: 18px;
+  }
+
+  .about-section {
+    padding: 15px;
+  }
+
+  .section-heading::before {
+    width: 3px;
+  }
+}

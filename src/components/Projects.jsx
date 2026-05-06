@@ -1,0 +1,51 @@
+import React from 'react';
+import { projectsData } from '../data/projectsData';
+import '../styles/Projects.css';
+
+export const Projects = ({ onProjectSelect, onNavigate }) => {
+  // Obtener solo los primeros 4 proyectos como destacados
+  const featured = projectsData.slice(0, 4);
+
+  const handleViewAll = () => {
+    if (onNavigate) {
+      onNavigate('all-projects');
+    }
+  };
+
+  return (
+    <section id="projects" className="projects">
+      <div className="projects-container">
+        <h2 className="section-title">Mis Proyectos Destacados</h2>
+        
+        <div className="projects-grid">
+          {featured.map(project => (
+            <div 
+              key={project.id} 
+              className="project-card"
+              onClick={() => onProjectSelect(project.id)}
+            >
+              <div className="project-image">
+                <span className="image-placeholder">{project.title}</span>
+              </div>
+              <h3 className="project-title">{project.title}</h3>
+              <div className={`project-status status-${project.status.toLowerCase()}`}>
+                {project.status}
+              </div>
+              <div className="project-tags">
+                {project.technologies.slice(0, 2).map(tag => (
+                  <span key={tag} className="tag">{tag}</span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="projects-footer">
+          <button className="btn-see-all" onClick={handleViewAll}>
+            Ver Todos Los Proyectos &gt;
+          </button>
+        </div>
+      </div>
+    </section>
+  );
+};
