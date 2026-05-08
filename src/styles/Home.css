@@ -1,23 +1,22 @@
 .main-content {
-  background: linear-gradient(135deg, var(--bg-darker), var(--secondary-color));
-  background-image: url('/src/assets/home-image.png');
-  background-attachment: fixed;
-  background-size:  cover;
-  background-position: top left;
-  position: relative;
-  overflow: hidden;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  @supports (scroll-timeline-name: --main-scroll) {
+    scroll-timeline-name: --main-scroll;
+    scroll-timeline-axis: block;
+  }
 }
-
-
 
 .home {
   min-height: 100vh;
   display: flex;
   align-items: center;
   padding: 60px 20px;
-  
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: auto;
 }
 
 .home::before {
@@ -31,6 +30,36 @@
   border-radius: 50%;
   filter: blur(80px);
   z-index: 0;
+}
+
+.home-background {
+  position: fixed;
+  inset: 3rem;
+  width: 100%;
+  height: 100%;
+  background-image: url('/src/assets/home-image.png');
+  background-attachment: fixed;
+  background-size:  cover;
+  background-position: top left;
+  will-change: filter, transform;
+  z-index: -1;
+
+  @supports (animation-timeline: --main-scroll) {
+    animation: blurAnimation both;
+    animation-duration: 1s;
+    animation-timeline: --main-scroll;
+  }
+}
+
+
+@keyframes blurAnimation {
+  from { 
+    filter: blur(0px);
+    transform: scale(1.1);
+  } to { 
+    filter: blur(10px);
+    transform: scale(0.95);
+  }
 }
 
 .home-container {

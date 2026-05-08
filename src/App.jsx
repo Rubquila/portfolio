@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Header } from './components/Header'
 import { Home } from './components/Home'
 import { Projects } from './components/Projects'
@@ -19,6 +19,7 @@ export default function App() {
   const [selectedProjectId, setSelectedProjectId] = useState(null)
   const [selectedArticleId, setSelectedArticleId] = useState(null)
   const [viewMode, setViewMode] = useState('section') // 'section' o 'detail'
+  const mainRef = useRef(null);
 
   const handleProjectSelect = (projectId) => {
     setSelectedProjectId(projectId)
@@ -40,14 +41,14 @@ export default function App() {
     <div className="app">
       <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
       
-      <main className="main-content">
+      <main ref={mainRef} className="main-content">
         {viewMode === 'detail' && selectedProjectId ? (
           <ProjectDetail projectId={selectedProjectId} onBack={handleBackFromDetail} onSelectProject={handleProjectSelect} />
         ) : viewMode === 'detail' && selectedArticleId ? (
           <ArticleDetail articleId={selectedArticleId} onBack={handleBackFromDetail} />
         ) : (
           <>
-            {currentSection === 'home' && <Home onNavigate={setCurrentSection} onProjectSelect={handleProjectSelect} />}
+            {currentSection === 'home' && <Home onNavigate={setCurrentSection} onProjectSelect={handleProjectSelect} scrollContainerRef={mainRef} />}
             {currentSection === 'all-projects' && <AllProjects onProjectSelect={handleProjectSelect} />}
             {currentSection === 'articles' && <AllArticles onArticleSelect={handleArticleSelect} />}
             {currentSection === 'printing-3d' && <Printing3D />}
