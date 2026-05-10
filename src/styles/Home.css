@@ -1,7 +1,7 @@
 .main-content {
-  height: 100vh;
+  height: 88vh;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: visible;
   @supports (scroll-timeline-name: --main-scroll) {
     scroll-timeline-name: --main-scroll;
     scroll-timeline-axis: block;
@@ -9,14 +9,13 @@
 }
 
 .home {
-  min-height: 100vh;
-  display: flex;
+  display: block;
   align-items: center;
   padding: 60px 20px;
   position: relative;
   overflow-x: hidden;
-  overflow-y: auto;
-  height: auto;
+  overflow-y: visible;
+  height: 100%;
 }
 
 .home::before {
@@ -36,7 +35,7 @@
   position: fixed;
   inset: 3rem;
   width: 100%;
-  height: 100%;
+  height: 90%;
   background-image: url('/src/assets/home-image.png');
   background-attachment: fixed;
   background-size:  cover;

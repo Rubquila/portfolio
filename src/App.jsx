@@ -57,9 +57,9 @@ export default function App() {
             {currentSection === 'contact' && <Contact />}
           </>
         )}
-      </main>
+            <Footer />
+</main>
 
-      <Footer />
     </div>
   )
 }
