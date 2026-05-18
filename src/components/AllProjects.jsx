@@ -176,12 +176,13 @@ export const AllProjects = ({ onProjectSelect }) => {
                 onClick={() => onProjectSelect(project.id)}
               >
                 <div className="project-image">
-                  <span className="image-placeholder">{project.title}</span>
-                </div>
-                <h3 className="project-title">{project.title}</h3>
-                <div className={`project-status status-${project.status.toLowerCase()}`}>
+                  <span className="image-placeholder">Foto</span>
+                  <div className={`project-status status-${project.status.toLowerCase()}`}>
                   {project.status}
                 </div>
+                </div>
+                <h3 className="project-title">{project.title}</h3>
+                
                 <p className="project-description">{project.shortDescription}</p>
                 <div className="project-meta">
                   <span className="category-badge">{project.category}</span>

@@ -34,12 +34,6 @@ export const Contact = () => {
 
           <button type="submit" className="btn-submit">Enviar Mensaje</button>
         </form>
-
-        <div className="contact-info">
-          <a href="https://linkedin.com" className="contact-link">LinkedIn</a>
-          <a href="https://github.com" className="contact-link">GitHub</a>
-          <a href="mailto:correo@email.com" className="contact-link">Email</a>
-        </div>
       </div>
     </section>
   );

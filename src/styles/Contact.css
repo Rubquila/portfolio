@@ -76,14 +76,6 @@
   box-shadow: 0 10px 20px rgba(74, 158, 255, 0.3);
 }
 
-.contact-info {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  margin-top: 3rem;
-  flex-wrap: wrap;
-}
-
 .contact-link {
   color: var(--primary-color);
   text-decoration: none;

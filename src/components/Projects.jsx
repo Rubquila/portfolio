@@ -4,7 +4,7 @@ import '../styles/Projects.css';
 
 export const Projects = ({ onProjectSelect, onNavigate }) => {
   // Obtener solo los primeros 4 proyectos como destacados
-  const featured = projectsData.slice(0, 4);
+  const featured = projectsData.slice(0, 3);
 
   const handleViewAll = () => {
     if (onNavigate) {
@@ -28,9 +28,6 @@ export const Projects = ({ onProjectSelect, onNavigate }) => {
                 <span className="image-placeholder">{project.title}</span>
               </div>
               <h3 className="project-title">{project.title}</h3>
-              <div className={`project-status status-${project.status.toLowerCase()}`}>
-                {project.status}
-              </div>
               <div className="project-tags">
                 {project.technologies.slice(0, 2).map(tag => (
                   <span key={tag} className="tag">{tag}</span>

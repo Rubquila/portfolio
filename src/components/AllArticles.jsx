@@ -114,14 +114,6 @@ export const AllArticles = ({ onArticleSelect }) => {
             >
               <div className="article-meta-header">
                 <span className="article-category">{article.category}</span>
-                <span className="article-date-short">
-                  {new Date(article.date).toLocaleDateString('es-ES', { 
-                    year: 'numeric', 
-                    month: 'numeric', 
-                    day: 'numeric' 
-                  })}
-                </span>
-                <span className="read-time">⏱️ {article.readTime}</span>
               </div>
               
               <h3 className="article-title">{article.title}</h3>

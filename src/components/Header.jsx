@@ -45,12 +45,6 @@ export const Header = ({ currentSection, setCurrentSection }) => {
           >
             Currículum
           </button>
-          <button
-            className={`nav-link ${currentSection === 'contact' ? 'active' : ''}`}
-            onClick={() => setCurrentSection('contact')}
-          >
-            Contacto
-          </button>
         </nav>
       </div>
     </header>

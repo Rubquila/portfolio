@@ -1,15 +1,21 @@
 .main-content {
-  height: 88vh;
+  height: auto;
   overflow-x: hidden;
   overflow-y: visible;
   @supports (scroll-timeline-name: --main-scroll) {
     scroll-timeline-name: --main-scroll;
-    scroll-timeline-axis: block;
-  }
+    scroll-timeline-axis: block;}
+  
+}
+.app {
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .home {
-  display: block;
+  display: inline-flex;
   align-items: center;
   padding: 60px 20px;
   position: relative;

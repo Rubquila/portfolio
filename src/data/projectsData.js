@@ -24,6 +24,29 @@ export const projectsData = [
   },
   {
     id: 2,
+    title: 'Página web personal de portfolio',
+    status: 'Mejorando',
+    category: 'Desarrollo Web',
+    shortDescription: 'Sitio web personal para mostrar mi trabajo, experiencia y conocimientos aquiridos',
+    image: '/projects/portfolio-website.jpg',
+    technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
+    tags: ['web', 'react', 'javascript'],
+    problem: 'Necesitaba una plataforma para mostrar mis proyectos, experiencia y conocimientos de forma profesional y accesible. Quería crear un sitio web personal que sirviera como portfolio, blog y biblioteca de conocimientos, utilizando tecnologías modernas y siguiendo las mejores prácticas de desarrollo web.',
+    solution: 'He desarrollado una página web personal de portfolio utilizando React, con un diseño moderno y responsive. El sitio incluye secciones para proyectos, artículos, habilidades y experiencia, con una navegación intuitiva y un diseño atractivo. He implementado funcionalidades como filtros de proyectos, búsqueda de anotaciones y manuales, y descarga de diseños 3D para imprimir.',
+    result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y compartir conocimientos. Actualmente estoy trabajando en la inserción y ampliación del contenido.',
+    resultImages: [
+      '/projects/raston-result-1.jpg',
+      '/projects/raston-result-2.jpg',
+      '/projects/raston-result-3.jpg'
+    ],
+    links: {
+      github: 'https://github.com/rubenql/raston-project',
+      demo: null
+    },
+    relatedProjectIds: []
+  },
+  {
+    id: 3,
     title: 'IEPETer',
     status: 'Completado',
     category: 'Programación',
@@ -45,7 +68,7 @@ export const projectsData = [
     relatedProjectIds: []
   },
   {
-    id: 3,
+    id: 4,
     title: 'Red inalámbrica de sensores forestales',
     status: 'Completado',
     category: 'IoT',
@@ -67,7 +90,7 @@ export const projectsData = [
     relatedProjectIds: []
   },
   {
-    id: 4,
+    id: 5,
     title: 'Proyecto Contra',
     status: 'Completado',
     category: 'IoT',
@@ -88,7 +111,7 @@ export const projectsData = [
     relatedProjectIds: []
   },
   {
-    id: 5,
+    id: 6,
     title: 'Comedero automático para mascotas',
     status: 'Completado',
     category: 'Hardware',
@@ -110,7 +133,7 @@ export const projectsData = [
     relatedProjectIds: [1, 6, 4]
   },
   {
-    id: 6,
+    id: 7,
     title: 'Controlador universal de estores',
     status: 'Desarrollando',
     category: 'Hardware',
@@ -131,7 +154,7 @@ export const projectsData = [
     relatedProjectIds: [1, 8, 5]
   },
   {
-    id: 7,
+    id: 8,
     title: 'Web personal de portfolio',
     status: 'Desarrollando',
     category: 'Software',
@@ -153,7 +176,7 @@ export const projectsData = [
     relatedProjectIds: [2, 8]
   },
   {
-    id: 8,
+    id: 9,
     title: 'Impresora 3D de Código Abierto',
     status: 'Completado',
     category: 'Impresión 3D',

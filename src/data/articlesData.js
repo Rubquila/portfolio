@@ -45,45 +45,5 @@ export const articlesData = [
     date: '2025-02-28',
     readTime: '11 min',
     tags: ['nodejs', 'javascript', 'debugging', 'backend']
-  },
-  {
-    id: 5,
-    title: 'Tipografía en CSS: Guía completa',
-    category: 'Programación',
-    excerpt: 'Mejora la typografía en tus sitios web',
-    content: 'La tipografía es crucial para la experiencia del usuario. Aquí te muestro cómo optimizarla en CSS.\n\nVariables CSS para tipografía:\nEs una buena práctica definir escalas tipográficas usando variables:\n```css\n:root {\n  --font-size-base: 16px;\n  --font-size-h1: 2.5rem;\n  --font-size-h2: 2rem;\n  --line-height: 1.6;\n}\n```\n\nWeb Fonts:\nUsa fuentes de Google u otros servicios:\n```css\n@import url(\'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700\');\n```\n\nLegibilidad:\n- Usa un tamaño mínimo de 16px para body text\n- Mantén line-height entre 1.4 y 1.8\n- Limita el ancho de línea a 60-80 caracteres\n\nEspaciado (letter-spacing):\n- Headlines: 0.02em\n- Body: 0\n- Pequeño texto: 0.05em\n\nOptimización de performance:\n- Carga solo las fuentes que necesites\n- Usa font-display: swap para mejorar FCP\n- Comprime archivos de fuente\n\nSelector fallback chain:\nSiempre proporciona fuentes fallback:\n```css\nfont-family: \'Custom Font\', Georgia, serif;\n```',
-    date: '2025-02-20',
-    readTime: '9 min',
-    tags: ['css', 'tipografía', 'diseño', 'frontend']
-  },
-  {
-    id: 6,
-    title: 'Mantenimiento de impresoras 3D',
-    category: 'Reparación',
-    excerpt: 'Cómo mantener tu impresora 3D en óptimas condiciones',
-    content: 'El mantenimiento regular de tu impresora 3D es esencial para garantizar la calidad de impresión y prolongar la vida útil del equipo.\n\n1. Limpieza de la placa base\nLimpia la placa de impresión después de cada uso con un instrumento no abrasivo.\n\n2. Lubricación de componentes\nLubrica los ejes y guías cada cierto tiempo.\n\n3. Cambio de nozzle\nUn nozzle gastado puede afectar significativamente la calidad.\n\n4. Calibración\nCalibre regularmente la altura de la boquilla.\n\n5. Limpieza de filtros\nSi tu impresora tiene filtros, cámbialos regularmente.',
-    date: '2025-02-15',
-    readTime: '10 min',
-    tags: ['impresión 3d', 'mantenimiento', 'reparación']
-  },
-  {
-    id: 7,
-    title: 'Domótica con Home Assistant',
-    category: 'Electrónica',
-    excerpt: 'Automatiza tu hogar con Home Assistant',
-    content: 'Home Assistant es una plataforma de código abierto que te permite automatizar y controlar todos los dispositivos de tu hogar desde un único lugar.\n\nInstalación\nPuedes instalar Home Assistant en:\n- Raspberry Pi\n- NAS\n- Computadora antigua\n- Nube (AWS, Azure, etc.)\n\nIntegraciones populares\n- MQTT\n- Zigbee\n- Z-Wave\n- WiFi\n- TP-Link\n- IKEA Tradfri\n\nAutomaciones\nCrea automaciones para:\n- Luces que se encienden con el anochecer\n- Calefacción inteligente\n- Alertas de seguridad\n- Notificaciones en el móvil\n\nScenes y Scripts\nAgrupa dispositivos en escenas para controlarlos juntos.',
-    date: '2025-02-10',
-    readTime: '13 min',
-    tags: ['domótica', 'home assistant', 'automatización', 'iot']
-  },
-  {
-    id: 8,
-    title: 'Optimización de Webpack',
-    category: 'Programación',
-    excerpt: 'Cómo optimizar tus bundles con Webpack',
-    content: 'Webpack es un poderoso bundler de módulos. Aquí están las mejores prácticas para optimizar tus bundles.\n\nCode Splitting\nDividir el código en chunks pequeños mejora el performance:\n```javascript\nimport { lazy, Suspense } from \'react\';\nconst Component = lazy(() => import(\'./Component\'));\n```\n\nMinificación\nAsegúrate de que Webpack minifique tu código en producción.\n\nTree Shaking\nRemueve código no utilizado:\n```javascript\nexport { usado, noUsado };\n```\n\nCaché y Hashing\nUsa hashing en los nombres de archivo para mejorar el caché del navegador:\n```javascript\noutput: {\n  filename: \'[name].[contenthash].js\'\n}\n```\n\nAnalysis\nUsa plugins como webpack-bundle-analyzer para analizar tu bundle.',
-    date: '2025-02-05',
-    readTime: '11 min',
-    tags: ['webpack', 'javascript', 'performance', 'bundler']
   }
 ];
