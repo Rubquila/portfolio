@@ -18,7 +18,7 @@ export const AboutDetail = ({ onNavigate }) => {
             />
             <div className="header-text">
               <h1 className="about-title">Rubén Quintanilla Lahiguera</h1>
-              <p className="about-subtitle">Ingeniero de Software y Multidisciplinario | Full Stack Developer</p>
+              <p className="about-subtitle">Ingeniero de Software & IoT | Web Full Stack Developer</p>
             </div>
           </div>
 
@@ -26,9 +26,9 @@ export const AboutDetail = ({ onNavigate }) => {
             <section className="about-section">
               <h2 className="section-heading">Sobre Mí</h2>
               <p>
-                Soy un ingeniero con pasión por innovar y crear soluciones integrales 
-                que combinan múltiples disciplinas. Con experiencia en programación y electrónica,
-                busco siempre mejorar los procesos y llevar proyectos hacia nuevos horizontes.
+                Soy un ingeniero de software con pasión por mejorar y crear soluciones integrales 
+                que combinan múltiples disciplinas. Con experiencia en programación web y electrónica,
+                busco siempre mejorar los procesos de negocio y construir proyectos innovadores.
               </p>
               <p>
                 Mi objetivo es aplicar conocimientos técnicos especializados para resolver 
@@ -40,7 +40,7 @@ export const AboutDetail = ({ onNavigate }) => {
               <h2 className="section-heading">Formación Académica</h2>
               <div className="education-item">
                 <h3>Máster en Ingeniería y Tecnologías Software</h3>
-                <p className="education-detail">Especialidad en Calidad de Software y Computación Autónoma</p>
+                <p className="education-detail">Especialidad en Calidad de Software, Testing y Computación Autónoma</p>
               </div>
               <div className="education-item">
                 <h3>Grado en Ingeniería Informática</h3>
@@ -48,7 +48,7 @@ export const AboutDetail = ({ onNavigate }) => {
               </div>
               <div className="education-item">
                 <h3>F.P. Grado Superior en Administración de Sistemas Informáticos</h3>
-                <p className="education-detail">Especialidad en Electrónica</p>
+                <p className="education-detail">Especialidad en Programación Web</p>
               </div>
               {/* <div className="education-item">
                 <h3>Certificaciones Profesionales</h3>
@@ -65,15 +65,26 @@ export const AboutDetail = ({ onNavigate }) => {
               <div className="expertise-grid">
                 <div className="expertise-card">
                   <h3>Programación</h3>
-                  <p>Desarrollo Full Stack, React, Node.js, JavaScript, Java, PHP y Python. Computación autónoma. Calidad de Software y Testing. Enfoque en soluciones escalables y mantenibles.</p>
+                  <ul className="skill-list">
+                    <li>Desarrollo Full Stack en React y Node.js, JavaScript</li>
+                    <li>MySQL y Firebase para BBDD</li>
+                    <li>Calidad de Software y Testing</li>
+                  </ul>
                 </div>
                 <div className="expertise-card">
                   <h3>Electrónica</h3>
-                  <p>Diseño de circuitos, programación de microcontroladores ESP, IoT, sistemas embebidos y automatización doméstica.</p>
+                  <ul className="skill-list">
+                    <li>Configuración y programación de microcontroladores ESP para IoT</li>
+                    <li>Reparación de circuitos y creación de pequeños dispositivos para IoT</li>
+                  </ul>
                 </div>
                 <div className="expertise-card">
-                  <h3>Automoción</h3>
-                  <p>Sistemas de control vehicular, diagnóstico automotriz, integración de componentes electrónicos.</p>
+                  <h3>Ingeniería</h3>
+                  <ul className="skill-list">
+                    <li>Creación de modelos 3D simples</li>
+                    <li>Automatización doméstica con NodeRed</li>
+                    <li>Proyectos de iluminación para el automovil y el hogar</li>
+                  </ul>
                 </div>
               </div>
             </section>
@@ -84,9 +95,9 @@ export const AboutDetail = ({ onNavigate }) => {
                 <div className="skills-column">
                   <h4>Frontend</h4>
                   <ul className="skill-list">
-                    <li>React 18</li>
+                    <li>React</li>
                     <li>HTML5 & CSS3</li>
-                    <li>JavaScript (ES6+)</li>
+                    <li>JavaScript</li>
                     <li>Material UI</li>
                     <li>Responsive Design</li>
                   </ul>
@@ -96,16 +107,17 @@ export const AboutDetail = ({ onNavigate }) => {
                   <ul className="skill-list">
                     <li>Node.js</li>
                     <li>Express</li>
-                    <li>Bases de Datos (SQL, NoSQL)</li>
+                    <li>BBDD SQL y NoSQL</li>
                     <li>APIs RESTful</li>
                   </ul>
                 </div>
                 <div className="skills-column">
                   <h4>Hardware & IoT</h4>
                   <ul className="skill-list">
-                    <li>Arduino & ESP32</li>
-                    <li>Circuitos Electrónicos</li>
+                    <li>ESP32 & Arduino</li>
+                    <li>Circuitos y componentes electrónicos</li>
                     <li>Node-RED</li>
+                    <li>ESPHome</li>
                   </ul>
                 </div>
               </div>
@@ -115,9 +127,9 @@ export const AboutDetail = ({ onNavigate }) => {
               <h2 className="section-heading">Mi Filosofía de Trabajo</h2>
               <div className="philosophy-content">
                 <p>
-                  Creo que la innovación surge de la combinación de diferentes perspectivas 
-                  y disciplinas. Cada proyecto es una oportunidad para aprender y mejorar, 
-                  tanto a nivel técnico como personal.
+                  Paciencia y esfuerzo son fundamentales para superar cualquier reto que me proponga, al igual que
+                  en el gimnasio, aplico estas cualidades en mi trabajo diario. Cada proyecto es una
+                  oportunidad para aprender y mejorar, tanto a nivel técnico como personal.
                 </p>
                 <p>
                   Me comprometo con:
@@ -135,10 +147,12 @@ export const AboutDetail = ({ onNavigate }) => {
             <section className="about-section">
               <h2 className="section-heading">Intereses</h2>
               <p>
-                Más allá del trabajo, me interesa la automatización del hogar, la inteligencia artificial, 
-                los vehículos autónomos y cómo la tecnología puede mejorar la calidad de vida de las personas. 
+                Más allá del trabajo, me interesa la automatización del hogar, la inteligencia artificial
+                y cómo la tecnología puede mejorar la calidad de vida de las personas. 
                 También soy entusiasta del medio ambiente, por lo que tengo interés en proyectos sostenibles y
                 procuro que mis proyectos sean responsables desde el punto de vista ambiental.
+                En mi tiempo libre me gusta hacer ejercicio, mantenerme en forma y disfrutar de la naturaleza con
+                actividades al aire libre haciendo senderismo y exploración.
               </p>
             </section>
           </article>

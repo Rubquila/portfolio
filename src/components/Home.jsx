@@ -52,7 +52,7 @@ export const Home = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
         
         <div className="home-container">
           <div className="home-content">
-            <h1 className="home-title">Ingeniero de Software y Multidisciplinar</h1>
+            <h1 className="home-title">Ingeniero de Software <br /><hr/> Web & IoT</h1>
             <p className="home-subtitle">Software • Electrónica • Impresión 3D</p>
             <div className="home-buttons">
               <button className="btn btn-primary" onClick={handleViewProjects}>Ver Proyectos</button>

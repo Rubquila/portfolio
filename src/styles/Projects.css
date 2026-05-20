@@ -27,7 +27,12 @@
   transform: translateY(-8px);
   border-color: var(--primary-color);
   box-shadow: 0 15px 40px rgba(74, 158, 255, 0.2);
-  background: linear-gradient(135deg, rgba(74, 158, 255, 0.2), rgba(30, 40, 82, 0.4));
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.7), rgba(30, 40, 82, 0.9));
+  opacity: 1;
+}
+
+.project-card:hover img {
+  opacity: 1;
 }
 
 .project-image {
@@ -53,6 +58,14 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
   transition: left 0.5s;
+}
+
+.project-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  align-items: center;
+  opacity: 0.8;
 }
 
 .project-card:hover .project-image::before {
@@ -132,7 +145,6 @@
   text-align: center;
   margin-top: 3rem;
   padding-top: 2rem;
-  border-top: 1px solid var(--border-color);
 }
 
 .btn-see-all {

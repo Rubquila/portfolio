@@ -6,7 +6,7 @@ export const Header = ({ currentSection, setCurrentSection }) => {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <span className="logo-icon">⚙️</span>
+          <span className="logo-icon"></span>
         </div>
         <nav className="nav">
           <button

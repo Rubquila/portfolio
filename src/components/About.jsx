@@ -18,15 +18,16 @@ export const About = ({ onNavigate }) => {
 
           <div className="about-text">
             <p className="about-description">
-              Soy un ingeniero con pasión por crear e innovar en diferentes campos. 
-              Combino electricidad, desarrollos de software y automoción para llevar 
+              Soy un ingeniero con pasión por crear proyectos innovadores aplicados a
+              la sociedad: medicina, medio ambiente e IoT. <br />
+              Combino desarrollo de software, electrónica e ingeniería para llevar 
               proyectos al siguiente nivel.
             </p>
 
             <div className="skills">
+              <button className="skill-tag">Software</button>
               <button className="skill-tag">Electrónica</button>
-              <button className="skill-tag">Programación</button>
-              <button className="skill-tag">Automoción</button>
+              <button className="skill-tag">Impresión 3D</button>
             </div>
 
             <button className="btn-read-more" onClick={() => onNavigate('about-detail')}>Leer Más &gt;</button>

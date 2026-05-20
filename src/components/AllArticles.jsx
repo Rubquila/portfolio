@@ -104,30 +104,16 @@ export const AllArticles = ({ onArticleSelect }) => {
           Mostrando <strong>{filteredArticles.length}</strong> de <strong>{articlesData.length}</strong> artículos
         </div>
 
-        {/* Articles grid */}
-        <div className="articles-grid">
+        {/* Articles list */}
+        <div className="articles-list">
           {filteredArticles.map(article => (
             <div
               key={article.id}
-              className="article-card"
+              className="article-item"
               onClick={() => onArticleSelect(article.id)}
             >
-              <div className="article-meta-header">
-                <span className="article-category">{article.category}</span>
-              </div>
-              
-              <h3 className="article-title">{article.title}</h3>
-              
-              <p className="article-excerpt">{article.excerpt}</p>
-              
-              <div className="article-tags">
-                {article.tags.slice(0, 3).map(tag => (
-                  <span key={tag} className="tag">#{tag}</span>
-                ))}
-                {article.tags.length > 3 && <span className="tag-more">+{article.tags.length - 3}</span>}
-              </div>
-              
-              <button className="read-more">Leer más →</button>
+              <h3 className="article-item-title">{article.title}</h3>
+              <span className="article-item-category">{article.category}</span>
             </div>
           ))}
         </div>

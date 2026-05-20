@@ -9,16 +9,13 @@ export const Footer = () => {
           <a href="https://www.linkedin.com/in/rubenql/" target="_blank" className="footer-link">LinkedIn</a>
         </div>
         <div className="footer-section">
-          <a href="https://github.com/Rubquila" target="_blank" className="footer-link">GitHub</a>
+          <a href="https://github.com/Rubquila?tab=projects" target="_blank" className="footer-link">GitHub</a>
         </div>
         <div className="footer-section">
-          <a href="https://github.com/Rubquila" target="_blank" className="footer-link">Thinkercad</a>
+          <a href="https://www.thinkercad.com/@Rubquila" target="_blank" className="footer-link">Thinkercad</a>
         </div>
         <div className="footer-section">
-          <a href="https://github.com/Rubquila" target="_blank" className="footer-link">YouTube</a>
-        </div>
-        <div className="footer-section">
-          <a href="https://github.com/Rubquila" target="_blank" className="footer-link">Instagram</a>
+          <a href="https://www.youtube.com/@Diamondhorse" target="_blank" className="footer-link">YouTube</a>
         </div>
         <div className="footer-section">
           <a href="mailto:correo@email.com" target="_blank" className="footer-link">Contacto</a>

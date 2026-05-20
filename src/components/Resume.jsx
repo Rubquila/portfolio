@@ -136,7 +136,7 @@ DB2 | 2026
       linkedin: 'rubenql',
       availability: 'Inmediata, total'
     },
-    profile: 'Programador Full Stack con experiencia en React, Java y Android, especializado en MDD e interfaces de calidad. Con interés en IoT y domótica, orientado al desarrollo de soluciones innovadoras con impacto real.',
+    profile: 'Ingeniero informático con Máster en Ingeniería de Software y más de 3 años de experiencia en desarrollo Full Stack. Especializado en la creación de aplicaciones web robustas con React, Node.js (Express) y MySQL. Sólida base en arquitectura de software, metodologías ágiles y patrones de diseño. Apasionado por la innovación tecnológica, con experiencia complementaria en desarrollo Android y soluciones IoT.',
     experience: [
       {
         title: 'Desarrollador Full Stack React/Node.js',
@@ -235,16 +235,22 @@ DB2 | 2026
           {/* Header con información personal */}
           <div className="resume-header">
             <div className="resume-info">
-              <h3>{curriculumData.personal.name}</h3>
-              <p className="job-title">{curriculumData.personal.title}</p>
-              <p className="profile-text">{curriculumData.profile}</p>
+              <h3>Rubén Quintanilla Lahiguera</h3>
+              <p className="job-title">Programador Full Stack</p>
+              <p className="profile-text">
+                Ingeniero informático con Máster en Ingeniería de Software y más de 3 años de experiencia en
+                desarrollo Full Stack. Especializado en la creación de aplicaciones web robustas con React,
+                Node.js (Express) y MySQL. Sólida base en arquitectura de software, metodologías ágiles y
+                patrones de diseño. Apasionado por la innovación tecnológica, con experiencia complementaria
+                en desarrollo Android y soluciones IoT.
+              </p>
             </div>
             <div className="contact-info">
               <p><strong>Contacto:</strong></p>
               <p></p>
               <p></p>
-              <p>💼 LinkedIn: <a href={`https://linkedin.com/in/${curriculumData.personal.linkedin}`} target="_blank" rel="noopener noreferrer">{curriculumData.personal.linkedin}</a></p>
-              <p><strong>Disponibilidad:</strong> {curriculumData.personal.availability}</p>
+              <p>💼 LinkedIn: <a href={`https://linkedin.com/in/rubenql`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
+              <p><strong>Disponibilidad:</strong> Inmediata, total</p>
             </div>
           </div>
 

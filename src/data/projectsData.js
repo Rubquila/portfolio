@@ -12,9 +12,9 @@ export const projectsData = [
     solution: 'He desarrollado un sistema local dómótico modular mediante Node-RED en la plataforma Home Assistant, que automatiza tareas y rutinas complejas propias de un smarthome. También he creado dispositivos hardware propios con microcontroladores ESP programados mediante ESPHome. El sistema es completamente local, sin dependencia de la nube, y permite integración con una amplia variedad de dispositivos y protocolos. Además, he implementado un sistema de notificaciones personalizadas y control remoto seguro.',
     result: 'Sistema completamente funcional que automatiza diferentes aspectos del hogar. Actualmente estoy integrando IA para respuesta conversacional y control avanzado de dispositivos. Reduce el consumo energético en un 30% y proporciona automatizaciones personalizadas.',
     resultImages: [
-      '/projects/raston-result-1.jpg',
-      '/projects/raston-result-2.jpg',
-      '/projects/raston-result-3.jpg'
+      '/src/assets/images/proyects/raston/raston1.jpg',
+      '/src/assets/images/proyects/raston/raston2.jpg',
+      '/src/assets/images/proyects/raston/raston3.jpg'
     ],
     links: {
       github: 'https://github.com/rubenql/raston-project',
@@ -35,7 +35,7 @@ export const projectsData = [
     solution: 'He desarrollado una página web personal de portfolio utilizando React, con un diseño moderno y responsive. El sitio incluye secciones para proyectos, artículos, habilidades y experiencia, con una navegación intuitiva y un diseño atractivo. He implementado funcionalidades como filtros de proyectos, búsqueda de anotaciones y manuales, y descarga de diseños 3D para imprimir.',
     result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y compartir conocimientos. Actualmente estoy trabajando en la inserción y ampliación del contenido.',
     resultImages: [
-      '/projects/raston-result-1.jpg',
+      '/src/assets/images/proyects/portfolio/portfolio1.png',
       '/projects/raston-result-2.jpg',
       '/projects/raston-result-3.jpg'
     ],
