@@ -151,6 +151,46 @@
   transform: translateX(4px);
 }
 
+/* Botón Ver más */
+.view-more-btn {
+  display: block;
+  margin: 1.5rem auto;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, var(--primary-color), var(--hover-color));
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-more-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(74, 158, 255, 0.4);
+}
+
+.view-more-btn:active {
+  transform: translateY(0);
+}
+
+/* Contenedor para elementos expandibles */
+.expandable-items {
+  overflow: hidden;
+  transition: all 1s ease;
+}
+
+.expandable-items.collapsed {
+  max-height: 0;
+  opacity: 0;
+}
+
+.expandable-items.expanded {
+  max-height: 2000px;
+  opacity: 1;
+}
+
 .resume-item h4 {
   font-size: 1.1rem;
   color: var(--text-primary);
@@ -186,7 +226,7 @@
 .languages-grid,
 .certifications-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
   gap: 1rem;
 }
 
