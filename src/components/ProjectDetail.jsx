@@ -48,6 +48,12 @@ export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
         {/* Imagen grande */}
         <div className="project-hero-image">
           <div className="image-placeholder-large">
+            <img src={project.coverImage} alt={project.title} 
+                  onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextElementSibling.style.display = 'flex';
+                  }}
+                />
             <span className="placeholder-icon">🖼️</span>
             <span>{project.title}</span>
           </div>
@@ -83,10 +89,10 @@ export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
             <p className="section-text">{project.result}</p>
             
             {/* Imágenes del resultado */}
-            {project.resultImages && project.resultImages.length > 0 && (
+            {project.images && project.images.length > 0 && (
               <>
                 <div className="result-images-gallery">
-                  {project.resultImages.map((image, idx) => (
+                  {project.images.map((image, idx) => (
                     <div key={idx} className="result-image-container">
                       <img 
                         src={image} 
@@ -211,7 +217,7 @@ export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
 
       {/* Image Viewer Modal */}
       <ImageViewer 
-        images={project.resultImages} 
+        images={project.images} 
         isOpen={viewerOpen} 
         onClose={() => setViewerOpen(false)} 
       />

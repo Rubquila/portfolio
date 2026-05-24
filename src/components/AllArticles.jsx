@@ -39,10 +39,10 @@ export const AllArticles = ({ onArticleSelect }) => {
         
         {/* Header */}
         <div className="articles-header">
-          <h2>Anotaciones & Artículos</h2>
+          <h2>Anotaciones & Tips</h2>
           <div className="articles-intro">
-            <h3>Mi Blog Personal</h3>
-            <p>Una colección de artículos sobre electrónica, programación, reparación y tecnología. Comparto conocimientos adquiridos a lo largo de mis proyectos y experiencias profesionales. Cada artículo ofrece soluciones prácticas, tutoriales paso a paso y mejores prácticas en la industria tech.</p>
+            <p>Una colección de anotaciones y tips sobre electrónica, programación, reparación y tecnología.<br />
+            Conocimientos adquiridos a lo largo de mis proyectos y experiencias personales y profesionales.</p>
             <div className="articles-features">
               <div className="feature">
                 <span className="feature-icon">💡</span>

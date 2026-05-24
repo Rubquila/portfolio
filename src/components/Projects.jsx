@@ -25,7 +25,7 @@ export const Projects = ({ onProjectSelect, onNavigate }) => {
               onClick={() => onProjectSelect(project.id)}
             >
               <div className="project-image">
-                <img src={project.resultImages[0]} alt={project.title} 
+                <img src={project.coverImage} alt={project.title} 
                   onError={(e) => {
                           e.target.style.display = 'none';
                           e.target.nextElementSibling.style.display = 'flex';

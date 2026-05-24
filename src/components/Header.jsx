@@ -40,6 +40,12 @@ export const Header = ({ currentSection, setCurrentSection }) => {
             Impresión 3D
           </button>
           <button
+            className={`nav-link ${currentSection === 'routes' ? 'active' : ''}`}
+            onClick={() => setCurrentSection('routes')}
+          >
+            Rutas
+          </button>
+          <button
             className={`nav-link ${currentSection === 'resume' ? 'active' : ''}`}
             onClick={() => setCurrentSection('resume')}
           >

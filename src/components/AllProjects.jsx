@@ -52,17 +52,16 @@ export const AllProjects = ({ onProjectSelect }) => {
   return (
     <section id="all-projects" className="all-projects">
       <div className="all-projects-container">
-        <h2 className="section-title">Todos los Proyectos</h2>
+        <h2 className="section-title">Proyectos</h2>
 
         {/* Cabecera de presentación */}
         <div className="section-header">
           <div className="header-content">
-            <h3 className="header-subtitle">Proyectos Destacados en Múltiples Disciplinas</h3>
             <p className="header-description">
-              A lo largo de mi carrera, he desarrollado una amplia variedad de proyectos que abarcan 
-              desde domótica inteligente y software personalizado, hasta hardware innovador y robótica autónoma. 
+              He desarrollado una amplia variedad de proyectos que abarcan desde domótica inteligente
+               y software personalizado, hasta hardware innovador y robótica autónoma.<br />
               Cada proyecto representa un desafío único que combina creatividad, conocimiento técnico 
-              y pasión por la resolución de problemas. Aquí puedes explorar algunos de mis trabajos más significativos.
+              y pasión por la ingeniería y resolución de problemas.
             </p>
             <div className="header-features">
               <div className="feature-item">
@@ -177,6 +176,12 @@ export const AllProjects = ({ onProjectSelect }) => {
               >
                 <div className="project-image">
                   <span className="image-placeholder">Foto</span>
+                  <img src={project.coverImage} alt={project.title} 
+                    onError={(e) => {
+                          e.target.style.display = 'none';
+                          e.target.nextElementSibling.style.display = 'flex';
+                    }}
+                  />
                   <div className={`project-status status-${project.status.toLowerCase()}`}>
                   {project.status}
                 </div>

@@ -56,12 +56,6 @@ export const ArticleDetail = ({ articleId, onBack }) => {
             <h1>{article.title}</h1>
             <div className="header-meta">
               <span className="category-badge">{article.category}</span>
-              <span className="article-date">{new Date(article.date).toLocaleDateString('es-ES', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</span>
-              <span className="article-read-time">⏱️ {article.readTime}</span>
             </div>
           </div>
         </div>
