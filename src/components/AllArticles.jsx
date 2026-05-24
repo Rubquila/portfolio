@@ -34,27 +34,28 @@ export const AllArticles = ({ onArticleSelect }) => {
   };
 
   return (
-    <section className="all-articles-section">
-      <div className="articles-container">
-        
+    <section className="all-projects">
+      <div className="all-projects-container">
         {/* Header */}
-        <div className="articles-header">
-          <h2>Anotaciones & Tips</h2>
-          <div className="articles-intro">
-            <p>Una colección de anotaciones y tips sobre electrónica, programación, reparación y tecnología.<br />
-            Conocimientos adquiridos a lo largo de mis proyectos y experiencias personales y profesionales.</p>
-            <div className="articles-features">
-              <div className="feature">
+        <div className="section-header">
+          <div className="header-content">
+            <h2 className="section-title">Anotaciones & Tips</h2>
+            <div className="header-description">
+              Una colección de anotaciones y tips sobre electrónica, programación, reparación y tecnología.<br />
+              Conocimientos adquiridos a lo largo de mis proyectos y experiencias personales y profesionales.
+            </div>
+            <div className="header-features">
+              <div className="feature-item">
                 <span className="feature-icon">💡</span>
-                <span className="feature-name">Tutoriales</span>
+                <span>Tutoriales</span>
               </div>
-              <div className="feature">
+              <div className="feature-item">
                 <span className="feature-icon">🔧</span>
-                <span className="feature-name">Guías Prácticas</span>
+                <span>Guías Prácticas</span>
               </div>
-              <div className="feature">
+              <div className="feature-item">
                 <span className="feature-icon">📚</span>
-                <span className="feature-name">Conocimiento</span>
+                <span>Conocimiento</span>
               </div>
             </div>
           </div>
@@ -74,14 +75,13 @@ export const AllArticles = ({ onArticleSelect }) => {
         {/* Filters */}
         <div className="filters-section">
           <button 
-            className="filter-toggle"
+            className="filters-toggle"
             onClick={() => setShowFilters(!showFilters)}
           >
-            <span>⚙️</span>
+            <span className="filter-icon">⚙️</span>
             Filtros
-            <span>{showFilters ? '▲' : '▼'}</span>
+            <span className={`toggle-arrow${showFilters ? ' open' : ''}`}>{showFilters ? '▲' : '▼'}</span>
           </button>
-          
           {showFilters && (
             <div className="filters-container">
               {categories.map(category => (
