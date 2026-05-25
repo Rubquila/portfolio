@@ -36,7 +36,7 @@ export const AllArticles = ({ onArticleSelect }) => {
   return (
     <section className="all-projects">
       <div className="all-projects-container">
-        {/* Header */}
+        {/* Cabecera de presentación */}
         <div className="section-header">
           <div className="header-content">
             <h2 className="section-title">Anotaciones & Tips</h2>

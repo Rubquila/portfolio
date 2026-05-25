@@ -52,16 +52,15 @@ export const AllProjects = ({ onProjectSelect }) => {
   return (
     <section id="all-projects" className="all-projects">
       <div className="all-projects-container">
-        <h2 className="section-title">Proyectos</h2>
-
         {/* Cabecera de presentación */}
         <div className="section-header">
           <div className="header-content">
+            <h2 className="section-title">Proyectos</h2>
             <p className="header-description">
-              He desarrollado una amplia variedad de proyectos que abarcan desde domótica inteligente
-               y software personalizado, hasta hardware innovador y robótica autónoma.<br />
-              Cada proyecto representa un desafío único que combina creatividad, conocimiento técnico 
-              y pasión por la ingeniería y resolución de problemas.
+              He desarrollado una amplia variedad de proyectos del ámbito de la domótica, IoT, 
+              software e iluminación.<br />
+              Cada proyecto representa un desafío único que combina creatividad, conocimiento técnico, 
+              pasión por la ingeniería y resolución de problemas.
             </p>
             <div className="header-features">
               <div className="feature-item">
@@ -101,43 +100,37 @@ export const AllProjects = ({ onProjectSelect }) => {
               ✕
             </button>
           )}
+          {/* Botón Filtros Colapsable */}
+          <button 
+            className="filters-toggle"
+            onClick={() => setFiltersOpen(!filtersOpen)}
+          >
+            <span className="filter-icon">⚙️</span>
+            Filtros
+            <span className={`toggle-arrow ${filtersOpen ? 'open' : ''}`}>▼</span>
+          </button>
         </div>
-
-        {/* Botón Filtros Colapsable */}
-        <button 
-          className="filters-toggle"
-          onClick={() => setFiltersOpen(!filtersOpen)}
-        >
-          <span className="filter-icon">⚙️</span>
-          Filtros
-          <span className={`toggle-arrow ${filtersOpen ? 'open' : ''}`}>▼</span>
-        </button>
 
         {/* Sección de filtros (colapsable) */}
         {filtersOpen && (
           <div className="filters-section">
-            <div className="filters-header">
-              <h3>Filtros</h3>
+            {/* Filtro por categorías */}
+            <div className="filter-group">
               {(selectedCategories.length > 0 || selectedTags.length > 0) && (
                 <button className="clear-filters-btn" onClick={clearFilters}>
                   Limpiar filtros
                 </button>
               )}
-            </div>
-
-            {/* Filtro por categorías */}
-            <div className="filter-group">
               <h4>Categorías</h4>
-              <div className="filter-options">
+              <div className="filter-category">
                 {categories.map(category => (
-                  <label key={category} className="filter-label">
-                    <input
-                      type="checkbox"
-                      checked={selectedCategories.includes(category)}
-                      onChange={() => toggleCategory(category)}
-                    />
-                    <span className="filter-name">{category}</span>
-                  </label>
+                  <button
+                    key={category}
+                    className={`category-filter ${selectedCategories.includes(category) ? 'active' : ''}`}
+                    onClick={() => toggleCategory(category)}
+                  >
+                    {category}
+                  </button>
                 ))}
               </div>
             </div>

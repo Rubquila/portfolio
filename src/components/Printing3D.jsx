@@ -50,17 +50,15 @@ export const Printing3D = () => {
   };
 
   return (
-    <section id="printing-3d" className="printing-3d">
-      <div className="printing-container">
-        <h2 className="section-title">Impresión 3D</h2>
-
-        {/* Cabecera de presentación */}
+    <section className="all-projects">
+      <div className="all-projects-container">
+        {/* Header */}
         <div className="section-header">
           <div className="header-content">
-            <h3 className="header-subtitle">Mis diseños de impresión 3D</h3>
-            <p className="header-description">
+            <h2 className="section-title">Impresión 3D</h2>
+            <div className="header-description">
               Aquí están algunos de mis proyectos de impresión 3D, desde accesorios hasta piezas de objetos.
-            </p>
+            </div>
           </div>
         </div>
 
@@ -90,7 +88,7 @@ export const Printing3D = () => {
         >
           <span className="filter-icon">⚙️</span>
           Filtros
-          <span className={`toggle-arrow ${filtersOpen ? 'open' : ''}`}>▼</span>
+          <span className={`toggle-arrow${filtersOpen ? ' open' : ''}`}>{filtersOpen ? '▲' : '▼'}</span>
         </button>
 
         {/* Sección de filtros (colapsable) */}
@@ -115,8 +113,9 @@ export const Printing3D = () => {
                       type="checkbox"
                       checked={selectedCategories.includes(category)}
                       onChange={() => toggleCategory(category)}
+                      className="filter-checkbox"
                     />
-                    <span className="filter-name">{category}</span>
+                    <span>{category}</span>
                   </label>
                 ))}
               </div>
