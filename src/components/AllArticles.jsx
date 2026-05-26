@@ -1,37 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
+import Filters from "../components/Filter";
 import { articlesData } from '../data/articlesData';
 import '../styles/AllArticles.css';
 
 export const AllArticles = ({ onArticleSelect }) => {
-  const [searchTerm, setSearchTerm] = useState('');
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [showFilters, setShowFilters] = useState(false);
-
-  // Obtener categorías únicas
-  const categories = [...new Set(articlesData.map(a => a.category))];
-
-  // Filtrar y buscar artículos
-  const filteredArticles = useMemo(() => {
-    return articlesData.filter(article => {
-      const matchesSearch = !searchTerm || 
-        article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        article.tags.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
-
-      const matchesCategory = selectedCategories.length === 0 || 
-        selectedCategories.includes(article.category);
-
-      return matchesSearch && matchesCategory;
-    });
-  }, [searchTerm, selectedCategories]);
-
-  const toggleCategory = (category) => {
-    setSelectedCategories(prev => 
-      prev.includes(category) 
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
-  };
+  const [filteredArticles, setFilteredArticles] = useState(articlesData);
+  
+  // useCallback para evitar re-creaciones innecesarias
+  const handleFiltered = useCallback((filtered) => {
+    setFilteredArticles(filtered);
+  }, []);
 
   return (
     <section className="all-projects">
@@ -61,64 +39,27 @@ export const AllArticles = ({ onArticleSelect }) => {
           </div>
         </div>
 
-        {/* Search */}
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Buscar artículos..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="search-input"
-          />
-        </div>
-
-        {/* Filters */}
-        <div className="filters-section">
-          <button 
-            className="filters-toggle"
-            onClick={() => setShowFilters(!showFilters)}
-          >
-            <span className="filter-icon">⚙️</span>
-            Filtros
-            <span className={`toggle-arrow${showFilters ? ' open' : ''}`}>{showFilters ? '▲' : '▼'}</span>
-          </button>
-          {showFilters && (
-            <div className="filters-container">
-              {categories.map(category => (
-                <label key={category} className="filter-label">
-                  <input
-                    type="checkbox"
-                    checked={selectedCategories.includes(category)}
-                    onChange={() => toggleCategory(category)}
-                    className="filter-checkbox"
-                  />
-                  <span>{category}</span>
-                </label>
-              ))}
-            </div>
-          )}
-        </div>
-
-        {/* Results counter */}
-        <div className="results-counter">
-          Mostrando <strong>{filteredArticles.length}</strong> de <strong>{articlesData.length}</strong> artículos
-        </div>
+        <Filters
+          elements={articlesData}
+          onFiltered={handleFiltered}
+          onElementSelect={onArticleSelect}
+        />
 
         {/* Articles list */}
-        <div className="articles-list">
-          {filteredArticles.map(article => (
-            <div
-              key={article.id}
-              className="article-item"
-              onClick={() => onArticleSelect(article.id)}
-            >
-              <h3 className="article-item-title">{article.title}</h3>
-              <span className="article-item-category">{article.category}</span>
-            </div>
-          ))}
-        </div>
-
-        {filteredArticles.length === 0 && (
+        {filteredArticles.length > 0 ? (
+          <div className="articles-list">
+            {filteredArticles.map(article => (
+              <div
+                key={article.id}
+                className="article-item"
+                onClick={() => onArticleSelect(article.id)}
+              >
+                <h3 className="article-item-title">{article.title}</h3>
+                <span className="article-item-category">{article.category}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
           <div className="no-results">
             <p>No se encontraron artículos que coincidan con tu búsqueda.</p>
           </div>

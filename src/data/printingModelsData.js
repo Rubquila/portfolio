@@ -1,4 +1,4 @@
-export const printingData = [
+export const printingModelsData = [
   {
     id: 1,
     title: 'Soporte de pared para tablet',

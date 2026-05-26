@@ -194,7 +194,7 @@ export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
                       </div>
                       <div className="related-project-content">
                         <h3 className="related-project-title">{relatedProject.title}</h3>
-                        <p className="related-project-description">{relatedProject.shortDescription}</p>
+                        <p className="related-project-description">{relatedProject.description}</p>
                         <div className="related-project-category">
                           {relatedProject.category}
                         </div>

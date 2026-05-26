@@ -96,7 +96,7 @@ export const ArticleDetail = ({ articleId, onBack }) => {
                   style={{ cursor: 'pointer' }}
                 >
                   <h4>{related.title}</h4>
-                  <p>{related.excerpt}</p>
+                  <p>{related.description}</p>
                   <span className="related-category">{related.category}</span>
                 </div>
               ))}

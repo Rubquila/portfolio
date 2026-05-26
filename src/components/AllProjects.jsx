@@ -1,53 +1,15 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
+import Filters from "../components/Filter";
 import { projectsData } from '../data/projectsData';
 import '../styles/AllProjects.css';
 
 export const AllProjects = ({ onProjectSelect }) => {
-  const [selectedCategories, setSelectedCategories] = useState([]);
-  const [selectedTags, setSelectedTags] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('');
-  const [filtersOpen, setFiltersOpen] = useState(false);
+  const [filteredProjects, setFilteredProjects] = useState(projectsData);
 
-  // Extraer categorías únicas
-  const categories = [...new Set(projectsData.map(p => p.category))];
-  
-  // Extraer tags únicos
-  const allTags = [...new Set(projectsData.flatMap(p => p.tags))];
-
-  // Filtrar proyectos
-  const filteredProjects = useMemo(() => {
-    return projectsData.filter(project => {
-      const matchCategory = selectedCategories.length === 0 || selectedCategories.includes(project.category);
-      const matchTags = selectedTags.length === 0 || selectedTags.some(tag => project.tags.includes(tag));
-      const matchSearch = searchTerm === '' || 
-        project.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(searchTerm.toLowerCase());
-      
-      return matchCategory && matchTags && matchSearch;
-    });
-  }, [selectedCategories, selectedTags, searchTerm]);
-
-  const toggleCategory = (category) => {
-    setSelectedCategories(prev =>
-      prev.includes(category) 
-        ? prev.filter(c => c !== category)
-        : [...prev, category]
-    );
-  };
-
-  const toggleTag = (tag) => {
-    setSelectedTags(prev =>
-      prev.includes(tag)
-        ? prev.filter(t => t !== tag)
-        : [...prev, tag]
-    );
-  };
-
-  const clearFilters = () => {
-    setSelectedCategories([]);
-    setSelectedTags([]);
-    setSearchTerm('');
-  };
+  // useCallback para evitar re-creaciones innecesarias
+  const handleFiltered = useCallback((filtered) => {
+    setFilteredProjects(filtered);
+  }, []);
 
   return (
     <section id="all-projects" className="all-projects">
@@ -83,80 +45,11 @@ export const AllProjects = ({ onProjectSelect }) => {
           </div>
         </div>
 
-        {/* Barra de búsqueda */}
-        <div className="search-box">
-          <input
-            type="text"
-            placeholder="Buscar proyectos..."
-            className="search-input"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          {searchTerm && (
-            <button 
-              className="clear-search"
-              onClick={() => setSearchTerm('')}
-            >
-              ✕
-            </button>
-          )}
-          {/* Botón Filtros Colapsable */}
-          <button 
-            className="filters-toggle"
-            onClick={() => setFiltersOpen(!filtersOpen)}
-          >
-            <span className="filter-icon">⚙️</span>
-            Filtros
-            <span className={`toggle-arrow ${filtersOpen ? 'open' : ''}`}>▼</span>
-          </button>
-        </div>
-
-        {/* Sección de filtros (colapsable) */}
-        {filtersOpen && (
-          <div className="filters-section">
-            {/* Filtro por categorías */}
-            <div className="filter-group">
-              {(selectedCategories.length > 0 || selectedTags.length > 0) && (
-                <button className="clear-filters-btn" onClick={clearFilters}>
-                  Limpiar filtros
-                </button>
-              )}
-              <h4>Categorías</h4>
-              <div className="filter-category">
-                {categories.map(category => (
-                  <button
-                    key={category}
-                    className={`category-filter ${selectedCategories.includes(category) ? 'active' : ''}`}
-                    onClick={() => toggleCategory(category)}
-                  >
-                    {category}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* Filtro por tags */}
-            <div className="filter-group">
-              <h4>Etiquetas</h4>
-              <div className="filter-tags">
-                {allTags.map(tag => (
-                  <button
-                    key={tag}
-                    className={`tag-filter ${selectedTags.includes(tag) ? 'active' : ''}`}
-                    onClick={() => toggleTag(tag)}
-                  >
-                    #{tag}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* Contador de resultados */}
-        <div className="results-count">
-          Mostrando <strong>{filteredProjects.length}</strong> de <strong>{projectsData.length}</strong> proyectos
-        </div>
+        <Filters
+          elements={projectsData}
+          onFiltered={handleFiltered}
+          onElementSelect={onProjectSelect}
+        />
 
         {/* Grid de proyectos */}
         {filteredProjects.length > 0 ? (
@@ -181,7 +74,7 @@ export const AllProjects = ({ onProjectSelect }) => {
                 </div>
                 <h3 className="project-title">{project.title}</h3>
                 
-                <p className="project-description">{project.shortDescription}</p>
+                <p className="project-description">{project.description}</p>
                 <div className="project-meta">
                   <span className="category-badge">{project.category}</span>
                 </div>
@@ -199,9 +92,6 @@ export const AllProjects = ({ onProjectSelect }) => {
         ) : (
           <div className="no-results">
             <p>No se encontraron proyectos que coincidan con los criterios seleccionados.</p>
-            <button className="clear-filters-btn" onClick={clearFilters}>
-              Limpiar filtros
-            </button>
           </div>
         )}
       </div>

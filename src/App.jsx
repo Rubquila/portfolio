@@ -6,7 +6,7 @@ import { AllProjects } from './components/AllProjects'
 import { ProjectDetail } from './components/ProjectDetail'
 import { AllArticles } from './components/AllArticles'
 import { ArticleDetail } from './components/ArticleDetail'
-import { Printing3D } from './components/Printing3D'
+import { AllPrintingModels } from './components/AllPrintingModels'
 import { About } from './components/About'
 import { AboutDetail } from './components/AboutDetail'
 import { Resume } from './components/Resume'
@@ -18,6 +18,7 @@ export default function App() {
   const [currentSection, setCurrentSection] = useState('home')
   const [selectedProjectId, setSelectedProjectId] = useState(null)
   const [selectedArticleId, setSelectedArticleId] = useState(null)
+  const [selectedPrintingModelId, setSelectedPrintingModelId] = useState(null)
   const [viewMode, setViewMode] = useState('section') // 'section' o 'detail'
   const mainRef = useRef(null);
 
@@ -31,10 +32,16 @@ export default function App() {
     setViewMode('detail')
   }
 
+  const handlePrintingModelSelect = (printingModelId) => {
+    setSelectedPrintingModelId(printingModelId)
+    setViewMode('detail')
+  }
+
   const handleBackFromDetail = () => {
     setViewMode('section')
     setSelectedProjectId(null)
     setSelectedArticleId(null)
+    setSelectedPrintingModelId(null)
   }
 
   return (
@@ -51,7 +58,7 @@ export default function App() {
             {currentSection === 'home' && <Home onNavigate={setCurrentSection} onProjectSelect={handleProjectSelect} scrollContainerRef={mainRef} />}
             {currentSection === 'all-projects' && <AllProjects onProjectSelect={handleProjectSelect} />}
             {currentSection === 'articles' && <AllArticles onArticleSelect={handleArticleSelect} />}
-            {currentSection === 'printing-3d' && <Printing3D />}
+            {currentSection === 'printingModels' && <AllPrintingModels onPrintingModelSelect={handlePrintingModelSelect} />}
             {currentSection === 'about-detail' && <AboutDetail onNavigate={setCurrentSection} />}
             {currentSection === 'resume' && <Resume />}
             {currentSection === 'contact' && <Contact />}
