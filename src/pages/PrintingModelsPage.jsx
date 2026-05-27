@@ -1,19 +1,21 @@
 import React, { useState, useCallback } from 'react';
-import Filters from "./Filter";
+import { useNavigate } from 'react-router-dom';
+import SearchComponent from "../components/SearchComponent";
 import { printingModelsData } from '../data/printingModelsData';
-import '../styles/AllPrintingModels.css';
+import '../styles/PrintingModelsPage.css';
 
-export const AllPrintingModels = ({ onPrintingModelSelect }) => {
+export const PrintingModelsPage = ({ onPrintingModelSelect }) => {
   const [filteredPrintingModels, setFilteredPrintingModels] = useState(printingModelsData);
+  const navigate = useNavigate();
   
-    // useCallback para evitar re-creaciones innecesarias
-    const handleFiltered = useCallback((filtered) => {
-      setFilteredPrintingModels(filtered);
-    }, []);
+  // useCallback para evitar re-creaciones innecesarias
+  const handleFiltered = useCallback((filtered) => {
+    setFilteredPrintingModels(filtered);
+  }, []);
 
   return (
-    <section className="all-projects">
-      <div className="all-projects-container">
+    <section className="section">
+      <div className="section-container">
         {/* Header */}
         <div className="section-header">
           <div className="header-content">
@@ -24,7 +26,7 @@ export const AllPrintingModels = ({ onPrintingModelSelect }) => {
           </div>
         </div>
 
-        <Filters
+        <SearchComponent
           elements={printingModelsData}
           onFiltered={handleFiltered}
           onElementSelect={onPrintingModelSelect}
@@ -41,7 +43,7 @@ export const AllPrintingModels = ({ onPrintingModelSelect }) => {
                 rel="noopener noreferrer"
                 className="print-card"
               >
-                <div className="print-image">
+                <div className="project-image">
                   <div className="image-placeholder">
                     <span className="image-icon">🖨️</span>
                     <span>{model.title}</span>

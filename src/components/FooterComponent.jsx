@@ -1,7 +1,8 @@
 import React from 'react';
-import '../styles/Footer.css';
+import { NavLink } from 'react-router-dom';
+import '../styles/FooterComponent.css';
 
-export const Footer = () => {
+export const FooterComponent = () => {
   return (
     <footer className="footer">
       <div className="footer-container">
@@ -18,7 +19,7 @@ export const Footer = () => {
           <a href="https://www.youtube.com/@Diamondhorse" target="_blank" className="footer-link">YouTube</a>
         </div>
         <div className="footer-section">
-          <a href="mailto:correo@email.com" target="_blank" className="footer-link">Contacto</a>
+          <NavLink to="/contact" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Contacto</NavLink>
         </div>
       </div>
     </footer>

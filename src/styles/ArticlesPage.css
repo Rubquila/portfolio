@@ -1,16 +1,3 @@
-
-/* Unificación con AllProjects */
-.all-projects {
-  padding: 80px 20px;
-  background-color: var(--bg-darker);
-  min-height: 100vh;
-}
-
-.all-projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* Articles List */
 .articles-list {
   display: flex;

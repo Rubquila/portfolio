@@ -1,19 +1,25 @@
 import React, { useState, useCallback } from 'react';
-import Filters from "../components/Filter";
+import { useNavigate } from 'react-router-dom';
+import SearchComponent from "../components/SearchComponent";
 import { articlesData } from '../data/articlesData';
-import '../styles/AllArticles.css';
+import '../styles/ArticlesPage.css';
 
-export const AllArticles = ({ onArticleSelect }) => {
+export const ArticlesPage = () => {
   const [filteredArticles, setFilteredArticles] = useState(articlesData);
-  
+  const navigate = useNavigate();
+
   // useCallback para evitar re-creaciones innecesarias
   const handleFiltered = useCallback((filtered) => {
     setFilteredArticles(filtered);
   }, []);
 
+  const handleArticleClick = (articleId) => {
+    navigate(`/articles/${articleId}`);
+  };
+
   return (
-    <section className="all-projects">
-      <div className="all-projects-container">
+    <section className="section">
+      <div className="section-container">
         {/* Cabecera de presentación */}
         <div className="section-header">
           <div className="header-content">
@@ -39,10 +45,10 @@ export const AllArticles = ({ onArticleSelect }) => {
           </div>
         </div>
 
-        <Filters
+        <SearchComponent
           elements={articlesData}
           onFiltered={handleFiltered}
-          onElementSelect={onArticleSelect}
+          onElementSelect={handleArticleClick}
         />
 
         {/* Articles list */}
@@ -52,7 +58,7 @@ export const AllArticles = ({ onArticleSelect }) => {
               <div
                 key={article.id}
                 className="article-item"
-                onClick={() => onArticleSelect(article.id)}
+                onClick={() => handleArticleClick(article.id)}
               >
                 <h3 className="article-item-title">{article.title}</h3>
                 <span className="article-item-category">{article.category}</span>

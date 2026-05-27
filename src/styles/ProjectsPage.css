@@ -1,14 +1,3 @@
-.all-projects {
-  padding: 80px 20px;
-  background-color: var(--bg-darker);
-  min-height: 100vh;
-}
-
-.all-projects-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
 /* Grid de proyectos */
 .projects-grid {
   display: grid;

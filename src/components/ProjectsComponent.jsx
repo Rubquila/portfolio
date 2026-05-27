@@ -1,8 +1,8 @@
 import React from 'react';
 import { projectsData } from '../data/projectsData';
-import '../styles/Projects.css';
+import '../styles/ProjectsComponent.css';
 
-export const Projects = ({ onProjectSelect, onNavigate }) => {
+export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
   // Obtener solo los primeros 4 proyectos como destacados
   const featured = projectsData.slice(0, 3);
 

@@ -1,7 +1,7 @@
 import React, { useState, useMemo, useEffect } from "react";
-import '../styles/Filter.css';
+import '../styles/SearchComponent.css';
 
-export default function Filters({
+export default function SearchComponent({
   elements = [],
   onFiltered = () => {},
   onElementSelect = () => {}

@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { Projects } from './Projects';
-import { About } from './About';
-import '../styles/Home.css';
+import { ProjectsComponent } from '../components/ProjectsComponent';
+import { AboutComponent } from '../components/AboutComponent';
+import '../styles/HomePage.css';
 
-export const Home = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
+export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
   const bgRef = useRef(null);
 
   const handleViewProjects = () => {
@@ -62,8 +62,8 @@ export const Home = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
         </div>
       </section>
 
-      <Projects onProjectSelect={onProjectSelect} onNavigate={onNavigate} />
-      <About onNavigate={onNavigate} />
+      <ProjectsComponent onProjectSelect={onProjectSelect} onNavigate={onNavigate} />
+      <AboutComponent onNavigate={onNavigate} />
     </>
   );
 };

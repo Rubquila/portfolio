@@ -1,71 +1,42 @@
-import { useState, useEffect, useRef } from 'react'
-import { Header } from './components/Header'
-import { Home } from './components/Home'
-import { Projects } from './components/Projects'
-import { AllProjects } from './components/AllProjects'
-import { ProjectDetail } from './components/ProjectDetail'
-import { AllArticles } from './components/AllArticles'
-import { ArticleDetail } from './components/ArticleDetail'
-import { AllPrintingModels } from './components/AllPrintingModels'
-import { About } from './components/About'
-import { AboutDetail } from './components/AboutDetail'
-import { Resume } from './components/Resume'
-import { Contact } from './components/Contact'
-import { Footer } from './components/Footer'
-import './styles/globals.css'
+import { useRef } from 'react'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HeaderComponent } from './components/HeaderComponent';
+import { HomePage } from './pages/HomePage';
+import { ProjectsPage } from './pages/ProjectsPage';
+import { ProjectDetail } from './components/ProjectDetail';
+import { ArticlesPage } from './pages/ArticlesPage';
+import { ArticleDetail } from './components/ArticleDetail';
+import { PrintingModelsPage } from './pages/PrintingModelsPage';
+import { AboutComponent } from './components/AboutComponent';
+import { AboutPage } from './pages/AboutPage';
+import { ResumePage } from './pages/ResumePage';
+import { ContactPage } from './pages/ContactPage';
+import { FooterComponent } from './components/FooterComponent';
+import './styles/globals.css';
 
 export default function App() {
-  const [currentSection, setCurrentSection] = useState('home')
-  const [selectedProjectId, setSelectedProjectId] = useState(null)
-  const [selectedArticleId, setSelectedArticleId] = useState(null)
-  const [selectedPrintingModelId, setSelectedPrintingModelId] = useState(null)
-  const [viewMode, setViewMode] = useState('section') // 'section' o 'detail'
   const mainRef = useRef(null);
-
-  const handleProjectSelect = (projectId) => {
-    setSelectedProjectId(projectId)
-    setViewMode('detail')
-  }
-
-  const handleArticleSelect = (articleId) => {
-    setSelectedArticleId(articleId)
-    setViewMode('detail')
-  }
-
-  const handlePrintingModelSelect = (printingModelId) => {
-    setSelectedPrintingModelId(printingModelId)
-    setViewMode('detail')
-  }
-
-  const handleBackFromDetail = () => {
-    setViewMode('section')
-    setSelectedProjectId(null)
-    setSelectedArticleId(null)
-    setSelectedPrintingModelId(null)
-  }
-
   return (
-    <div className="app">
-      <Header currentSection={currentSection} setCurrentSection={setCurrentSection} />
-      
-      <main ref={mainRef} className="main-content">
-        {viewMode === 'detail' && selectedProjectId ? (
-          <ProjectDetail projectId={selectedProjectId} onBack={handleBackFromDetail} onSelectProject={handleProjectSelect} />
-        ) : viewMode === 'detail' && selectedArticleId ? (
-          <ArticleDetail articleId={selectedArticleId} onBack={handleBackFromDetail} />
-        ) : (
-          <>
-            {currentSection === 'home' && <Home onNavigate={setCurrentSection} onProjectSelect={handleProjectSelect} scrollContainerRef={mainRef} />}
-            {currentSection === 'all-projects' && <AllProjects onProjectSelect={handleProjectSelect} />}
-            {currentSection === 'articles' && <AllArticles onArticleSelect={handleArticleSelect} />}
-            {currentSection === 'printingModels' && <AllPrintingModels onPrintingModelSelect={handlePrintingModelSelect} />}
-            {currentSection === 'about-detail' && <AboutDetail onNavigate={setCurrentSection} />}
-            {currentSection === 'resume' && <Resume />}
-            {currentSection === 'contact' && <Contact />}
-          </>
-        )}
-      </main>
-      <Footer />
-    </div>
-  )
+    <Router>
+      <div className="app">
+        <HeaderComponent />
+        <main ref={mainRef} className="main-content">
+          <Routes>
+            <Route path="/" element={<HomePage scrollContainerRef={mainRef}/>} />
+            <Route path="/aboutme" element={<AboutPage />} />
+            <Route path="/projects" element={<ProjectsPage />} />
+            <Route path="/projects/:projectId" element={<ProjectDetail />} />
+            <Route path="/articles" element={<ArticlesPage />} />
+            <Route path="/articles/:articleId" element={<ArticleDetail />} />
+            <Route path="/printingmodels" element={<PrintingModelsPage />} />
+            <Route path="/printingmodels/:modelId" element={<PrintingModelsPage detailMode={true} />} />
+            <Route path="/curriculum" element={<ResumePage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </main>
+        <FooterComponent />
+      </div>
+    </Router>
+  );
 }

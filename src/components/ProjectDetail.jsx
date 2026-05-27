@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { projectsData } from '../data/projectsData';
-import { ImageViewer } from './ImageViewer';
-import '../styles/ProjectDetail.css';
 
-export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
+import { useParams, useNavigate } from 'react-router-dom';
+
+export const ProjectDetail = () => {
+  const { projectId } = useParams();
+  const navigate = useNavigate();
   const [viewerOpen, setViewerOpen] = useState(false);
   const project = projectsData.find(p => p.id === projectId);
 
@@ -13,7 +13,7 @@ export const ProjectDetail = ({ projectId, onBack, onSelectProject }) => {
         <div className="project-detail-container">
           <div className="not-found">
             <h2>Proyecto no encontrado</h2>
-            <button className="btn-back" onClick={onBack}>Volver</button>
+            <button className="btn-back" onClick={() => navigate(-1)}>Volver</button>
           </div>
         </div>
       </section>

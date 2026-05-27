@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/About.css';
+import '../styles/AboutComponent.css';
 
-export const About = ({ onNavigate }) => {
+export const AboutComponent = ({ onNavigate }) => {
   return (
     <section id="about" className="about">
       <div className="about-container">

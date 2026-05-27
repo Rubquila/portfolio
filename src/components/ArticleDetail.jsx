@@ -1,8 +1,11 @@
 import React from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { articlesData } from '../data/articlesData';
 import '../styles/ArticleDetail.css';
 
-export const ArticleDetail = ({ articleId, onBack }) => {
+export const ArticleDetail = () => {
+  const { articleId } = useParams();
+  const navigate = useNavigate();
   const article = articlesData.find(a => a.id === articleId);
 
   if (!article) {
@@ -11,7 +14,7 @@ export const ArticleDetail = ({ articleId, onBack }) => {
         <div className="article-detail-container">
           <div className="not-found">
             <h2>Artículo no encontrado</h2>
-            <button className="btn-back" onClick={onBack}>Volver</button>
+            <button className="btn-back" onClick={() => navigate(-1)}>Volver</button>
           </div>
         </div>
       </section>

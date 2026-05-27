@@ -1,19 +1,25 @@
 import React, { useState, useCallback } from 'react';
-import Filters from "../components/Filter";
+import { useNavigate } from 'react-router-dom';
+import SearchComponent from "../components/SearchComponent";
 import { projectsData } from '../data/projectsData';
-import '../styles/AllProjects.css';
+import '../styles/ProjectsPage.css';
 
-export const AllProjects = ({ onProjectSelect }) => {
+export const ProjectsPage = () => {
   const [filteredProjects, setFilteredProjects] = useState(projectsData);
+  const navigate = useNavigate();
 
   // useCallback para evitar re-creaciones innecesarias
   const handleFiltered = useCallback((filtered) => {
     setFilteredProjects(filtered);
   }, []);
 
+  const handleProjectClick = (projectId) => {
+    navigate(`/projects/${projectId}`);
+  };
+
   return (
-    <section id="all-projects" className="all-projects">
-      <div className="all-projects-container">
+    <section id="all-projects" className="section">
+      <div className="section-container">
         {/* Cabecera de presentación */}
         <div className="section-header">
           <div className="header-content">
@@ -45,10 +51,10 @@ export const AllProjects = ({ onProjectSelect }) => {
           </div>
         </div>
 
-        <Filters
+        <SearchComponent
           elements={projectsData}
           onFiltered={handleFiltered}
-          onElementSelect={onProjectSelect}
+          onElementSelect={handleProjectClick}
         />
 
         {/* Grid de proyectos */}
@@ -58,6 +64,7 @@ export const AllProjects = ({ onProjectSelect }) => {
               <div 
                 key={project.id} 
                 className="project-card"
+                onClick={() => handleProjectClick(project.id)}
                 onClick={() => onProjectSelect(project.id)}
               >
                 <div className="project-image">

@@ -1,14 +1,10 @@
 import React from 'react';
-import '../styles/AboutDetail.css';
+import '../styles/AboutPage.css';
 
-export const AboutDetail = ({ onNavigate }) => {
+export const AboutPage = ({ onNavigate }) => {
   return (
     <section id="about-detail" className="about-detail">
       <div className="about-detail-container">
-        <button className="back-button" onClick={() => onNavigate('home')}>
-          ← Volver
-        </button>
-
         <div className="about-detail-content">
           <div className="about-detail-header">
             <img 
