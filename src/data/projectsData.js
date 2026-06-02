@@ -73,15 +73,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'IoT',
     description: 'Red inalámbrica de sensores para la detección precoz de incendios forestales',
-    coverImage: '/projects/forest-sensors.jpg',
+    coverImage: '/src/assets/images/proyects/04/04-0.png',
     technologies: ['Arduino', 'Attiny85', 'IoT', 'Processing', 'Bluetooth'],
     tags: ['iot', 'hardware', 'sensores', 'medio ambiente', 'redes'],
     problem: 'Los incendios forestales en España son una amenaza crítica. Es necesario crear un sistema de detección precoz que recopile datos de temperatura, humedad y CO de zonas remotas sin infraestructura disponible.',
     solution: 'He desarrollado un prototipo de red inalámbrica de sensores para la detección temprana de incendios forestales como trabajo final de carrera.\n\nHe ustilizado Arduino y Attiny con Processing para la captura y análisis de datos, implementando una red en malla propia y gestionando el modo Sleep de cada nodo. Un sistema autosuficiente, modular y escalable con comunicación Bluetooth.',
     result: 'Prototipo funcional capaz de monitorear más de 50 nodos simultáneamente, con nodos de bajo consumo energético y autosuficientes gracias a baterías y carga solar.',
     images: [
-      '/projects/forest-result-1.jpg',
-      '/projects/forest-result-2.jpg'
+      '/src/assets/images/proyects/04/04-0.png',
+      '/src/assets/images/proyects/04/04-1.jpg',
+      '/src/assets/images/proyects/04/04-2.jpg'
     ],
     links: {
       github: 'https://github.com/rubenql/forest-sensors',
@@ -95,14 +96,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'IoT',
     description: 'Dispositivo inhibidor de frecuencias para concienciación sobre la incomunicación y soledad de los refugiados',
-    coverImage: '/projects/contra-project.jpg',
+    coverImage: '/src/assets/images/proyects/05/05-0.jpg',
     technologies: ['ESP32', 'RF', 'WiFi', 'GSM'],
     tags: ['hardware', 'electrónica', 'hacking', 'arte'],
     problem: 'Simular la incomunicación sufrida por refugiados sirios usando una manta de emergencia isotérmica. Proyecto en colaboración con un alumno de Bellas Artes como proyecto final de máster.',
     solution: 'He programado un dispositivo inhibidor de frecuencias GSRM, 2G, 3G y wifi en colaboración con BBAA utilizando ESP32. El dispositivo simula un entorno de incomunicación dentro de un radio controlado, permitiendo experimentar la desconexión digital de forma segura.',
-    result: 'Proyecto funcional utilizado en exposiciones de sensibilización en la UPV y en Centro Cultural del Carmen. Ha llegado a más de 500 personas permitiéndoles vivir brevemente la experiencia de incomunicación.',
+    result: 'Proyecto funcional utilizado en exposiciones de sensibilización en Fundación La Posta, el Centro Cultural del Carmen y en la UPV. Ha llegado a más de 500 personas permitiéndoles vivir brevemente la experiencia de incomunicación.',
     images: [
-      '/projects/contra-result-1.jpg'
+      '/src/assets/images/proyects/05/05-0.jpg',
+      '/src/assets/images/proyects/05/05-1.jpg',
+      '/src/assets/images/proyects/05/05-2.jpg'
     ],
     links: {
       github: null,
@@ -204,16 +207,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'Automoción',
     description: 'Instalación y control de puntos de luz LED en el marco de las puertas de un Peugeot 207',
-    coverImage: '/projects/lighting-control.jpg',
+    coverImage: '/src/assets/images/proyects/10/10-0.jpg',
     technologies: ['LED', 'Peugeot 207'],
     tags: ['electrónica', 'iluminación', 'automoción'],
     problem: 'Una característica muy estética, y gratamente funcional en la noche, es la iluminación de los marcos de las puertas en el automóvil. Es por ello que se pretende crear un sistema de iluminación LED que se integre en los marcos y que pueda ser controlable.',
     solution: 'He diseñado y he instalado un sistema de iluminación LED para los marcos de las puertas de un Peugeot 207, integrando puntos de iluminación LED concretos, con embellecedores, iluminandose con distintos patronesy permitiendo su control desde el panel de control de iluminación.',
     result: 'El sistema de iluminación LED mejora significativamente la apariencia del coche y proporciona una iluminación funcional en entornos de baja iluminación.',
     images: [
-      '/projects/printer-result-1.jpg',
-      '/projects/printer-result-2.jpg',
-      '/projects/printer-result-3.jpg'
+      '/src/assets/images/proyects/10/10-0.jpg',
+      '/src/assets/images/proyects/10/10-1.jpg',
+      '/src/assets/images/proyects/10/10-2.jpg'
     ],
     links: {
       github: null,

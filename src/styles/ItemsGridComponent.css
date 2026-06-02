@@ -28,10 +28,11 @@
   background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(74, 158, 255, 0.05));
   border-bottom: 1px solid var(--border-color);
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;  
+  align-items: center;           /* ← cambiar de flex-start a center */
+  justify-content: center;       /* ← cambiar de flex-start a center */
   color: var(--text-secondary);
   font-size: 0.5rem;
+  position: relative;
 }
 
 .gridItem-image img {
@@ -48,14 +49,14 @@
 
 .gridItem-status {
   display: inline-block;
-  position: relative;
-  top: 0rem;
-  right: 7rem;;
+  position: absolute;            /* ← cambiar de relative a absolute */
+  top: 0.5rem;                   /* ← reemplazar top: 0rem */
+  right: 0.5rem;                 /* ← reemplazar right: 7rem */
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
   font-size: 0.6rem;
   font-weight: 600;
-  margin: 0.5rem;
+  margin: 0;                      /* ← remover margin: 0.5rem */
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
