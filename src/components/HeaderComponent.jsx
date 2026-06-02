@@ -11,11 +11,11 @@ export const HeaderComponent = () => {
         </div>
         <nav className="nav">
           <NavLink to="/" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Inicio</NavLink>
-          <NavLink to="/aboutme" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Sobre Mí</NavLink>
+          <NavLink to="/curriculum" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Currículum</NavLink>
           <NavLink to="/projects" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Proyectos</NavLink>
           <NavLink to="/articles" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Anotaciones</NavLink>
           <NavLink to="/printingmodels" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Impresión 3D</NavLink>
-          <NavLink to="/curriculum" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Currículum</NavLink>
+          <NavLink to="/aboutme" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Sobre Mí</NavLink>
           {/* <NavLink to="/trails" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Rutas</NavLink> */}
         </nav>
       </div>

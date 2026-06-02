@@ -3,10 +3,11 @@ import '../styles/AboutPage.css';
 
 export const AboutPage = ({ onNavigate }) => {
   return (
-    <section id="about-detail" className="about-detail">
-      <div className="about-detail-container">
-        <div className="about-detail-content">
-          <div className="about-detail-header">
+    <section id="about" className="about">
+      <div className="about-container">
+        <div className="about-content">
+          
+          <div className="about-header">
             <img 
               src="/profile.png" 
               alt="Rubén Quintanilla - Foto de perfil"
@@ -89,7 +90,7 @@ export const AboutPage = ({ onNavigate }) => {
               <h2 className="section-heading">Habilidades Técnicas</h2>
               <div className="skills-columns">
                 <div className="skills-column">
-                  <h4>Frontend</h4>
+                  <h3>Frontend</h3>
                   <ul className="skill-list">
                     <li>React</li>
                     <li>HTML5 & CSS3</li>
@@ -99,7 +100,7 @@ export const AboutPage = ({ onNavigate }) => {
                   </ul>
                 </div>
                 <div className="skills-column">
-                  <h4>Backend</h4>
+                  <h3>Backend</h3>
                   <ul className="skill-list">
                     <li>Node.js</li>
                     <li>Express</li>
@@ -108,7 +109,7 @@ export const AboutPage = ({ onNavigate }) => {
                   </ul>
                 </div>
                 <div className="skills-column">
-                  <h4>Hardware & IoT</h4>
+                  <h3>Hardware & IoT</h3>
                   <ul className="skill-list">
                     <li>ESP32 & Arduino</li>
                     <li>Circuitos y componentes electrónicos</li>

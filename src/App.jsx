@@ -1,14 +1,14 @@
 import { useRef } from 'react'
-
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import { HeaderComponent } from './components/HeaderComponent';
 import { HomePage } from './pages/HomePage';
 import { ProjectsPage } from './pages/ProjectsPage';
-import { ProjectDetail } from './components/ProjectDetail';
+import { ProjectDetailPage } from './pages/ProjectDetailPage';
 import { ArticlesPage } from './pages/ArticlesPage';
-import { ArticleDetail } from './components/ArticleDetail';
+import { ArticleDetailPage } from './pages/ArticleDetailPage';
 import { PrintingModelsPage } from './pages/PrintingModelsPage';
-import { AboutComponent } from './components/AboutComponent';
+import { PrintingModelDetailPage } from './pages/PrintingModelDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ResumePage } from './pages/ResumePage';
 import { ContactPage } from './pages/ContactPage';
@@ -26,11 +26,11 @@ export default function App() {
             <Route path="/" element={<HomePage scrollContainerRef={mainRef}/>} />
             <Route path="/aboutme" element={<AboutPage />} />
             <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:projectId" element={<ProjectDetail />} />
+            <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
             <Route path="/articles" element={<ArticlesPage />} />
-            <Route path="/articles/:articleId" element={<ArticleDetail />} />
+            <Route path="/articles/:articleId" element={<ArticleDetailPage />} />
             <Route path="/printingmodels" element={<PrintingModelsPage />} />
-            <Route path="/printingmodels/:modelId" element={<PrintingModelsPage detailMode={true} />} />
+            <Route path="/printingmodels/:modelId" element={<PrintingModelDetailPage />} />
             <Route path="/curriculum" element={<ResumePage />} />
             <Route path="/contact" element={<ContactPage />} />
           </Routes>

@@ -2,9 +2,9 @@ import React, { useState, useMemo, useEffect } from "react";
 import '../styles/SearchComponent.css';
 
 export default function SearchComponent({
-  elements = [],
-  onFiltered = () => {},
-  onElementSelect = () => {}
+  items = [],
+  onFiltered = () => {}
+  
 }) {
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedTags, setSelectedTags] = useState([]);
@@ -12,19 +12,19 @@ export default function SearchComponent({
   const [filtersOpen, setFiltersOpen] = useState(false);
 
   // Extraer categorías y tags únicos
-  const categories = useMemo(() => [...new Set(elements.map(e => e.category))], [elements]);
-  const allTags = useMemo(() => [...new Set(elements.flatMap(e => e.tags))], [elements]);
+  const categories = useMemo(() => [...new Set(items.map(i => i.category))], [items]);
+  const allTags = useMemo(() => [...new Set(items.flatMap(i => i.tags))], [items]);
 
   const filteredElements = useMemo(() => {
-    return elements.filter(element => {
-      const matchCategory = selectedCategories.length === 0 || selectedCategories.includes(element.category);
-      const matchTags = selectedTags.length === 0 || selectedTags.some(tag => element.tags.includes(tag));
+    return items.filter(item => {
+      const matchCategory = selectedCategories.length === 0 || selectedCategories.includes(item.category);
+      const matchTags = selectedTags.length === 0 || selectedTags.some(tag => item.tags.includes(tag));
       const matchSearch = searchTerm === "" ||
-        element.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        element.description.toLowerCase().includes(searchTerm.toLowerCase());
+        item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        item.description.toLowerCase().includes(searchTerm.toLowerCase());
       return matchCategory && matchTags && matchSearch;
     });
-  }, [elements, selectedCategories, selectedTags, searchTerm]);
+  }, [items, selectedCategories, selectedTags, searchTerm]);
 
   useEffect(() => {
     // Notifica al padre si quiere recibir la lista filtrada
@@ -50,7 +50,7 @@ export default function SearchComponent({
       <div className="search-box">
         <input
           type="text"
-          placeholder="Buscar proyectos..."
+          placeholder="Buscar..."
           className="search-input"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
@@ -100,7 +100,7 @@ export default function SearchComponent({
       )}
 
       <div className="results-count">
-        Mostrando <strong>{filteredElements.length}</strong> de <strong>{elements.length}</strong> elementos
+        Mostrando <strong>{filteredElements.length}</strong> de <strong>{items.length}</strong> elementos
       </div>
     </div>
   );

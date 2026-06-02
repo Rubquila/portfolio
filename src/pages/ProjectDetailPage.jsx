@@ -1,93 +1,143 @@
-
+import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
+import { ImageViewer } from '../components/ImageViewer';
+import { projectsData } from '../data/projectsData';
+import '../styles/models/ArticleStyle.css';
+import '../styles/ProjectDetailPage.css';
 
-export const ProjectDetail = () => {
+export const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [viewerOpen, setViewerOpen] = useState(false);
-  const project = projectsData.find(p => p.id === projectId);
+  const project = projectsData.find(p => p.id === Number(projectId));
+
+  const onBack = () => {
+    navigate(`/projects`);
+  };
+
+  //TODO: Extraer esta función a un helper común para reutilizar en artículos y proyectos
+  // Convertir saltos de línea en párrafos y permitir HTML
+  const formatContent = (text) => {
+    return text
+      .split('\n\n')
+      .map((paragraph, idx) => {
+        if (paragraph.trim() === '') {
+          return '';
+        }
+        // Procesar listas de ítems
+        if (paragraph.trim().match(/^(-|•|\d+\.)/m)) {
+          const items = paragraph.split('\n').filter(line => line.trim());
+          return `<ul class="article-content-list">${items.map(item => {
+            const cleanItem = item.replace(/^(-|•|\d+\.)/, '').trim();
+            return `<li class="article-content-list-item">${cleanItem}</li>`;
+          }).join('')}</ul>`;
+        }
+        // Retornar como párrafo, permitiendo HTML dentro
+        return `<p class="article-content-paragraph">${paragraph.trim()}</p>`;
+      })
+      .filter(p => p !== '')
+      .join('');
+  };
 
   if (!project) {
     return (
-      <section className="project-detail">
-        <div className="project-detail-container">
+      <article className="article">
+        <div className="article-container">
           <div className="not-found">
             <h2>Proyecto no encontrado</h2>
-            <button className="btn-back" onClick={() => navigate(-1)}>Volver</button>
+            <button className="btn-back" onClick={onBack}>Ver todos los proyectos</button>
           </div>
         </div>
-      </section>
+      </article>
     );
   }
 
   return (
-    <section className="project-detail">
-      <div className="project-detail-container">
+    <article className="article">
+      <div className="article-container">
         
         {/* Header */}
-        <div className="project-header">
-          <div className="header-title">
-            <h1>{project.title}</h1>
-            <div className={`project-status status-${project.status.toLowerCase()}`}>
-              {project.status}
-            </div>
-            <div className="header-meta">
+        <div className="article-header">
+          <h1 className="article-header-title">{project.title}</h1>
+          <div className="article-header-meta">
+            <div className="article-header-meta-cell1">
               <span className="category-badge">{project.category}</span>
-              <div className="technologies-inline">
+              <div>
                 {project.technologies.map((tech, idx) => (
                   <span key={tech} className="tech-badge">
                     {tech}
-                    {idx < project.technologies.length - 1 && ' •'}
+                    {idx < project.technologies.length - 1 && ' • '}
+                  </span>
+                ))}
+                <br />
+                {project.tags.map((tag, idx) => (
+                  <span key={tag} className="tag-badge">
+                    #{tag} &nbsp;
                   </span>
                 ))}
               </div>
+            </div>
+            <div className="article-header-meta-cell2">
+              <span className={`status-badge status-${project.status.toLowerCase()}`}>
+                {project.status}
+              </span>
             </div>
           </div>
         </div>
 
         {/* Imagen grande */}
-        <div className="project-hero-image">
-          <div className="image-placeholder-large">
-            <img src={project.coverImage} alt={project.title} 
-                  onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextElementSibling.style.display = 'flex';
-                  }}
-                />
-            <span className="placeholder-icon">🖼️</span>
-            <span>{project.title}</span>
+        <div className="article-heroimage">
+          <div className="article-image-placeholder">
+            <img className="article-coverimage" src={project.coverImage} alt={project.title} 
+              onError={(e) => {
+                e.target.style.display = 'none';
+                e.target.nextElementSibling.style.display = 'flex';
+              }}
+            />
+            {project.coverImage === '' && (
+              <>
+                <span className="placeholder-icon">🖼️</span>
+                <span>{project.title}</span>
+              </>
+            )}
           </div>
         </div>
 
         {/* Contenido principal */}
-        <div className="project-content">
+        <div className="article-content">
 
           {/* PROBLEMA */}
-          <section className="content-section problema-section">
-            <h2 className="section-heading">
+          <section className="article-content-section problema-section">
+            <h2 className="article-section-heading">
               <span className="heading-icon">❌</span>
               Problema
             </h2>
-            <p className="section-text">{project.problem}</p>
+            <div className="article-section-text" 
+              dangerouslySetInnerHTML={{ __html: formatContent(project.problem) }}>
+            </div>
           </section>
 
           {/* SOLUCIÓN */}
-          <section className="content-section solucion-section">
-            <h2 className="section-heading">
+          <section className="article-content-section solucion-section">
+            <h2 className="article-section-heading">
               <span className="heading-icon">💡</span>
               Solución
             </h2>
-            <p className="section-text">{project.solution}</p>
+            <div className="article-section-text" 
+              dangerouslySetInnerHTML={{ __html: formatContent(project.solution) }}>
+            </div>
           </section>
 
           {/* RESULTADO */}
-          <section className="content-section resultado-section">
-            <h2 className="section-heading">
+          <section className="article-content-section resultado-section">
+            <h2 className="article-section-heading">
               <span className="heading-icon">✨</span>
               Resultado
             </h2>
-            <p className="section-text">{project.result}</p>
-            
+            <div className="article-section-text" 
+              dangerouslySetInnerHTML={{ __html: formatContent(project.result) }}>
+            </div>
+
             {/* Imágenes del resultado */}
             {project.images && project.images.length > 0 && (
               <>
@@ -120,8 +170,21 @@ export const ProjectDetail = () => {
             )}
           </section>
 
+          {/* MANUAL */}
+          {project.manual && (
+            <section className="article-content-section manual-section">
+              <h2 className="article-section-heading">
+                <span className="heading-icon">📚</span>
+                Manual
+              </h2>
+              <div className="article-section-text">
+                {project.manual}
+              </div>
+            </section>
+          )}
+
           {/* TECNOLOGÍAS */}
-          <section className="content-section technologies-section">
+          {/* <section className="content-section technologies-section">
             <h2 className="section-heading">
               <span className="heading-icon">⚙️</span>
               Tecnologías
@@ -142,36 +205,30 @@ export const ProjectDetail = () => {
               </div>
             </div>
           </section>
-
+          */}
+          
+          {/* ENLACES DE INTERÉS */}
+          <section className="article-content-section links-section">
+            <h4>Enlaces relacionados</h4>
+            <ul className="links-list">
+              {Object.entries(project.links).map(([linkName, linkUrl], index) => (
+                <li><a 
+                  key={index} 
+                  href={linkUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="link-item"
+                >
+                  {linkName}
+                </a></li>
+              ))}
+            </ul>
+          </section>
         </div>
 
-        {/* Botones de acción */}
-        <div className="project-actions">
-          {project.links.github ? (
-            <a 
-              href={project.links.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn btn-github"
-            >
-              💻 Ver Código
-            </a>
-          ) : null}
-          
-          {project.links.demo ? (
-            <a 
-              href={project.links.demo} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="btn btn-demo"
-            >
-              🌐 Ver Demo
-            </a>
-          ) : null}
-          
-          <button className="btn btn-back" onClick={onBack}>
-            ← Volver
-          </button>
+        {/* Botón de volver */}
+        <div className="article-footer">
+          <button className="btn btn-back" onClick={onBack}>← Ver todos los proyectos</button>
         </div>
 
         {/* PROYECTOS RELACIONADOS */}
@@ -221,6 +278,6 @@ export const ProjectDetail = () => {
         isOpen={viewerOpen} 
         onClose={() => setViewerOpen(false)} 
       />
-    </section>
+    </article>
   );
 };

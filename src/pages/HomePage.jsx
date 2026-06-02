@@ -1,6 +1,5 @@
 import React, { useEffect, useRef } from 'react';
 import { ProjectsComponent } from '../components/ProjectsComponent';
-import { AboutComponent } from '../components/AboutComponent';
 import '../styles/HomePage.css';
 
 export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
@@ -63,7 +62,40 @@ export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) =>
       </section>
 
       <ProjectsComponent onProjectSelect={onProjectSelect} onNavigate={onNavigate} />
-      <AboutComponent onNavigate={onNavigate} />
+      
+      {/* About */}
+      <section id="home-about" className="home-about">
+        <div className="home-about-container">
+          <h2 className="home-section-title">Sobre Mí</h2>
+          
+          <div className="home-about-content">
+            <div className="home-about-image">
+              <img 
+                src="/profile.png" 
+                alt="Rubén Quintanilla - Foto de perfil"
+                className="home-profile-img"
+              />
+            </div>
+
+            <div className="home-about-text">
+              <p className="home-about-description">
+                Soy un ingeniero con pasión por crear proyectos innovadores aplicados a
+                la sociedad: medicina, medio ambiente e IoT. <br />
+                Combino desarrollo de software, electrónica e ingeniería para llevar 
+                proyectos al siguiente nivel.
+              </p>
+
+              <div className="home-skills">
+                <button className="home-skill-tag">Software</button>
+                <button className="home-skill-tag">Electrónica</button>
+                <button className="home-skill-tag">Impresión 3D</button>
+              </div>
+
+              <button className="btn-read-more" onClick={() => onNavigate('about-detail')}>Leer Más &gt;</button>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 };

@@ -4,7 +4,7 @@ import '../styles/ProjectsComponent.css';
 
 export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
   // Obtener solo los primeros 4 proyectos como destacados
-  const featured = projectsData.slice(0, 3);
+  const featured = projectsData.slice(0, 4);
 
   const handleViewAll = () => {
     if (onNavigate) {
@@ -25,10 +25,11 @@ export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
               onClick={() => onProjectSelect(project.id)}
             >
               <div className="project-image">
-                <img src={project.coverImage} alt={project.title} 
+                <img src={project.coverImage}
+                  alt={project.title} 
                   onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextElementSibling.style.display = 'flex';
+                    e.target.style.display = 'none';
+                    e.target.nextElementSibling.style.display = 'flex';
                   }}
                 />
               </div>

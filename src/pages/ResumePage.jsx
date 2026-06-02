@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../styles/models/SectionStyle.css';
 import '../styles/ResumePage.css';
 
 export const ResumePage = () => {
@@ -6,35 +7,42 @@ export const ResumePage = () => {
   const [expandProjects, setExpandProjects] = useState(false);
 
   return (
-    <section id="resume" className="resume">
-      <div className="resume-container">
-        <h2 className="section-title">Currículum Vitae</h2>
-
-        {/* Sección de Descargas */}
-        <div className="download-section">
-          <h3>Descargas PDF 📄</h3>
-          <div className="download-buttons">
+    <article id="resume" className="section">
+      <div className="section-container">
+        
+        <div className="section-header">
+          <div className="section-header-content">
+            <h2 className="section-header-title">Currículum Vitae</h2>
+            <p className="section-header-description">
+              Descubre mi trayectoria profesional, experiencia, proyectos y formación. Un recorrido
+              por mi perfil como desarrollador Full Stack, orientado a la innovación, la ingeniería
+              y la tecnología.
+            </p>
+            <div className="header-download-buttons">
             <a
-              className="download-btn download-pdf"
+              className="header-download-btn download-pdf"
               href='/src/assets/curriculum.pdf'
               target="_blank"
               title="Descargar CV en PDF"
             >
-              Currículum
+              
+              Currículum<br />📄
             </a>
             <a
-              className="download-btn download-pdf"
+              className="header-download-btn download-pdf"
               href='/src/assets/carta_presentacion.pdf'
               target="_blank"
               title="Descargar Carta de Presentación en PDF"
             >
-              Carta <br />presentación
+              
+              Carta <br />presentación<br />📄
             </a>
+          </div>
           </div>
         </div>
 
         {/* Contenido del CV */}
-        <div className="resume-content">
+        <div className="section-content">
           
           {/* Header con información personal */}
           <div className="resume-header">
@@ -62,7 +70,7 @@ export const ResumePage = () => {
 
           {/* Experiencia Laboral */}
           <div className="resume-section">
-            <h3 className="section-subtitle">Experiencia Laboral</h3>
+            <h3 className="resume-section-subtitle">Experiencia Laboral</h3>
             <div className="resume-item">
               <div className="item-header">
                 <h4>Desarrollador Full Stack React/Node.js</h4>
@@ -132,7 +140,7 @@ export const ResumePage = () => {
 
           {/* Proyectos */}
           <div className="resume-section">
-            <h3 className="section-subtitle">Proyectos</h3>
+            <h3 className="resume-section-subtitle">Proyectos</h3>
             <div className="resume-item">
               <h4>Proyecto Raston</h4>
               <p>Desarrollé un sistema local domótico para la automatización de rutinas complejas en
@@ -195,7 +203,7 @@ export const ResumePage = () => {
 
           {/* Educación */}
           <div className="resume-section">
-            <h3 className="section-subtitle">Nivel Formativo</h3>
+            <h3 className="resume-section-subtitle">Nivel Formativo</h3>
             <div className="resume-item">
               <h4>Máster en Ingeniería y Tecnología de Sistemas Software</h4>
               <p>U. Politécnica Valencia | 2023</p>
@@ -212,7 +220,7 @@ export const ResumePage = () => {
 
           {/* Idiomas */}
           <div className="resume-section">
-            <h3 className="section-subtitle">Idiomas</h3>
+            <h3 className="resume-section-subtitle">Idiomas</h3>
             <div className="languages-grid">
               <div className="language-item">
                 <strong>Castellano:</strong> Lengua materna
@@ -228,7 +236,7 @@ export const ResumePage = () => {
 
           {/* Certificaciones */}
           <div className="resume-section">
-            <h3 className="section-subtitle">Certificaciones</h3>
+            <h3 className="resume-section-subtitle">Certificaciones</h3>
             <div className="certifications-grid">
               <div className="cert-item">
                 <span>HTML5 y CSS3</span>
@@ -260,7 +268,7 @@ export const ResumePage = () => {
 
         {/* Carta de Presentación */}
         <div className="cover-letter-section">
-          <h3>Carta de Presentación</h3>
+          <h3 className="resume-section-subtitle">Carta de Presentación</h3>
           <div className="cover-letter-content">
             <p className="paragraph">
               Soy <strong>Rubén Quintanilla</strong>, desarrollador <strong>Full Stack</strong> con experiencia en proyectos tanto de <strong>frontend</strong> como de <strong>backend</strong>, especialmente con <strong>React, Node.js y Express</strong>, y formación en <strong>Master en Ingeniería y Tecnologías de Sistemas Software</strong> por la Universidad Politécnica de Valencia.
@@ -280,6 +288,6 @@ export const ResumePage = () => {
           </div>
         </div>
       </div>
-    </section>
+    </article>
   );
 };

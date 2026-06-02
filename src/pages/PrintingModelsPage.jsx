@@ -1,10 +1,12 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SearchComponent from "../components/SearchComponent";
+import ItemsGridComponent from '../components/ItemsGridComponent';
 import { printingModelsData } from '../data/printingModelsData';
+import '../styles/models/SearcherStyle.css';
 import '../styles/PrintingModelsPage.css';
 
-export const PrintingModelsPage = ({ onPrintingModelSelect }) => {
+export const PrintingModelsPage = () => {
   const [filteredPrintingModels, setFilteredPrintingModels] = useState(printingModelsData);
   const navigate = useNavigate();
   
@@ -13,56 +15,43 @@ export const PrintingModelsPage = ({ onPrintingModelSelect }) => {
     setFilteredPrintingModels(filtered);
   }, []);
 
+  const handlePrintingModelClick = (modelId) => {
+    navigate(`/printingmodels/${modelId}`);
+  };
+
   return (
-    <section className="section">
-      <div className="section-container">
+    <section className="searcher">
+      <div className="searcher-container">
+        
         {/* Header */}
-        <div className="section-header">
-          <div className="header-content">
-            <h2 className="section-title">Impresión 3D</h2>
-            <div className="header-description">
+        <div className="searcher-header">
+          <div className="searcher-header-content">
+            <h2 className="searcher-header-title">Impresión 3D</h2>
+            <div className="searcher-header-description">
               Aquí están algunos de mis modelos de impresión 3D, desde accesorios hasta piezas de objetos.
             </div>
           </div>
         </div>
+        
+        <div className='searcher-content'>
+          <SearchComponent
+            items={printingModelsData}
+            onFiltered={handleFiltered}
+          />
 
-        <SearchComponent
-          elements={printingModelsData}
-          onFiltered={handleFiltered}
-          onElementSelect={onPrintingModelSelect}
-        />
+          {/* Grid de modelos */}
+          {filteredPrintingModels.length > 0 ? (
+            <ItemsGridComponent
+              items={filteredPrintingModels}
+              onItemClick={handlePrintingModelClick}
+            />
+          ) : (
+            <div className="no-results">
+              <p>No se encontraron modelos que coincidan con tu búsqueda.</p>
+            </div>
+          )}
 
-        {/* Grid de modelos */}
-        {filteredPrintingModels.length > 0 ? (
-          <div className="prints-grid">
-            {filteredPrintingModels.map(model => (
-              <a 
-                key={model.id}
-                href={model.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="print-card"
-              >
-                <div className="project-image">
-                  <div className="image-placeholder">
-                    <span className="image-icon">🖨️</span>
-                    <span>{model.title}</span>
-                  </div>
-                </div>
-                <h3 className="print-title">{model.title}</h3>
-                <p className="print-description">{model.description}</p>
-                <div className="print-footer">
-                  <span className="print-category">{model.category}</span>
-                  <span className="external-icon">↗</span>
-                </div>
-              </a>
-            ))}
-          </div>
-        ) : (
-          <div className="no-results">
-            <p>No se encontraron modelos que coincidan con tu búsqueda</p>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );

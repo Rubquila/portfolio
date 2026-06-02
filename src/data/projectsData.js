@@ -17,8 +17,8 @@ export const projectsData = [
       '/src/assets/images/proyects/raston/raston3.jpg'
     ],
     links: {
-      github: null,
-      demo: null
+      Github: 'www.google.com',
+      Demo: null
     },
     relatedProjectIds: [6, 7]
   },
@@ -28,7 +28,7 @@ export const projectsData = [
     status: 'Mejorando',
     category: 'Programación',
     description: 'Sitio web personal para mostrar mi trabajo, experiencia y conocimientos aquiridos',
-    coverImage: '/projects/portfolio-website.jpg',
+    coverImage: '/src/assets/images/proyects/portfolio/portfolio0.jpg',
     technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
     tags: ['web', 'react', 'javascript'],
     problem: 'Necesitaba una plataforma para mostrar mis proyectos, experiencia y conocimientos de forma profesional y accesible. Quería crear un sitio web personal que sirviera como portfolio y biblioteca de conocimientos, utilizando tecnologías modernas y siguiendo las mejores prácticas de desarrollo web.',
@@ -36,8 +36,8 @@ export const projectsData = [
     result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y alacenar y compartir mis conocimientos. Actualmente estoy trabajando en la ampliación del contenido.',
     images: [
       '/src/assets/images/proyects/portfolio/portfolio1.png',
-      '/projects/raston-result-2.jpg',
-      '/projects/raston-result-3.jpg'
+      '/src/assets/images/proyects/portfolio/portfolio2.jpg',
+      '/src/assets/images/proyects/portfolio/portfolio3.jpg'
     ],
     links: {
       github: 'https://github.com/rubenql/raston-project',

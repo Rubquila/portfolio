@@ -1,38 +1,16 @@
-/* AboutDetail.css - Página completa de Sobre Mí */
-
-.about-detail {
+.about {
   min-height: calc(100vh - 120px);
   background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
   padding: 60px 20px;
   color: #e0e0e0;
 }
 
-.about-detail-container {
+.about-container {
   max-width: 900px;
   margin: 0 auto;
 }
 
-.back-button {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: none;
-  border: 1px solid #3498db;
-  color: #3498db;
-  padding: 10px 20px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  margin-bottom: 40px;
-  transition: all 0.3s ease;
-}
-
-.back-button:hover {
-  background: rgba(52, 152, 219, 0.1);
-  transform: translateX(-4px);
-}
-
-.about-detail-content {
+.about-content {
   animation: fadeIn 0.6s ease;
 }
 
@@ -47,7 +25,7 @@
   }
 }
 
-.about-detail-header {
+.about-header {
   display: flex;
   align-items: center;
   gap: 40px;
@@ -175,14 +153,16 @@
   font-weight: bold;
 }
 
-.expertise-grid {
+.expertise-grid,
+.skills-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   margin-top: 20px;
 }
 
-.expertise-card {
+.expertise-card,
+.skills-column {
   padding: 25px;
   background: linear-gradient(135deg, rgba(52, 152, 219, 0.05), rgba(93, 173, 226, 0.02));
   border: 1px solid rgba(52, 152, 219, 0.15);
@@ -190,15 +170,18 @@
   transition: all 0.3s ease;
 }
 
-.expertise-card:hover {
+.expertise-card:hover,
+.skills-column:hover {
   border-color: #3498db;
   box-shadow: 0 8px 24px rgba(52, 152, 219, 0.15);
   transform: translateY(-4px);
 }
 
-.expertise-card h3 {
+.expertise-card h3,
+.skills-column h3 {
   margin: 0 0 12px 0;
   color: #3498db;
+  text-transform: uppercase;
   font-size: 18px;
 }
 
@@ -207,28 +190,6 @@
   font-size: 14px;
   color: #b0b0b0;
   line-height: 1.6;
-}
-
-.skills-columns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
-  margin-top: 20px;
-}
-
-.skills-column {
-  padding: 20px;
-  background: rgba(52, 152, 219, 0.03);
-  border-radius: 8px;
-  border: 1px solid rgba(52, 152, 219, 0.1);
-}
-
-.skills-column h4 {
-  margin: 0 0 15px 0;
-  color: #3498db;
-  font-size: 16px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
 }
 
 .principle-list {
@@ -294,11 +255,11 @@
 
 /* Responsive */
 @media (max-width: 768px) {
-  .about-detail {
+  .about {
     padding: 40px 15px;
   }
 
-  .about-detail-header {
+  .about-header {
     flex-direction: column;
     text-align: center;
     gap: 20px;
@@ -340,11 +301,11 @@
 }
 
 @media (max-width: 480px) {
-  .about-detail {
+  .about {
     padding: 30px 10px;
   }
 
-  .about-detail-header {
+  .about-header {
     padding: 20px;
   }
 

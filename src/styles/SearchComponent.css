@@ -197,3 +197,10 @@
 .results-count strong {
   color: var(--primary-color);
 }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .filters-container {
+    grid-template-columns: 1fr;
+  }
+}
