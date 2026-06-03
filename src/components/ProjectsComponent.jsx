@@ -1,16 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import '../styles/ProjectsComponent.css';
 
-export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
+export const ProjectsComponent = () => {
+  const navigate = useNavigate();
   // Obtener solo los primeros 4 proyectos como destacados
   const featured = projectsData.slice(0, 4);
-
-  const handleViewAll = () => {
-    if (onNavigate) {
-      onNavigate('all-projects');
-    }
-  };
 
   return (
     <section id="projects" className="projects">
@@ -22,7 +18,7 @@ export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
             <div 
               key={project.id} 
               className="project-card"
-              onClick={() => onProjectSelect(project.id)}
+              onClick={() => navigate(`/projects/${project.id}`)}
             >
               <div className="project-image">
                 <img src={project.coverImage}
@@ -44,7 +40,7 @@ export const ProjectsComponent = ({ onProjectSelect, onNavigate }) => {
         </div>
 
         <div className="projects-footer">
-          <button className="btn-see-all" onClick={handleViewAll}>
+          <button className="btn-see-all" onClick={() => navigate('/projects')}>
             Ver Todos Los Proyectos &gt;
           </button>
         </div>

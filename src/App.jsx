@@ -1,5 +1,6 @@
 import { useRef } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { HeaderComponent } from './components/HeaderComponent';
 import { HomePage } from './pages/HomePage';
@@ -17,26 +18,39 @@ import './styles/globals.css';
 
 export default function App() {
   const mainRef = useRef(null);
+
   return (
     <Router>
-      <div className="app">
-        <HeaderComponent />
-        <main ref={mainRef} className="main-content">
-          <Routes>
-            <Route path="/" element={<HomePage scrollContainerRef={mainRef}/>} />
-            <Route path="/aboutme" element={<AboutPage />} />
-            <Route path="/projects" element={<ProjectsPage />} />
-            <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
-            <Route path="/articles" element={<ArticlesPage />} />
-            <Route path="/articles/:articleId" element={<ArticleDetailPage />} />
-            <Route path="/printingmodels" element={<PrintingModelsPage />} />
-            <Route path="/printingmodels/:modelId" element={<PrintingModelDetailPage />} />
-            <Route path="/curriculum" element={<ResumePage />} />
-            <Route path="/contact" element={<ContactPage />} />
-          </Routes>
-        </main>
-        <FooterComponent />
-      </div>
+      <AppRoutes mainRef={mainRef} />
     </Router>
+  );
+}
+
+function AppRoutes({ mainRef }) {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence mode="wait">
+      <motion.div key={location.pathname} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
+        <div className="app">
+          <HeaderComponent />
+          <main ref={mainRef} className="main-content">
+            <Routes location={location}>
+              <Route path="/" element={<HomePage scrollContainerRef={mainRef} />} />
+              <Route path="/aboutme" element={<AboutPage />} />
+              <Route path="/projects" element={<ProjectsPage />} />
+              <Route path="/projects/:projectId" element={<ProjectDetailPage />} />
+              <Route path="/articles" element={<ArticlesPage />} />
+              <Route path="/articles/:articleId" element={<ArticleDetailPage />} />
+              <Route path="/printingmodels" element={<PrintingModelsPage />} />
+              <Route path="/printingmodels/:modelId" element={<PrintingModelDetailPage />} />
+              <Route path="/curriculum" element={<ResumePage />} />
+              <Route path="/contact" element={<ContactPage />} />
+            </Routes>
+          </main>
+          <FooterComponent />
+        </div>
+      </motion.div>
+    </AnimatePresence>
   );
 }

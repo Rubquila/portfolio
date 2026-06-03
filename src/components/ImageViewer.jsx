@@ -1,20 +1,17 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../styles/ImageViewer.css';
 
-export const ImageViewer = ({ images, isOpen, onClose }) => {
+export const ImageViewer = ({ images, currentImageIndex, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
-  if (!isOpen || !images || images.length === 0) {
-    return null;
-  }
-
   const currentImage = images[currentIndex];
 
   const handlePrevious = () => {
+    if (!images || images.length === 0) return;
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
 
   const handleNext = () => {
+    if (!images || images.length === 0) return;
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
@@ -24,10 +21,15 @@ export const ImageViewer = ({ images, isOpen, onClose }) => {
     if (e.key === 'Escape') onClose();
   };
 
-  React.useEffect(() => {
+  useEffect(() => {
+    setCurrentIndex(currentImageIndex || 0);
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [images.length]);
+  }, [images, isOpen, onClose]);
+
+  if (!isOpen || !images || images.length === 0) {
+    return null;
+  }
 
   return (
     <div className="image-viewer-overlay" onClick={onClose}>

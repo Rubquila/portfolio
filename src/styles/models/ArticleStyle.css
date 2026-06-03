@@ -178,15 +178,6 @@
   border-radius: 2px;
 }
 
-/* .section-heading {
-  font-size: 1.4rem;
-  color: var(--text-primary);
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-} */
-
 .heading-icon {
   font-size: 1.8rem;
 }
@@ -263,8 +254,6 @@
   font-style: italic;
 }
 
-
-
 .article-content-section.problema-section {
   border-left-color: #ff6b6b;
 }
@@ -321,22 +310,6 @@
   margin: 3rem 0;
   padding-top: 2rem;
   border-top: 1px solid var(--border-color);
-}
-
-.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
 }
 
 .btn-back {

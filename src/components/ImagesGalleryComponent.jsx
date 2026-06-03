@@ -1,8 +1,18 @@
-import React from 'react';
+import { useState } from 'react'
+import { ImageViewer } from '../components/ImageViewer';
+import '../styles/ImagesGalleryComponent.css';
 
 export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
+  const [viewerOpen, setViewerOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
   if (!images || images.length === 0) {
     return null;
+  }
+
+  const onClickImage = (index) => {
+    setCurrentImageIndex(index);
+    setViewerOpen(true);
   }
 
   return (
@@ -14,6 +24,7 @@ export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
             src={image} 
             alt={`Resultado ${idx + 1}`}
             className="result-image"
+            onClick={() => onClickImage(idx)}
             onError={(e) => {
                 e.target.style.display = 'none';
                 e.target.nextElementSibling.style.display = 'flex';
@@ -28,14 +39,15 @@ export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
       </div>
       <button 
         className="btn btn-view-gallery"
-        onClick={onViewGallery}
+        onClick={() => onClickImage(0)}
       >
         🔍 Ver Galería Completa
       </button>
 
       {/* Image Viewer Modal */}
       <ImageViewer 
-        images={model.images} 
+        images={images}
+        currentImageIndex={currentImageIndex}
         isOpen={viewerOpen} 
         onClose={() => setViewerOpen(false)} 
       />

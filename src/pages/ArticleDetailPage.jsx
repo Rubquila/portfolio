@@ -1,5 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
+import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
+import { formatContent } from '../utils/contentFormatter';
 import { articlesData } from '../data/articlesData';
 import '../styles/models/ArticleStyle.css';
 import '../styles/ArticleDetailPage.css';
@@ -11,29 +13,6 @@ export const ArticleDetailPage = () => {
 
   const onBack = () => {
     navigate(`/articles`);
-  };
-
-  // Convertir saltos de línea en párrafos y permitir HTML
-  const formatContent = (text) => {
-    return text
-      .split('\n\n')
-      .map((paragraph, idx) => {
-        if (paragraph.trim() === '') {
-          return '';
-        }
-        // Procesar listas de ítems
-        if (paragraph.trim().match(/^(-|•|\d+\.)/m)) {
-          const items = paragraph.split('\n').filter(line => line.trim());
-          return `<ul class="article-content-list">${items.map(item => {
-            const cleanItem = item.replace(/^(-|•|\d+\.)/, '').trim();
-            return `<li class="article-content-list-item">${cleanItem}</li>`;
-          }).join('')}</ul>`;
-        }
-        // Retornar como párrafo, permitiendo HTML dentro
-        return `<p class="article-content-paragraph">${paragraph.trim()}</p>`;
-      })
-      .filter(p => p !== '')
-      .join('');
   };
 
   // Obtener artículos relacionados (misma categoría)
@@ -82,10 +61,31 @@ export const ArticleDetailPage = () => {
             <div className="article-section-text"
               dangerouslySetInnerHTML={{ __html: formatContent(article.content) }}
             />
+
+            {/* IMÁGENES */}
+            {article.images && article.images.length > 0 && (
+              <ImagesGalleryComponent images={article.images} />
+            )}
           </section>
+
+          {/* ENLACES DE INTERÉS */}
+          {article.links && Object.keys(article.links).length > 0 && (
+            <section className="article-content-section links-section">
+              <h4>Enlaces relacionados</h4>
+              <ul className="links-list">
+                {Object.entries(article.links).map(([linkName, linkUrl], index) => (
+                  <li key={index}>
+                    <a className="link-item" href={linkUrl} target="_blank" rel="noopener noreferrer">
+                      {linkName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
-        {/* Botones de navegación */}
+        {/* VOLVER */}
         <div className="article-footer">
           <button className="btn btn-back" onClick={onBack}>← Ver todos los artículos</button>
         </div>

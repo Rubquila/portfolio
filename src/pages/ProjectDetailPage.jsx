@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-import { ImageViewer } from '../components/ImageViewer';
+import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
+import { formatContent } from '../utils/contentFormatter';
 import { projectsData } from '../data/projectsData';
 import '../styles/models/ArticleStyle.css';
 import '../styles/ProjectDetailPage.css';
@@ -9,34 +10,11 @@ export const ProjectDetailPage = () => {
   const { projectId } = useParams();
   const navigate = useNavigate();
   const [viewerOpen, setViewerOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const project = projectsData.find(p => p.id === Number(projectId));
 
   const onBack = () => {
     navigate(`/projects`);
-  };
-
-  //TODO: Extraer esta función a un helper común para reutilizar en artículos y proyectos
-  // Convertir saltos de línea en párrafos y permitir HTML
-  const formatContent = (text) => {
-    return text
-      .split('\n\n')
-      .map((paragraph, idx) => {
-        if (paragraph.trim() === '') {
-          return '';
-        }
-        // Procesar listas de ítems
-        if (paragraph.trim().match(/^(-|•|\d+\.)/m)) {
-          const items = paragraph.split('\n').filter(line => line.trim());
-          return `<ul class="article-content-list">${items.map(item => {
-            const cleanItem = item.replace(/^(-|•|\d+\.)/, '').trim();
-            return `<li class="article-content-list-item">${cleanItem}</li>`;
-          }).join('')}</ul>`;
-        }
-        // Retornar como párrafo, permitiendo HTML dentro
-        return `<p class="article-content-paragraph">${paragraph.trim()}</p>`;
-      })
-      .filter(p => p !== '')
-      .join('');
   };
 
   if (!project) {
@@ -91,7 +69,6 @@ export const ProjectDetailPage = () => {
             <img className="article-coverimage" src={project.coverImage} alt={project.title} 
               onError={(e) => {
                 e.target.style.display = 'none';
-                e.target.nextElementSibling.style.display = 'flex';
               }}
             />
             {project.coverImage === '' && (
@@ -138,35 +115,9 @@ export const ProjectDetailPage = () => {
               dangerouslySetInnerHTML={{ __html: formatContent(project.result) }}>
             </div>
 
-            {/* Imágenes del resultado */}
+            {/* IMÁGENES */}
             {project.images && project.images.length > 0 && (
-              <>
-                <div className="result-images-gallery">
-                  {project.images.map((image, idx) => (
-                    <div key={idx} className="result-image-container">
-                      <img 
-                        src={image} 
-                        alt={`Resultado ${idx + 1}`}
-                        className="result-image"
-                        onError={(e) => {
-                          e.target.style.display = 'none';
-                          e.target.nextElementSibling.style.display = 'flex';
-                        }}
-                      />
-                      <div className="image-placeholder-result">
-                        <span className="placeholder-icon">📸</span>
-                        <span>Imagen {idx + 1}</span>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-                <button 
-                  className="btn btn-view-gallery"
-                  onClick={() => setViewerOpen(true)}
-                >
-                  🔍 Ver Galería Completa
-                </button>
-              </>
+              <ImagesGalleryComponent images={project.images} />
             )}
           </section>
 
@@ -177,56 +128,30 @@ export const ProjectDetailPage = () => {
                 <span className="heading-icon">📚</span>
                 Manual
               </h2>
-              <div className="article-section-text">
-                {project.manual}
-              </div>
+              <div className="article-section-text" 
+              dangerouslySetInnerHTML={{ __html: formatContent(project.manual) }}>
+            </div>
             </section>
           )}
-
-          {/* TECNOLOGÍAS */}
-          {/* <section className="content-section technologies-section">
-            <h2 className="section-heading">
-              <span className="heading-icon">⚙️</span>
-              Tecnologías
-            </h2>
-            <div className="tech-list">
-              {project.technologies.map(tech => (
-                <span key={tech} className="tech-item">
-                  {tech}
-                </span>
-              ))}
-            </div>
-            <div className="tags-list">
-              <h4>Etiquetas:</h4>
-              <div className="tags-grid">
-                {project.tags.map(tag => (
-                  <span key={tag} className="tag-item">#{tag}</span>
-                ))}
-              </div>
-            </div>
-          </section>
-          */}
           
           {/* ENLACES DE INTERÉS */}
-          <section className="article-content-section links-section">
-            <h4>Enlaces relacionados</h4>
-            <ul className="links-list">
-              {Object.entries(project.links).map(([linkName, linkUrl], index) => (
-                <li><a 
-                  key={index} 
-                  href={linkUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="link-item"
-                >
-                  {linkName}
-                </a></li>
-              ))}
-            </ul>
-          </section>
+          {project.links && Object.keys(project.links).length > 0 && (
+            <section className="article-content-section links-section">
+              <h4>Enlaces relacionados</h4>
+              <ul className="links-list">
+                {Object.entries(project.links).map(([linkName, linkUrl], index) => (
+                  <li key={index}>
+                    <a className="link-item" href={linkUrl} target="_blank" rel="noopener noreferrer">
+                      {linkName}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
         </div>
 
-        {/* Botón de volver */}
+        {/* VOLVER */}
         <div className="article-footer">
           <button className="btn btn-back" onClick={onBack}>← Ver todos los proyectos</button>
         </div>
@@ -269,15 +194,7 @@ export const ProjectDetailPage = () => {
             </div>
           </section>
         )}
-
       </div>
-
-      {/* Image Viewer Modal */}
-      <ImageViewer 
-        images={project.images} 
-        isOpen={viewerOpen} 
-        onClose={() => setViewerOpen(false)} 
-      />
     </article>
   );
 };

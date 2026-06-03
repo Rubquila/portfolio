@@ -7,6 +7,11 @@
   margin: 0 auto;
 }
 
+.projects-container .section-title {
+  color: var(--primary-color);
+  text-align: center;
+}
+
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -15,6 +20,10 @@
 }
 
 .project-card {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: column;
   background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(30, 40, 82, 0.3));
   border: 1px solid var(--border-color);
   border-radius: 12px;

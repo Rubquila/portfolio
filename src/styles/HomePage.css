@@ -1,3 +1,17 @@
+.screen {
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app {
+  height: 88vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
 .main-content {
   height: auto;
   overflow-x: hidden;
@@ -6,12 +20,6 @@
     scroll-timeline-name: --main-scroll;
     scroll-timeline-axis: block;}
   
-}
-.app {
-  height: 88vh;
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 .home {
@@ -145,6 +153,11 @@
   z-index: 1;
 }
 
+.home-section-title {
+  color: var(--primary-color);
+  text-align: center;
+}
+
 .home-about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -237,6 +250,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   margin-top: 2rem;
+  margin-left: 2rem;
 }
 
 .btn-read-more:hover {

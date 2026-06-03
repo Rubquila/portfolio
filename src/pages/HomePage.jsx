@@ -1,20 +1,20 @@
 import React, { useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import ItemsGridComponent from '../components/ItemsGridComponent';
 import { ProjectsComponent } from '../components/ProjectsComponent';
 import '../styles/HomePage.css';
 
-export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) => {
+export const HomePage = ({ scrollContainerRef }) => {
   const bgRef = useRef(null);
+  const navigate = useNavigate();
 
-  const handleViewProjects = () => {
-    if (onNavigate) {
-      onNavigate('all-projects');
-    }
-  };
-
-  const handleContact = () => {
-    if (onNavigate) {
-      onNavigate('contact');
-    }
+/* Desliza el scroll hasta la sección indicada */
+  const handleClick = (id) => {
+    const container = scrollContainerRef?.current;
+    const el = document.getElementById(id);
+    if (!el) return;
+    const top = el.getBoundingClientRect().top + window.pageYOffset ;
+    container.scrollTo({ top, behavior: 'smooth' });
   };
 
   useEffect(() => {
@@ -38,12 +38,12 @@ export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) =>
       bgRef.current.style.transform = `scale(${scale})`;
     };
 
-  container.addEventListener('scroll', handleScroll);
-  handleScroll();
-  return () => {
-    container.removeEventListener('scroll', handleScroll);
-  };
-}, [scrollContainerRef]);
+    container.addEventListener('scroll', handleScroll);
+    handleScroll();
+    return () => {
+      container.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrollContainerRef]);
 
   return (
     <><div className="home-background" ref={bgRef}></div>
@@ -54,15 +54,17 @@ export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) =>
             <h1 className="home-title">Ingeniero de Software <br /><hr/> Web & IoT</h1>
             <p className="home-subtitle">Software • Electrónica • Impresión 3D</p>
             <div className="home-buttons">
-              <button className="btn btn-primary" onClick={handleViewProjects}>Ver Proyectos</button>
-              <button className="btn btn-secondary" onClick={handleContact}>Contactame</button>
+              <button className="btn btn-primary" onClick={() => handleClick('featured-projects')}>Ver Proyectos</button>
+              <button className="btn btn-secondary" onClick={() => handleClick('home-about')}>Sobre mi</button>
             </div>
           </div>
         </div>
       </section>
 
-      <ProjectsComponent onProjectSelect={onProjectSelect} onNavigate={onNavigate} />
-      
+      <div id="featured-projects">
+        <ProjectsComponent />
+      </div>
+
       {/* About */}
       <section id="home-about" className="home-about">
         <div className="home-about-container">
@@ -80,7 +82,7 @@ export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) =>
             <div className="home-about-text">
               <p className="home-about-description">
                 Soy un ingeniero con pasión por crear proyectos innovadores aplicados a
-                la sociedad: medicina, medio ambiente e IoT. <br />
+                la sociedad: IoT, medicina, y medio ambiente. <br />
                 Combino desarrollo de software, electrónica e ingeniería para llevar 
                 proyectos al siguiente nivel.
               </p>
@@ -91,7 +93,8 @@ export const HomePage = ({ onNavigate, onProjectSelect, scrollContainerRef }) =>
                 <button className="home-skill-tag">Impresión 3D</button>
               </div>
 
-              <button className="btn-read-more" onClick={() => onNavigate('about-detail')}>Leer Más &gt;</button>
+              <button className=" btn btn-primary" onClick={() => navigate(`/contact`)}>Contactame</button>
+              <button className="btn-read-more" onClick={() => navigate(`/aboutme`)}>Leer Más &gt;</button>
             </div>
           </div>
         </div>
