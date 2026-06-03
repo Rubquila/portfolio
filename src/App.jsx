@@ -30,11 +30,18 @@ function AppRoutes({ mainRef }) {
   const location = useLocation();
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div key={location.pathname} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.6 }}>
-        <div className="app">
-          <HeaderComponent />
-          <main ref={mainRef} className="main-content">
+    <div className="app">
+      <HeaderComponent />
+      <main ref={mainRef} className="main-content">
+        <AnimatePresence mode="wait" initial={false}>
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.50, ease: 'easeInOut' }}
+            className="route-motion-wrapper"
+          >
             <Routes location={location}>
               <Route path="/" element={<HomePage scrollContainerRef={mainRef} />} />
               <Route path="/aboutme" element={<AboutPage />} />
@@ -47,10 +54,10 @@ function AppRoutes({ mainRef }) {
               <Route path="/curriculum" element={<ResumePage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
-          </main>
-          <FooterComponent />
-        </div>
-      </motion.div>
-    </AnimatePresence>
+            <FooterComponent />
+          </motion.div>
+        </AnimatePresence>
+      </main>
+    </div>
   );
 }
