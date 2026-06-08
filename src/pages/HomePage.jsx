@@ -66,7 +66,7 @@ export const HomePage = ({ scrollContainerRef }) => {
 
       <section id="featured-projects" class="home-section home-projects">
         <h2 className="home-section-title">Mis Proyectos Destacados</h2>
-        <ProjectsWidget />
+        <ProjectsWidget items={[1, 2, 3, 4]}/>
         <button className="btn btn-secondary btn-projects-more" onClick={() => navigate('/projects')}>
           Ver Todos Los Proyectos &gt;
         </button>

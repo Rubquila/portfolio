@@ -69,12 +69,14 @@ export const ProjectDetailPage = () => {
         {/* Imagen grande */}
         <div className="article-heroimage">
           <div className="article-image-placeholder">
-            <img className="article-coverimage" src={project.coverImage} alt={project.title} 
+            <img className="article-coverimage"
+              src={project.coverImage}
+              alt={project.title} 
               onError={(e) => {
                 e.target.style.display = 'none';
               }}
             />
-            {project.coverImage === '' && (
+            {(project.coverImage == null || project.coverImage === '') && (
               <>
                 <span className="placeholder-icon">🖼️</span>
                 <span>{project.title}</span>

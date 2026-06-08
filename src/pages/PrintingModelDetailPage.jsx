@@ -55,13 +55,19 @@ export const PrintingModelDetailPage = () => {
         {/* Imagen grande */}
         <div className="article-heroimage">
           <div className="article-image-placeholder">
-            <img src={model.coverImage} alt={model.title} 
-                  onError={(e) => {
-                          e.target.style.display = 'none';
-                  }}
-                />
-            <span className="placeholder-icon">🖼️</span>
-            <span>{model.title}</span>
+            <img className="article-coverimage" 
+              src={model.coverImage}
+              alt={model.title} 
+              onError={(e) => {
+                e.target.style.display = 'none';
+              }}
+            />
+            {(model.coverImage == null || model.coverImage === '') && (
+              <>
+                <span className="placeholder-icon">🖼️</span>
+                <span>{model.title}</span>
+              </>
+            )}
           </div>
         </div>
 

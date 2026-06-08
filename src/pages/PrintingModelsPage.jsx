@@ -28,8 +28,22 @@ export const PrintingModelsPage = () => {
         <div className="page-header searcher-header">
           <div className="page-header-content">
             <h2 className="page-header-title">Impresión 3D</h2>
-            <div className="page-header-description">
+            <p className="page-header-description">
               Aquí están algunos de mis modelos de impresión 3D, desde accesorios hasta piezas de objetos.
+            </p>
+            <div className="page-header-features">
+              <div className="page-feature-item">
+                <span className="page-feature-icon">🛠️</span>
+                <span>Ingeniería</span>
+              </div>
+              <div className="page-feature-item">
+                <span className="page-feature-icon">📐</span>
+                <span>Diseño</span>
+              </div>
+              <div className="page-feature-item">
+                <span className="page-feature-icon">⚙️</span>
+                <span>Repuestos</span>
+              </div>
             </div>
           </div>
         </div>

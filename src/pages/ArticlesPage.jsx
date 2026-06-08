@@ -35,11 +35,11 @@ export const ArticlesPage = () => {
             <div className="page-header-features">
               <div className="page-feature-item">
                 <span className="page-feature-icon">📓</span>
-                <span>Tutoriales</span>
+                <span>Guías Prácticas</span>
               </div>
               <div className="page-feature-item">
                 <span className="page-feature-icon">🔧</span>
-                <span>Guías Prácticas</span>
+                <span>Reparaciones</span>
               </div>
               <div className="page-feature-item">
                 <span className="page-feature-icon">📚</span>
