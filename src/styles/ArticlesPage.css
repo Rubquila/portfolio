@@ -1,3 +1,7 @@
+.bg-articles {
+  background-image: url('/src/assets/images/backgrounds/bg-articles.png');
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .articles-header h2 {

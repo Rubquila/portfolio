@@ -1,9 +1,16 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../styles/AboutPage.css';
 
-export const AboutPage = ({ onNavigate }) => {
+export const AboutPage = () => {
+  const navigate = useNavigate();
+
+  const toResume = () => {
+    navigate(`/resume`);
+  };
+
   return (
-    <section id="about" className="about">
+    <section id="about" className="page pageAbout">
       <div className="about-container">
         <div className="about-content">
           
@@ -147,18 +154,24 @@ export const AboutPage = ({ onNavigate }) => {
                 Más allá del trabajo, me interesa la automatización del hogar, la inteligencia artificial
                 y cómo la tecnología puede mejorar la calidad de vida de las personas. 
                 También soy entusiasta del medio ambiente, por lo que tengo interés en proyectos sostenibles y
-                procuro que mis proyectos sean responsables desde el punto de vista ambiental.
+                procuro que mis proyectos sean responsables desde el punto de vista ambiental.<br />
                 En mi tiempo libre me gusta hacer ejercicio, mantenerme en forma y disfrutar de la naturaleza con
-                actividades al aire libre haciendo senderismo y exploración.
+                actividades al aire libre, como senderismo y exploración.
               </p>
             </section>
           </article>
 
           <div className="about-cta">
             <p>¿Interesado en colaborar o conocer más sobre mis proyectos?</p>
-            <button className="btn-contact" onClick={() => onNavigate('contact')}>
-              Ponte en Contacto
-            </button>
+            <div className="btn-container">
+              <button className="btn-contact" onClick={toResume}>
+                Currículum Vitae
+              </button>
+              <a href="https://www.linkedin.com/in/rubenql/" target="_blank">
+                <button className="btn-contact">Ponte en Contacto</button>
+              </a>
+            </div>
+            
           </div>
         </div>
       </div>

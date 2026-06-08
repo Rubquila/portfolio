@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ImageViewer } from '../components/ImageViewer';
+import { ImageViewerWidget } from './ImageViewerWidget';
 import '../styles/ImagesGalleryComponent.css';
 
 export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
@@ -27,7 +27,6 @@ export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
             onClick={() => onClickImage(idx)}
             onError={(e) => {
                 e.target.style.display = 'none';
-                e.target.nextElementSibling.style.display = 'flex';
             }}
             />
             <div className="image-placeholder-result">
@@ -38,14 +37,14 @@ export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
         ))}
       </div>
       <button 
-        className="btn btn-view-gallery"
+        className="btn btn-primary btn-view-gallery"
         onClick={() => onClickImage(0)}
       >
         🔍 Ver Galería Completa
       </button>
 
       {/* Image Viewer Modal */}
-      <ImageViewer 
+      <ImageViewerWidget 
         images={images}
         currentImageIndex={currentImageIndex}
         isOpen={viewerOpen} 

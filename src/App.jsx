@@ -33,7 +33,20 @@ function AppRoutes({ mainRef }) {
     <div className="app">
       <HeaderComponent />
       <main ref={mainRef} className="main-content">
-        <AnimatePresence mode="wait" initial={false}>
+        {/* Aplica el efecto de transición entre rutas  */}
+        <AnimatePresence
+          mode="wait"
+          initial={false}
+          /* Resetea el scroll al cambiar de ruta */
+          onExitComplete={() => {
+            const container = mainRef?.current;
+            if (container && typeof container.scrollTo === 'function') {
+              container.scrollTo({ top: 0, behavior: 'auto' });
+            } else {
+              window.scrollTo({ top: 0, behavior: 'auto' });
+            }
+          }}
+        >
           <motion.div
             key={location.pathname}
             initial={{ opacity: 0 }}
@@ -51,7 +64,7 @@ function AppRoutes({ mainRef }) {
               <Route path="/articles/:articleId" element={<ArticleDetailPage />} />
               <Route path="/printingmodels" element={<PrintingModelsPage />} />
               <Route path="/printingmodels/:modelId" element={<PrintingModelDetailPage />} />
-              <Route path="/curriculum" element={<ResumePage />} />
+              <Route path="/resume" element={<ResumePage />} />
               <Route path="/contact" element={<ContactPage />} />
             </Routes>
             <FooterComponent />

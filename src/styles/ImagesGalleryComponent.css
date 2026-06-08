@@ -12,6 +12,7 @@
   aspect-ratio: 4/3;
   background: linear-gradient(135deg, rgba(74, 158, 255, 0.1), rgba(30, 40, 82, 0.1));
   border: 1px solid rgba(74, 158, 255, 0.2);
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -45,11 +46,7 @@
 }
 
 .btn-view-gallery {
-  background: linear-gradient(135deg, var(--primary-color), #5ba3ff);
-  color: #000;
-  border: none;
   margin-top: 1.5rem;
-  display: block;
   margin-left: auto;
   margin-right: auto;
 }

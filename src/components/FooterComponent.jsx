@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import '../styles/FooterComponent.css';
 
 export const FooterComponent = () => {
@@ -18,9 +17,17 @@ export const FooterComponent = () => {
         <div className="footer-section">
           <a href="https://www.youtube.com/@Diamondhorse" target="_blank" className="footer-link">YouTube</a>
         </div>
-        <div className="footer-section">
-          <NavLink to="/contact" className={({ isActive }) => `nav-link${isActive ? ' active' : ''}`}>Contacto</NavLink>
-        </div>
+      </div>
+      <hr />
+      <div className="footer-section footer-license">
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+          <img alt="Licencia Creative Commons"
+              src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" />
+        </a>
+        &nbsp;&nbsp;&nbsp;Este sitio está bajo una &nbsp;
+        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+          licencia Creative Commons BY-NC-SA 4.0
+        </a>.
       </div>
     </footer>
   );

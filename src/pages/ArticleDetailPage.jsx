@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
+import { ArticlesWidget } from '../components/ArticlesWidget';
 import { formatContent } from '../utils/contentFormatter';
 import { articlesData } from '../data/articlesData';
 import '../styles/models/ArticleStyle.css';
@@ -18,15 +19,17 @@ export const ArticleDetailPage = () => {
   // Obtener artículos relacionados (misma categoría)
   const relatedArticles = articlesData
     .filter(a => a.category === article.category && a.id !== article.id)
-    .slice(0, 3);
+    .slice(0, 5)
+    .map(a => a.id);
 
   if (!article) {
     return (
-      <article className="article">
+      <article className="pageArticle pageArticleDetail">
+        <div className="article-background-layer bg-articleDetail" aria-hidden="true" />
         <div className="article-container">
           <div className="not-found">
             <h2>Artículo no encontrado</h2>
-            <button className="btn-back" onClick={onBack}>Ver todos los artículos</button>
+            <button className="btn btn-back" onClick={onBack}>← Ver todos los artículos</button>
           </div>
         </div>
       </article>
@@ -34,7 +37,8 @@ export const ArticleDetailPage = () => {
   }
 
   return (
-    <article className="article">
+    <article className="pageArticle pageArticleDetail">
+      <div className="article-background-layer bg-articleDetail" aria-hidden="true" />
       <div className="article-container">
         
         {/* Header */}
@@ -71,7 +75,10 @@ export const ArticleDetailPage = () => {
           {/* ENLACES DE INTERÉS */}
           {article.links && Object.keys(article.links).length > 0 && (
             <section className="article-content-section links-section">
-              <h4>Enlaces relacionados</h4>
+              <h2  className="article-section-heading">
+                <span className="heading-icon">🔗</span>
+                Enlaces relacionados
+              </h2>
               <ul className="links-list">
                 {Object.entries(article.links).map(([linkName, linkUrl], index) => (
                   <li key={index}>
@@ -92,23 +99,12 @@ export const ArticleDetailPage = () => {
 
         {/* Artículos relacionados */}
         {relatedArticles.length > 0 && (
-          <div className="related-articles">
-            <h3>Artículos Relacionados</h3>
-            <div className="related-articles-grid">
-              {relatedArticles.map(related => (
-                <div 
-                  key={related.id}
-                  className="related-article-card"
-                  onClick={() => setSelectedArticleId(related.id)}
-                  style={{ cursor: 'pointer' }}
-                >
-                  <h4>{related.title}</h4>
-                  <p>{related.description}</p>
-                  <span className="related-category">{related.category}</span>
-                </div>
-              ))}
+          <section className="relatedArticles-section">
+            <h2 className="section-heading">Artículos Relacionados</h2>
+            <div>
+              <ArticlesWidget items={relatedArticles}/>
             </div>
-          </div>
+          </section>
         )}
 
       </div>

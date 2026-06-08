@@ -1,0 +1,123 @@
+.projectsWidget {
+  padding: 0;
+}
+
+.projectsWidget-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projectsWidget-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
+
+.projectsWidgetItem-card {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.projectsWidgetItem-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--primary-color);
+  box-shadow: 0 15px 40px rgba(74, 158, 255, 0.2);
+}
+
+.projectsWidgetItem-image {
+  width: 100%;
+  aspect-ratio: 1;
+}
+
+.projectsWidgetItem-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.projectsWidgetItem-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  align-items: center;
+  opacity: 0.8;
+}
+
+.projectsWidgetItem-card:hover .projectsWidgetItem-image::before {
+  left: 100%;
+}
+
+.projectsWidgetItem-title {
+  padding: 1.2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+/* .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0 1.2rem 1.2rem 1.2rem;
+} */
+
+.projectsWidgetItem-category {
+  background-color: rgba(74, 158, 255, 0.15);
+  color: var(--primary-color);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: 1px solid rgba(74, 158, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+  .projectsWidget-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .projectsWidget {
+    padding: 60px 20px;
+  }
+
+  .projectsWidget-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .projectsWidgetItem-title {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .projectsWidgetItem-category {
+    padding: 0 1rem 1rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .projectsWidget {
+    padding: 40px 15px;
+  }
+
+  .projectsWidget-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .projectsWidgetItem-image {
+    aspect-ratio: 16/9;
+  }
+}

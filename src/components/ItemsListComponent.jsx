@@ -16,11 +16,11 @@ export default function ItemsListComponent({ items, onItemClick }) {
           className="listItem-card"
           onClick={() => onItemClick && onItemClick(item.id)}
         >
-          <h3 className="listItem-title">{item.title}</h3>
-          {/* <p className="listItem-description">{item.description}</p> */}
-          <div className="listItem-meta">
-            <span className="listItem-category">{item.category}</span>
+          <div>
+            <h3 className="listItem-title">{item.title}</h3>
+            <p className="listItem-description">{item.description}</p>
           </div>
+          <span className="category-badge listItem-category">{item.category}</span>
         </div>
       ))}
     </div>

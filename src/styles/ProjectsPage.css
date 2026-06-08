@@ -1,6 +1,10 @@
+.bg-projects {
+  background-image: url('/src/assets/images/backgrounds/bg-projects.png');
+}
+
 /* Responsive */
 @media (max-width: 768px) {
-  .all-projects {
+  .projectsPage {
     padding: 60px 20px;
   }
 
@@ -17,7 +21,7 @@
 }
 
 @media (max-width: 480px) {
-  .all-projects {
+  .projectsPage {
     padding: 40px 15px;
   }
 

@@ -22,7 +22,6 @@ export default function ItemsGridComponent({ items, onItemClick }) {
               alt={item.title}
               onError={(e) => {
                 e.target.style.display = "none";
-                e.target.nextElementSibling.style.display = "flex";
               }}
             />
             {item.status && (
@@ -34,17 +33,17 @@ export default function ItemsGridComponent({ items, onItemClick }) {
           <h3 className="gridItem-title">{item.title}</h3>
           <p className="gridItem-description">{item.description}</p>
           <div className="gridItem-meta">
-            <span className="category-badge">{item.category}</span>
+            <span className="category-badge gridItem-category">{item.category}</span>
           </div>
           {item.technologies && (
             <div className="gridItem-tags">
               {item.technologies.slice(0, 3).map((tech) => (
-                <span key={tech} className="tech-tag">
+                <span key={tech} className="gridItem-tag">
                   {tech}
                 </span>
               ))}
               {item.technologies.length > 3 && (
-                <span className="tech-tag more">
+                <span className="gridItem-tag more">
                   +{item.technologies.length - 3}
                 </span>
               )}

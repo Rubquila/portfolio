@@ -1,3 +1,7 @@
+.bg-printingmodels {
+  background-image: url('/src/assets/images/backgrounds/bg-printingmodels.png');
+}
+
 /* Responsive */
 @media (max-width: 768px) {
   .printing-3d {

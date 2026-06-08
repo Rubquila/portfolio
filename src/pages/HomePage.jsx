@@ -1,19 +1,23 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import ItemsGridComponent from '../components/ItemsGridComponent';
-import { ProjectsComponent } from '../components/ProjectsComponent';
+import { ProjectsWidget } from '../components/ProjectsWidget';
 import '../styles/HomePage.css';
 
 export const HomePage = ({ scrollContainerRef }) => {
   const bgRef = useRef(null);
   const navigate = useNavigate();
 
+  const toAbout = () => {
+    navigate(`/aboutme`);
+  };
+
 /* Desliza el scroll hasta la sección indicada */
-  const handleClick = (id) => {
+  const moveTo = (id) => {
     const container = scrollContainerRef?.current;
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.pageYOffset ;
+    const top = el.getBoundingClientRect().top + window.pageYOffset - 30;
     container.scrollTo({ top, behavior: 'smooth' });
   };
 
@@ -47,26 +51,29 @@ export const HomePage = ({ scrollContainerRef }) => {
 
   return (
     <><div className="home-background" ref={bgRef}></div>
-      <section id="home" className="home">
-        
+      <section id="home" className="home-section">
         <div className="home-container">
           <div className="home-content">
             <h1 className="home-title">Ingeniero de Software <br /><hr/> Web & IoT</h1>
             <p className="home-subtitle">Software • Electrónica • Impresión 3D</p>
             <div className="home-buttons">
-              <button className="btn btn-primary" onClick={() => handleClick('featured-projects')}>Ver Proyectos</button>
-              <button className="btn btn-secondary" onClick={() => handleClick('home-about')}>Sobre mi</button>
+              <button className="btn btn-primary" onClick={() => moveTo('featured-projects')}>Ver Proyectos</button>
+              <button className="btn btn-secondary" onClick={() => moveTo('home-about')}>Sobre mi</button>
             </div>
           </div>
         </div>
       </section>
 
-      <div id="featured-projects">
-        <ProjectsComponent />
-      </div>
+      <section id="featured-projects" class="home-section home-projects">
+        <h2 className="home-section-title">Mis Proyectos Destacados</h2>
+        <ProjectsWidget />
+        <button className="btn btn-secondary btn-projects-more" onClick={() => navigate('/projects')}>
+          Ver Todos Los Proyectos &gt;
+        </button>
+      </section>
 
       {/* About */}
-      <section id="home-about" className="home-about">
+      <section id="home-about" className="home-section home-about">
         <div className="home-about-container">
           <h2 className="home-section-title">Sobre Mí</h2>
           
@@ -93,8 +100,12 @@ export const HomePage = ({ scrollContainerRef }) => {
                 <button className="home-skill-tag">Impresión 3D</button>
               </div>
 
-              <button className=" btn btn-primary" onClick={() => navigate(`/contact`)}>Contactame</button>
-              <button className="btn-read-more" onClick={() => navigate(`/aboutme`)}>Leer Más &gt;</button>
+              <div className='btn-container home-about-buttons'>
+                <a href="https://www.linkedin.com/in/rubenql/" target="_blank">
+                  <button className=" btn btn-primary">Contactame</button>
+                </a>
+                <button className="btn btn-secondary" onClick={toAbout}>Leer Más &gt;</button>
+              </div>
             </div>
           </div>
         </div>

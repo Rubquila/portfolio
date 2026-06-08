@@ -20,41 +20,42 @@ export const ProjectsPage = () => {
   };
 
   return (
-    <section id="all-projects" className="searcher">
-      <div className="searcher-container">
+    <section id="projectsPage" className="page pageSearcher">
+      <div className="searcher-background-layer bg-projects" aria-hidden="true" />
+      <div className="page-container searcher-container">
         
         {/* Cabecera de presentación */}
-        <div className="searcher-header">
-          <div className="searcher-header-content">
-            <h2 className="searcher-header-title">Proyectos</h2>
-            <p className="searcher-header-description">
+        <div className="page-header searcher-header">
+          <div className="page-header-content">
+            <h2 className="page-header-title">Proyectos</h2>
+            <p className="page-header-description">
               He desarrollado una amplia variedad de proyectos del ámbito de la domótica, IoT, 
               software e iluminación.<br />
               Cada proyecto representa un desafío único que combina creatividad, conocimiento técnico, 
               pasión por la ingeniería y resolución de problemas.
             </p>
-            <div className="searcher-header-features">
-              <div className="searcher-feature-item">
-                <span className="searcher-feature-icon">💡</span>
+            <div className="page-header-features">
+              <div className="page-feature-item">
+                <span className="page-feature-icon">💡</span>
                 <span>Innovación</span>
               </div>
-              <div className="searcher-feature-item">
-                <span className="searcher-feature-icon">🛠️</span>
+              <div className="page-feature-item">
+                <span className="page-feature-icon">🛠️</span>
                 <span>Ingeniería</span>
               </div>
-              <div className="searcher-feature-item">
-                <span className="searcher-feature-icon">📱</span>
+              <div className="page-feature-item">
+                <span className="page-feature-icon">📱</span>
                 <span>Software</span>
               </div>
-              <div className="searcher-feature-item">
-                <span className="searcher-feature-icon">🔬</span>
+              <div className="page-feature-item">
+                <span className="page-feature-icon">🔬</span>
                 <span>Investigación</span>
               </div>
             </div>
           </div>
         </div>
         
-        <div className='searcher-content'>
+        <div className='page-content'>
           <SearchComponent
             items={projectsData}
             onFiltered={handleFiltered}

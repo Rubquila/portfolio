@@ -1,3 +1,15 @@
+.pageArticle.pagePrintingModelDetail {
+  background: radial-gradient(circle at top center, rgba(255, 192, 98, 0.45), transparent 45%),
+              linear-gradient(180deg, rgba(14, 17, 41, 0.90), rgba(6, 8, 21, 0.90));
+}
+
+.bg-printingModelDetail {
+  background-image: url('/src/assets/images/backgrounds/bg-printingmodels.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 /* Proyectos Relacionados */
 .related-models-section {
   border-left-color: #ff9500 !important;

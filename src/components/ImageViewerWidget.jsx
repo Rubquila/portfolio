@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/ImageViewer.css';
+import '../styles/ImageViewerWidget.css';
 
-export const ImageViewer = ({ images, currentImageIndex, isOpen, onClose }) => {
+export const ImageViewerWidget = ({ images, currentImageIndex, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const currentImage = images[currentIndex];
 

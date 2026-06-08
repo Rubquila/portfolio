@@ -20,20 +20,21 @@ export const PrintingModelsPage = () => {
   };
 
   return (
-    <section className="searcher">
-      <div className="searcher-container">
+    <section id="printingModelsPage" className="page pageSearcher">
+      <div className="searcher-background-layer bg-printingmodels" aria-hidden="true" />
+      <div className="page-container searcher-container">
         
         {/* Header */}
-        <div className="searcher-header">
-          <div className="searcher-header-content">
-            <h2 className="searcher-header-title">Impresión 3D</h2>
-            <div className="searcher-header-description">
+        <div className="page-header searcher-header">
+          <div className="page-header-content">
+            <h2 className="page-header-title">Impresión 3D</h2>
+            <div className="page-header-description">
               Aquí están algunos de mis modelos de impresión 3D, desde accesorios hasta piezas de objetos.
             </div>
           </div>
         </div>
         
-        <div className='searcher-content'>
+        <div className='page-content'>
           <SearchComponent
             items={printingModelsData}
             onFiltered={handleFiltered}

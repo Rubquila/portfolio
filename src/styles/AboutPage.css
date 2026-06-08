@@ -1,6 +1,8 @@
-.about {
+.pageAbout {
   min-height: calc(100vh - 120px);
-  background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+  /* background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%); */
+  background: radial-gradient(circle at top center, rgba(255, 183, 74, 0.19), transparent 25%),
+              linear-gradient(180deg, rgba(10, 14, 39, 0.90), rgba(5, 7, 15, 0.90));
   padding: 60px 20px;
   color: #e0e0e0;
 }

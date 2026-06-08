@@ -1,3 +1,15 @@
+.pageArticle.pageArticleDetail {
+  background: radial-gradient(circle at top 0% left 20%, rgba(255, 192, 98, 0.45), transparent 45%),
+              linear-gradient(180deg, rgba(14, 17, 41, 0.90), rgba(6, 8, 21, 1));
+}
+
+.bg-articleDetail {
+  background-image: url('/src/assets/images/backgrounds/bg-articles.png');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
 .header-meta {
   display: flex;
   align-items: center;
@@ -5,14 +17,6 @@
   flex-wrap: wrap;
   margin-top: 1rem;
   font-size: 0.95rem;
-}
-
-.category-badge {
-  background-color: rgba(74, 158, 255, 0.2);
-  color: var(--primary-color);
-  padding: 0.4rem 1rem;
-  border-radius: 20px;
-  font-weight: 500;
 }
 
 /* Tags */
@@ -45,72 +49,4 @@
 
 .tag-detail:hover {
   background-color: rgba(74, 158, 255, 0.25);
-}
-
-
-
-/* Related Articles */
-.related-articles {
-  margin-top: 3rem;
-  padding-top: 2rem;
-}
-
-.related-articles h3 {
-  font-size: 1.3rem;
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
-}
-
-.related-articles-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
-}
-
-.related-article-card {
-  background-color: var(--bg-darker);
-  border: 1px solid var(--border-color);
-  border-radius: 8px;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.related-article-card:hover {
-  border-color: var(--primary-color);
-  box-shadow: 0 4px 12px rgba(74, 158, 255, 0.15);
-}
-
-.related-article-card h4 {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  color: var(--text-primary);
-}
-
-.related-article-card p {
-  margin: 0 0 1rem 0;
-  font-size: 0.85rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.related-category {
-  display: inline-block;
-  background-color: rgba(74, 158, 255, 0.15);
-  color: var(--primary-color);
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-
-/* Not found */
-.not-found {
-  text-align: center;
-  padding: 3rem;
-}
-
-.not-found h2 {
-  color: var(--text-primary);
-  margin-bottom: 1.5rem;
 }

@@ -18,7 +18,8 @@ export const PrintingModelDetailPage = () => {
 
   if (!model) {
     return (
-      <article className="article">
+      <article className="pageArticle pagePrintingModelDetail">
+        <div className="article-background-layer bg-printingModelDetail" aria-hidden="true" />
         <div className="article-container">
           <div className="not-found">
             <h2>Modelo no encontrado</h2>
@@ -30,7 +31,8 @@ export const PrintingModelDetailPage = () => {
   }
 
   return (
-    <article className="article">
+    <article className="pageArticle pagePrintingModelDetail">
+      <div className="article-background-layer bg-printingModelDetail" aria-hidden="true" />
       <div className="article-container">
         
         {/* Header */}

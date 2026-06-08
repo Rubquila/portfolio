@@ -15,7 +15,7 @@
   
 }
 
-.home {
+.home-section {
   display: inline-flex;
   align-items: center;
   padding: 60px 20px;
@@ -25,7 +25,7 @@
   height: 100%;
 }
 
-.home::before {
+.home-section::before {
   content: '';
   position: absolute;
   top: -50%;
@@ -43,12 +43,13 @@
   inset: 3rem;
   width: 100%;
   height: 90%;
-  background-image: url('/src/assets/home-image.png');
+  background-image: url('/src/assets/images/backgrounds/bg-home.png');
   background-attachment: fixed;
   background-size:  cover;
   background-position: top left;
   will-change: filter, transform;
   z-index: -1;
+  mix-blend-mode: screen;
 
   @supports (animation-timeline: --main-scroll) {
     animation: blurAnimation both;
@@ -118,12 +119,20 @@
   z-index: 1;
 }
 
+/* Proyectos */
+.home-projects {
+  display: inline;
+}
+
+.btn-projects-more {
+  text-align: center;
+  margin: 5rem auto 10rem auto;
+}
+
 /* About */
 .home-about {
-  padding: 80px 20px;
-  background: linear-gradient(135deg, var(--bg-darker), var(--secondary-color));
-  position: relative;
-  overflow: hidden;
+  background: linear-gradient(to bottom, transparent, 10%, var(--bg-darker), var(--secondary-color));
+  height: 95%;
 }
 
 .home-about::before {
@@ -221,7 +230,6 @@
   border-radius: 8px;
   font-size: 0.9rem;
   font-weight: 500;
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -232,25 +240,9 @@
   transform: translateY(-3px);
 }
 
-.btn-read-more {
-  background: none;
-  border: 2px solid var(--primary-color);
-  color: var(--primary-color);
-  padding: 12px 28px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 2rem;
-  margin-left: 2rem;
-}
-
-.btn-read-more:hover {
-  background-color: var(--primary-color);
-  color: #000;
-  transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(74, 158, 255, 0.3);
+.home-about-buttons {
+  display: flex;
+  justify-content: flex-start;
 }
 
 @media (max-width: 1024px) {

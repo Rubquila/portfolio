@@ -3,17 +3,18 @@ import '../styles/models/SectionStyle.css';
 import '../styles/ResumePage.css';
 
 export const ResumePage = () => {
+  const [expandCoverLetter, setExpandCoverLetter] = useState(false);
   const [expandExperience, setExpandExperience] = useState(false);
   const [expandProjects, setExpandProjects] = useState(false);
 
   return (
-    <article id="resume" className="section">
-      <div className="section-container">
+    <article id="resumePage" className="page pageSection">
+      <div className="page-container section-container">
         
-        <div className="section-header">
-          <div className="section-header-content">
-            <h2 className="section-header-title">Currículum Vitae</h2>
-            <p className="section-header-description">
+        <div className="page-header section-header">
+          <div className="page-header-content">
+            <h2 className="page-header-title">Currículum Vitae</h2>
+            <p className="page-header-description">
               Descubre mi trayectoria profesional, experiencia, proyectos y formación. Un recorrido
               por mi perfil como desarrollador Full Stack, orientado a la innovación, la ingeniería
               y la tecnología.
@@ -41,9 +42,35 @@ export const ResumePage = () => {
           </div>
         </div>
 
+        {/* Carta de presentación expandible */}
+        <div className="cover-letter-section">
+          <div className="cover-letter-content">
+            <h3 className="resume-section-subtitle" onClick={() => setExpandCoverLetter(!expandCoverLetter)}>
+              <span>Carta de presentación </span>
+              <span className={`toggle-arrow ${expandCoverLetter ? "open" : ""}`}>▼</span>
+            </h3>
+            <div className={`expandable-items ${expandCoverLetter ? 'expanded' : 'collapsed'}`}>
+              <p className="paragraph">
+                Soy <strong>Rubén Quintanilla</strong>, desarrollador <strong>Full Stack</strong> con experiencia en proyectos tanto de <strong>frontend</strong> como de <strong>backend</strong>, especialmente con <strong>React, Node.js y Express</strong>, y formación en <strong>Master en Ingeniería y Tecnologías de Sistemas Software</strong> por la Universidad Politécnica de Valencia.
+              </p>
+              <p className="paragraph">
+                Durante mi trayectoria he participado en el ciclo completo de desarrollo de aplicaciones web y móviles, cuidando tanto la <strong>usabilidad de la interfaz</strong> como la <strong>solidez de la arquitectura</strong>. Me gusta escribir código limpio, colaborar en equipo y aprender nuevas tecnologías que aporten valor real a los proyectos.
+              </p>
+              <p className="paragraph">
+                Además, tengo un perfil muy orientado a la <strong>innovación</strong>: he trabajado realizando aplicaciones para medicina y gestión de procesos, y en proyectos personales relacionados con la <strong>domótica e IoT</strong>, donde he podido combinar hardware y software para crear soluciones automatizadas con <strong>Node-RED</strong> y microcontroladores <strong>ESP</strong>.
+              </p>
+              <p className="paragraph">
+                Busco seguir creciendo profesionalmente en entornos donde se valoren la <strong>creatividad, la responsabilidad y las ganas de mejorar cada día</strong>, aportando mi experiencia en desarrollo Full Stack, mi visión de producto y mi entusiasmo por la tecnología.
+              </p>
+              <p className="closing">
+                <strong>Rubén Quintanilla Lahiguera</strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Contenido del CV */}
-        <div className="section-content">
-          
+        <div className="page-content section-content">
           {/* Header con información personal */}
           <div className="resume-header">
             <div className="resume-info">
@@ -131,10 +158,10 @@ export const ResumePage = () => {
               </div>
             </div>
             <button 
-              className="view-more-btn" 
+              className="btn btn-primary btn-expand" 
               onClick={() => setExpandExperience(!expandExperience)}
             >
-              {expandExperience ? 'Ver menos' : 'Ver otros trabajos'}
+              {expandExperience ? 'Ver menos' : 'Ver otros empleos'}
             </button>
           </div>
 
@@ -194,7 +221,7 @@ export const ResumePage = () => {
               </div>
             </div>
             <button 
-              className="view-more-btn" 
+              className="btn btn-primary btn-expand" 
               onClick={() => setExpandProjects(!expandProjects)}
             >
               {expandProjects ? 'Ver menos' : 'Ver más proyectos'}
@@ -261,31 +288,6 @@ export const ResumePage = () => {
             </div>
           </div>
 
-        </div>
-
-        {/* Divisor */}
-        <div className="resume-divider"></div>
-
-        {/* Carta de Presentación */}
-        <div className="cover-letter-section">
-          <h3 className="resume-section-subtitle">Carta de Presentación</h3>
-          <div className="cover-letter-content">
-            <p className="paragraph">
-              Soy <strong>Rubén Quintanilla</strong>, desarrollador <strong>Full Stack</strong> con experiencia en proyectos tanto de <strong>frontend</strong> como de <strong>backend</strong>, especialmente con <strong>React, Node.js y Express</strong>, y formación en <strong>Master en Ingeniería y Tecnologías de Sistemas Software</strong> por la Universidad Politécnica de Valencia.
-            </p>
-            <p className="paragraph">
-              Durante mi trayectoria he participado en el ciclo completo de desarrollo de aplicaciones web y móviles, cuidando tanto la <strong>usabilidad de la interfaz</strong> como la <strong>solidez de la arquitectura</strong>. Me gusta escribir código limpio, colaborar en equipo y aprender nuevas tecnologías que aporten valor real a los proyectos.
-            </p>
-            <p className="paragraph">
-              Además, tengo un perfil muy orientado a la <strong>innovación</strong>: he trabajado realizando aplicaciones para medicina y gestión de procesos, y en proyectos personales relacionados con la <strong>domótica e IoT</strong>, donde he podido combinar hardware y software para crear soluciones automatizadas con <strong>Node-RED</strong> y microcontroladores <strong>ESP</strong>.
-            </p>
-            <p className="paragraph">
-              Busco seguir creciendo profesionalmente en entornos donde se valoren la <strong>creatividad, la responsabilidad y las ganas de mejorar cada día</strong>, aportando mi experiencia en desarrollo Full Stack, mi visión de producto y mi entusiasmo por la tecnología.
-            </p>
-            <p className="closing">
-              <strong>Rubén Quintanilla Lahiguera</strong>
-            </p>
-          </div>
         </div>
       </div>
     </article>

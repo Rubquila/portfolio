@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
+import { ProjectsWidget } from '../components/ProjectsWidget';
 import { formatContent } from '../utils/contentFormatter';
 import { projectsData } from '../data/projectsData';
 import '../styles/models/ArticleStyle.css';
@@ -19,11 +20,12 @@ export const ProjectDetailPage = () => {
 
   if (!project) {
     return (
-      <article className="article">
+      <article className="pageArticle pageProjectDetail">
+        <div className="article-background-layer bg-projectDetail" aria-hidden="true" />
         <div className="article-container">
           <div className="not-found">
             <h2>Proyecto no encontrado</h2>
-            <button className="btn-back" onClick={onBack}>Ver todos los proyectos</button>
+            <button className="btn btn-back" onClick={onBack}>← Ver todos los proyectos</button>
           </div>
         </div>
       </article>
@@ -31,7 +33,8 @@ export const ProjectDetailPage = () => {
   }
 
   return (
-    <article className="article">
+    <article className="pageArticle pageProjectDetail">
+      <div className="article-background-layer bg-projectDetail" aria-hidden="true" />
       <div className="article-container">
         
         {/* Header */}
@@ -137,7 +140,10 @@ export const ProjectDetailPage = () => {
           {/* ENLACES DE INTERÉS */}
           {project.links && Object.keys(project.links).length > 0 && (
             <section className="article-content-section links-section">
-              <h4>Enlaces relacionados</h4>
+              <h2  className="article-section-heading">
+                <span className="heading-icon">🔗</span>
+                Enlaces relacionados
+              </h2>
               <ul className="links-list">
                 {Object.entries(project.links).map(([linkName, linkUrl], index) => (
                   <li key={index}>
@@ -159,38 +165,9 @@ export const ProjectDetailPage = () => {
         {/* PROYECTOS RELACIONADOS */}
         {project.relatedProjectIds && project.relatedProjectIds.length > 0 && (
           <section className="content-section related-projects-section">
-            <h2 className="section-heading">
-              <span className="heading-icon">🔗</span>
-              Proyectos Relacionados
-            </h2>
-            <div className="related-projects-grid">
-              {project.relatedProjectIds.map(relatedId => {
-                const relatedProject = projectsData.find(p => p.id === relatedId);
-                return (
-                  relatedProject && (
-                    <div key={relatedProject.id} className="related-project-card">
-                      <div className="related-project-image">
-                        <div className="image-placeholder-small">
-                          <span className="placeholder-icon">🖼️</span>
-                        </div>
-                      </div>
-                      <div className="related-project-content">
-                        <h3 className="related-project-title">{relatedProject.title}</h3>
-                        <p className="related-project-description">{relatedProject.description}</p>
-                        <div className="related-project-category">
-                          {relatedProject.category}
-                        </div>
-                      </div>
-                      <button 
-                        className="related-project-link"
-                        onClick={() => onSelectProject && onSelectProject(relatedProject.id)}
-                      >
-                        Ver Proyecto →
-                      </button>
-                    </div>
-                  )
-                );
-              })}
+            <h2 className="section-heading">Proyectos Relacionados</h2>
+            <div>
+              <ProjectsWidget items={project.relatedProjectIds}/>
             </div>
           </section>
         )}
