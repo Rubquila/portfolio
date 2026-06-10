@@ -21,7 +21,7 @@ export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
         {images.map((image, idx) => (
           <div key={idx} className="result-image-container">
             <img 
-            src={image} 
+            src={"../src/assets/images/" + image} 
             alt={`Resultado ${idx + 1}`}
             className="result-image"
             onClick={() => onClickImage(idx)}

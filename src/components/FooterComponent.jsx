@@ -24,10 +24,12 @@ export const FooterComponent = () => {
           <img alt="Licencia Creative Commons"
               src="https://licensebuttons.net/l/by-nc-sa/4.0/88x31.png" />
         </a>
-        &nbsp;&nbsp;&nbsp;Este sitio está bajo una &nbsp;
-        <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
-          licencia Creative Commons BY-NC-SA 4.0
-        </a>.
+        <span className='footer-license-text'>
+          Este sitio está bajo una &nbsp;
+          <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+            licencia Creative Commons BY-NC-SA 4.0
+          </a>.
+        </span>
       </div>
     </footer>
   );

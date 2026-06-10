@@ -89,8 +89,8 @@ export const ResumePage = () => {
               <p></p>
               <p></p>
               <p>💼 LinkedIn: <a href={`https://linkedin.com/in/rubenql`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
-              <p>💼 GitHub: <a href={`https://github.com/rubenql`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
-              <p>💼 Web: <a href={`https://linkedin.com/in/rubenql`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
+              <p>💼 GitHub: <a href={`https://github.com/Rubquila`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
+              <p>💼 Web: <a href={`https://rubenquila.pages.dev/`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
               <p><strong>Disponibilidad:</strong> Inmediata, total</p>
             </div>
           </div>

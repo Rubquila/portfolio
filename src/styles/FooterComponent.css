@@ -48,6 +48,11 @@
   height: 75%;
 }
 
+.footer-license-text {
+  display: block;
+  margin-left: 0.5rem;
+}
+
 .footer-license a {
   color: var(--text-secondary);
   text-decoration: underline;
