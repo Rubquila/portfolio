@@ -43,7 +43,7 @@ export const ImageViewerWidget = ({ images, currentImageIndex, isOpen, onClose }
         {/* Imagen principal */}
         <div className="viewer-image-wrapper">
           <img 
-            src={"../src/assets/images/" + currentImage} 
+            src={"/images/" + currentImage} 
             alt={`Imagen ${currentIndex + 1}`}
             className="viewer-main-image"
             onError={(e) => {
@@ -80,7 +80,7 @@ export const ImageViewerWidget = ({ images, currentImageIndex, isOpen, onClose }
                   onClick={() => setCurrentIndex(idx)}
                 >
                   <img 
-                    src={"../src/assets/images/" + image} 
+                    src={"/images/" + image} 
                     alt={`Thumbnail ${idx + 1}`}
                     onError={(e) => {
                       e.target.style.backgroundColor = 'rgba(74, 158, 255, 0.1)';

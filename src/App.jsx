@@ -12,7 +12,6 @@ import { PrintingModelsPage } from './pages/PrintingModelsPage';
 import { PrintingModelDetailPage } from './pages/PrintingModelDetailPage';
 import { AboutPage } from './pages/AboutPage';
 import { ResumePage } from './pages/ResumePage';
-import { ContactPage } from './pages/ContactPage';
 import { FooterComponent } from './components/FooterComponent';
 import './styles/globals.css';
 
@@ -65,7 +64,6 @@ function AppRoutes({ mainRef }) {
               <Route path="/printingmodels" element={<PrintingModelsPage />} />
               <Route path="/printingmodels/:modelId" element={<PrintingModelDetailPage />} />
               <Route path="/resume" element={<ResumePage />} />
-              <Route path="/contact" element={<ContactPage />} />
             </Routes>
             <FooterComponent />
           </motion.div>

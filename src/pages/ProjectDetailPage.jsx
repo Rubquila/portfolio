@@ -70,7 +70,7 @@ export const ProjectDetailPage = () => {
         <div className="article-heroimage">
           <div className="article-image-placeholder">
             <img className="article-coverimage"
-              src={"../src/assets/images/" + project.coverImage}
+              src={"/images/" + project.coverImage}
               alt={project.title} 
               onError={(e) => {
                 e.target.style.display = 'none';

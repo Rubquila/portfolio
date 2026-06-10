@@ -36,7 +36,7 @@ export const ProjectsWidget = ({ items }) => {
               onClick={() => handleProjectClick && handleProjectClick(item.id)}
             >
               <div className="projectsWidgetItem-image gridItem-image">
-                <img src={"../src/assets/images/" + item.coverImage}
+                <img src={"/images/" + item.coverImage}
                   alt={item.title} 
                   onError={(e) => {
                     e.target.style.display = 'none';

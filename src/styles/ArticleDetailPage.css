@@ -4,7 +4,7 @@
 }
 
 .bg-articleDetail {
-  background-image: url('/src/assets/images/backgrounds/bg-articles.png');
+  background-image: url('/images/backgrounds/bg-articles.png');
   background-size: cover;
   background-position: center center;
   background-attachment: fixed;

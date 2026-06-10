@@ -22,7 +22,7 @@ export const ResumePage = () => {
             <div className="header-download-buttons">
             <a
               className="header-download-btn download-pdf"
-              href='/src/assets/curriculum.pdf'
+              href='/curriculum/curriculum.pdf'
               target="_blank"
               title="Descargar CV en PDF"
             >
@@ -31,7 +31,7 @@ export const ResumePage = () => {
             </a>
             <a
               className="header-download-btn download-pdf"
-              href='/src/assets/carta_presentacion.pdf'
+              href='/curriculum/carta_presentacion.pdf'
               target="_blank"
               title="Descargar Carta de Presentación en PDF"
             >
@@ -89,8 +89,8 @@ export const ResumePage = () => {
               <p></p>
               <p></p>
               <p>💼 LinkedIn: <a href={`https://linkedin.com/in/rubenql`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
-              <p>💼 GitHub: <a href={`https://github.com/Rubquila`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
-              <p>💼 Web: <a href={`https://rubenquila.pages.dev/`} target="_blank" rel="noopener noreferrer">rubenql</a></p>
+              <p>💼 GitHub: <a href={`https://github.com/Rubquila`} target="_blank" rel="noopener noreferrer">Rubquila</a></p>
+              <p>💼 Web: <a href={`https://rubenquila.pages.dev/`} target="_blank" rel="noopener noreferrer">https://rubenquila.pages.dev/</a></p>
               <p><strong>Disponibilidad:</strong> Inmediata, total</p>
             </div>
           </div>

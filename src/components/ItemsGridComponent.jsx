@@ -18,7 +18,7 @@ export default function ItemsGridComponent({ items, onItemClick }) {
         >
           <div className="gridItem-image">
             <img
-              src={"../src/assets/images/" + item.coverImage}
+              src={"/images/" + item.coverImage}
               alt={item.title}
               onError={(e) => {
                 e.target.style.display = "none";

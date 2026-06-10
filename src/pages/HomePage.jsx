@@ -80,7 +80,7 @@ export const HomePage = ({ scrollContainerRef }) => {
           <div className="home-about-content">
             <div className="home-about-image">
               <img 
-                src="/profile.png" 
+                src="/images/profile.png" 
                 alt="Rubén Quintanilla - Foto de perfil"
                 className="home-profile-img"
               />

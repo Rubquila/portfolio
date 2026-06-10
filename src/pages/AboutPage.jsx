@@ -16,7 +16,7 @@ export const AboutPage = () => {
           
           <div className="about-header">
             <img 
-              src="/profile.png" 
+              src="/images/profile.png" 
               alt="Rubén Quintanilla - Foto de perfil"
               className="profile-img-large"
             />
