@@ -52,23 +52,11 @@ export const PrintingModelDetailPage = () => {
           </div>
         </div>
 
-        {/* Imagen grande */}
+        {/* IMÁGENES */}
         <div className="article-heroimage">
-          <div className="article-image-placeholder">
-            <img className="article-coverimage" 
-              src={model.coverImage}
-              alt={model.title} 
-              onError={(e) => {
-                e.target.style.display = 'none';
-              }}
-            />
-            {(model.coverImage == null || model.coverImage === '') && (
-              <>
-                <span className="placeholder-icon">🖼️</span>
-                <span>{model.title}</span>
-              </>
-            )}
-          </div>
+          {model.images && model.images.length > 0 && (
+            <ImagesGalleryComponent images={model.images} />
+          )}
         </div>
 
         {/* Contenido principal */}
@@ -77,11 +65,6 @@ export const PrintingModelDetailPage = () => {
           <div className="article-section-text" 
             dangerouslySetInnerHTML={{ __html: formatContent(model.content) }}>
           </div>
-
-          {/* IMÁGENES */}
-          {model.images && model.images.length > 0 && (
-            <ImagesGalleryComponent images={model.images} />
-          )}
         </section>
 
         {/* ENLACES DE INTERÉS */}
@@ -105,44 +88,6 @@ export const PrintingModelDetailPage = () => {
           <button className="btn btn-back" onClick={onBack}>← Ver todos los modelos</button>
         </div>
 
-        {/* PROYECTOS RELACIONADOS */}
-        {model.relatedProjectIds && model.relatedProjectIds.length > 0 && (
-          <section className="content-section related-models-section">
-            <h2 className="section-heading">
-              <span className="heading-icon">🔗</span>
-              Proyectos Relacionados
-            </h2>
-            <div className="related-models-grid">
-              {model.relatedProjectIds.map(relatedId => {
-                const relatedProject = modelsData.find(p => p.id === relatedId);
-                return (
-                  relatedProject && (
-                    <div key={relatedProject.id} className="related-model-card">
-                      <div className="related-model-image">
-                        <div className="image-placeholder-small">
-                          <span className="placeholder-icon">🖼️</span>
-                        </div>
-                      </div>
-                      <div className="related-model-content">
-                        <h3 className="related-model-title">{relatedProject.title}</h3>
-                        <p className="related-model-description">{relatedProject.description}</p>
-                        <div className="related-model-category">
-                          {relatedProject.category}
-                        </div>
-                      </div>
-                      <button 
-                        className="related-model-link"
-                        onClick={() => onSelectProject && onSelectProject(relatedProject.id)}
-                      >
-                        Ver Proyecto →
-                      </button>
-                    </div>
-                  )
-                );
-              })}
-            </div>
-          </section>
-        )}
       </div>
     </article>
   );
