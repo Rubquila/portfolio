@@ -17,7 +17,11 @@ export const HomePage = ({ scrollContainerRef }) => {
     const container = scrollContainerRef?.current;
     const el = document.getElementById(id);
     if (!el) return;
-    const top = el.getBoundingClientRect().top + window.pageYOffset - 30;
+    // Obtiene la altura del header (puede ser fijo o dentro del container)
+    const header = document.querySelector("header");
+    const headerHeight = header ? header.offsetHeight : 0;
+
+    const top = el.getBoundingClientRect().top + window.pageYOffset - headerHeight + 20;
     container.scrollTo({ top, behavior: 'smooth' });
   };
 

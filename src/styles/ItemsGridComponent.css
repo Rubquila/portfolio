@@ -142,9 +142,4 @@
     grid-template-columns: 1fr;
     gap: 1.2rem;
   }
-
-  .gridItem-image {
-    aspect-ratio: auto;
-    min-height: 150px;
-  }
 }

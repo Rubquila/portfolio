@@ -101,10 +101,6 @@
     padding: 1rem;
     font-size: 0.9rem;
   }
-
-  .projectsWidgetItem-category {
-    padding: 0 1rem 1rem 1rem;
-  }
 }
 
 @media (max-width: 480px) {

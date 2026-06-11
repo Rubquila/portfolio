@@ -21,7 +21,7 @@ html, body {
   height: 100%;
   overflow-x: hidden;
   /* keep vertical scrollbar present to avoid layout shifts */
-  overflow-y: scroll;
+  overflow-y: visible;
 }
 
 body {
@@ -157,6 +157,7 @@ a {
 .btn {
   display: block;
   align-items: center;
+  justify-content: center;
   padding: 12px 24px;
   gap: 0.5rem;
   border: none;
@@ -285,8 +286,12 @@ a {
   }
 
   .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    width: 100%;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+  .btn-secondary {
+    padding: 10px 16px;
   }
 }
 
