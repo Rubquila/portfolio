@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
-import ItemsGridComponent from '../components/ItemsGridComponent';
-import { ProjectsWidget } from '../components/ProjectsWidget';
-import '../styles/HomePage.css';
+import ItemsGridComponent from '/src/components/ItemsGridComponent/ItemsGridComponent';
+import { ProjectsWidget } from '/src/widgets/ProjectsWidget/ProjectsWidget';
+import './HomePage.css';
 
 export const HomePage = ({ scrollContainerRef }) => {
   const bgRef = useRef(null);
@@ -68,7 +68,7 @@ export const HomePage = ({ scrollContainerRef }) => {
         </div>
       </section>
 
-      <section id="featured-projects" class="home-section home-projects">
+      <section id="featured-projects" className="home-section home-projects">
         <h2 className="home-section-title">Mis Proyectos Destacados</h2>
         <ProjectsWidget items={[1, 2, 3, 4]}/>
         <button className="btn btn-secondary btn-projects-more" onClick={() => navigate('/projects')}>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import '../styles/models/SectionStyle.css';
-import '../styles/ResumePage.css';
+import '/src/styles/SectionStyle.css';
+import './ResumePage.css';
 
 export const ResumePage = () => {
   const [expandCoverLetter, setExpandCoverLetter] = useState(false);
@@ -22,21 +22,21 @@ export const ResumePage = () => {
             <div className="header-download-buttons">
             <a
               className="header-download-btn download-pdf"
-              href='/curriculum/curriculum.pdf'
+              href='/files/curriculum.pdf'
               target="_blank"
               title="Descargar CV en PDF"
             >
               
-              Currículum<br />📄
+              Currículum<br />PDF 📄
             </a>
             <a
               className="header-download-btn download-pdf"
-              href='/curriculum/carta_presentacion.pdf'
+              href='/files/carta_presentacion.pdf'
               target="_blank"
               title="Descargar Carta de Presentación en PDF"
             >
               
-              Carta <br />presentación<br />📄
+              Carta <br />presentación<br />PDF 📄
             </a>
           </div>
           </div>

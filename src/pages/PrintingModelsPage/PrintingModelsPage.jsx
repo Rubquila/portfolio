@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchComponent from "../components/SearchComponent";
-import ItemsGridComponent from '../components/ItemsGridComponent';
-import { printingModelsData } from '../data/printingModelsData';
-import '../styles/models/SearcherStyle.css';
-import '../styles/PrintingModelsPage.css';
+import SearchComponent from "/src/components/SearchComponent/SearchComponent";
+import ItemsGridComponent from '/src/components/ItemsGridComponent/ItemsGridComponent';
+import { printingModelsData } from '/src/data/printingModelsData';
+import '/src/styles/SearcherStyle.css';
+import './PrintingModelsPage.css';
 
 export const PrintingModelsPage = () => {
   const [filteredPrintingModels, setFilteredPrintingModels] = useState(printingModelsData);

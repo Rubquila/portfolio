@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { ImageViewerWidget } from './ImageViewerWidget';
-import '../styles/ImagesGalleryComponent.css';
+import { ImageViewerWidget } from '/src/widgets/ImageViewerWidget/ImageViewerWidget';
+import './ImagesGalleryComponent.css';
 
 export const ImagesGalleryComponent = ({ images, onViewGallery }) => {
   const [viewerOpen, setViewerOpen] = useState(false);

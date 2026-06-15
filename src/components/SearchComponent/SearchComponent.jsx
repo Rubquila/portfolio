@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from "react";
-import '../styles/SearchComponent.css';
+import './SearchComponent.css';
 
 export default function SearchComponent({
   items = [],

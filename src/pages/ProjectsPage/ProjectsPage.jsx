@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchComponent from "../components/SearchComponent";
-import ItemsGridComponent from '../components/ItemsGridComponent';
-import { projectsData } from '../data/projectsData';
-import '../styles/models/SearcherStyle.css';
-import '../styles/ProjectsPage.css';
+import SearchComponent from "/src/components/SearchComponent/SearchComponent";
+import ItemsGridComponent from '/src/components/ItemsGridComponent/ItemsGridComponent';
+import { projectsData } from '/src/data/projectsData';
+import '/src/styles/SearcherStyle.css';
+import './ProjectsPage.css';
 
 export const ProjectsPage = () => {
   const [filteredProjects, setFilteredProjects] = useState(projectsData);

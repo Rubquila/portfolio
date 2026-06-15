@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../styles/ImageViewerWidget.css';
+import './ImageViewerWidget.css';
 
 export const ImageViewerWidget = ({ images, currentImageIndex, isOpen, onClose }) => {
   const [currentIndex, setCurrentIndex] = useState(0);

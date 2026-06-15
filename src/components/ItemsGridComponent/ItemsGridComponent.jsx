@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ItemsGridComponent.css";
+import "./ItemsGridComponent.css";
 
 export default function ItemsGridComponent({ items, onItemClick }) {
   if (!items || items.length === 0) {

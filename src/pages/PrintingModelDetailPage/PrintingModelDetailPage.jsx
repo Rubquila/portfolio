@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
-import { formatContent } from '../utils/contentFormatter';
-import { printingModelsData } from '../data/printingModelsData';
-import '../styles/models/ArticleStyle.css';
-import '../styles/PrintingModelDetailPage.css';
+import { ImagesGalleryComponent } from '/src/components/ImagesGalleryComponent/ImagesGalleryComponent';
+import { formatContent } from '/src/utils/contentFormatter';
+import { printingModelsData } from '/src/data/printingModelsData';
+import '/src/styles/ArticleStyle.css';
+import './PrintingModelDetailPage.css';
 
 export const PrintingModelDetailPage = () => {
   const { modelId } = useParams();

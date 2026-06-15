@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import SearchComponent from "../components/SearchComponent";
-import ItemsListComponent from '../components/ItemsListComponent';
-import { articlesData } from '../data/articlesData';
-import '../styles/models/SearcherStyle.css';
-import '../styles/ArticlesPage.css';
+import SearchComponent from "/src/components/SearchComponent/SearchComponent";
+import ItemsListComponent from '/src/components/ItemsListComponent/ItemsListComponent';
+import { articlesData } from '/src/data/articlesData';
+import '/src/styles/SearcherStyle.css';
+import './ArticlesPage.css';
 
 export const ArticlesPage = () => {
   const [filteredArticles, setFilteredArticles] = useState(articlesData);

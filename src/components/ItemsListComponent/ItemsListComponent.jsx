@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ItemsListComponent.css";
+import "./ItemsListComponent.css";
 
 export default function ItemsListComponent({ items, onItemClick }) {
   if (!items || items.length === 0) {

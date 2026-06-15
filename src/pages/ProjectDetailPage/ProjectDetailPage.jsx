@@ -1,11 +1,11 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
-import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
-import { ProjectsWidget } from '../components/ProjectsWidget';
-import { formatContent } from '../utils/contentFormatter';
-import { projectsData } from '../data/projectsData';
-import '../styles/models/ArticleStyle.css';
-import '../styles/ProjectDetailPage.css';
+import { ImagesGalleryComponent } from '/src/components/ImagesGalleryComponent/ImagesGalleryComponent';
+import { ProjectsWidget } from '/src/widgets/ProjectsWidget/ProjectsWidget';
+import { formatContent } from '/src/utils/contentFormatter';
+import { projectsData } from '/src/data/projectsData';
+import '/src/styles/ArticleStyle.css';
+import './ProjectDetailPage.css';
 
 export const ProjectDetailPage = () => {
   const { projectId } = useParams();

@@ -2,17 +2,17 @@ import { useRef } from 'react'
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { HeaderComponent } from './components/HeaderComponent';
-import { HomePage } from './pages/HomePage';
-import { ProjectsPage } from './pages/ProjectsPage';
-import { ProjectDetailPage } from './pages/ProjectDetailPage';
-import { ArticlesPage } from './pages/ArticlesPage';
-import { ArticleDetailPage } from './pages/ArticleDetailPage';
-import { PrintingModelsPage } from './pages/PrintingModelsPage';
-import { PrintingModelDetailPage } from './pages/PrintingModelDetailPage';
-import { AboutPage } from './pages/AboutPage';
-import { ResumePage } from './pages/ResumePage';
-import { FooterComponent } from './components/FooterComponent';
+import { HeaderComponent } from './components/HeaderComponent/HeaderComponent';
+import { HomePage } from './pages/HomePage/HomePage';
+import { ProjectsPage } from './pages/ProjectsPage/ProjectsPage';
+import { ProjectDetailPage } from './pages/ProjectDetailPage/ProjectDetailPage';
+import { ArticlesPage } from './pages/ArticlesPage/ArticlesPage';
+import { ArticleDetailPage } from './pages/ArticleDetailPage/ArticleDetailPage';
+import { PrintingModelsPage } from './pages/PrintingModelsPage/PrintingModelsPage';
+import { PrintingModelDetailPage } from './pages/PrintingModelDetailPage/PrintingModelDetailPage';
+import { AboutPage } from './pages/AboutPage/AboutPage';
+import { ResumePage } from './pages/ResumePage/ResumePage';
+import { FooterComponent } from './components/FooterComponent/FooterComponent';
 import './styles/globals.css';
 
 export default function App() {

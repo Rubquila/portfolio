@@ -1,11 +1,11 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ImagesGalleryComponent } from '../components/ImagesGalleryComponent';
-import { ArticlesWidget } from '../components/ArticlesWidget';
-import { formatContent } from '../utils/contentFormatter';
-import { articlesData } from '../data/articlesData';
-import '../styles/models/ArticleStyle.css';
-import '../styles/ArticleDetailPage.css';
+import { ImagesGalleryComponent } from '/src/components/ImagesGalleryComponent/ImagesGalleryComponent';
+import { ArticlesWidget } from '/src/widgets/ArticlesWidget/ArticlesWidget';
+import { formatContent } from '/src/utils/contentFormatter';
+import { articlesData } from '/src/data/articlesData';
+import '/src/styles/ArticleStyle.css';
+import './ArticleDetailPage.css';
 
 export const ArticleDetailPage = () => {
   const { articleId } = useParams();

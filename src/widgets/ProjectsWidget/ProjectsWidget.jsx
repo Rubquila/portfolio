@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { projectsData } from '../data/projectsData';
-import '../styles/ProjectsWidget.css';
+import { projectsData } from '/src/data/projectsData';
+import './ProjectsWidget.css';
 
 export const ProjectsWidget = ({ items }) => {
   const navigate = useNavigate();

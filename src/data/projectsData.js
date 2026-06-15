@@ -5,16 +5,16 @@ export const projectsData = [
     status: 'Mejorando',
     category: 'IoT',
     description: 'Automatización inteligente del hogar con Home Assistant y Node-RED',
-    coverImage: 'proyects/01/01-0.jpg',
+    coverImage: 'projects/01/01-0.jpg',
     technologies: ['Raspberry Pi', 'IoT', 'Node-RED', 'ESP32', 'Home Assistant'],
     tags: ['domótica', 'automatización', 'hardware', 'iot'],
     problem: 'La automatización del hogar requeriere soluciones complejas y caras, que son ofrecidas por fabricantes que restringen el uso de dispositivos de su propia marca.\n\nSe plantea un sistema versátil que permita controlar electrodomésticos, iluminación, sensores, climatización y videovigilancia desde una única plataforma, y que además, permita programar automatizaciones complejas e incluso desarrollar dispositivos nuevos.',
     solution: 'He desarrollado un sistema local dómótico modular mediante Node-RED en la plataforma Home Assistant, que automatiza tareas y rutinas complejas propias de un smarthome. También he creado dispositivos hardware propios con microcontroladores ESP programados mediante ESPHome.\n\nEl sistema es completamente local, sin dependencia de la nube, y permite integración con una amplia variedad de dispositivos y protocolos. Además, he implementado un sistema de notificaciones personalizadas y control remoto seguro.',
     result: 'Sistema completamente funcional que automatiza climatización, iluminación, limpieza y seguridad. Actualmente estoy integrando IA para respuesta conversacional y control avanzado de dispositivos. Reduce el consumo energético en un 30% y proporciona automatizaciones personalizadas.\n\nMas detalles por completar.',
     images: [
-      'proyects/01/01-0.jpg',
-      'proyects/01/01-1.jpg',
-      'proyects/01/01-2.jpg'
+      'projects/01/01-0.jpg',
+      'projects/01/01-1.jpg',
+      'projects/01/01-2.jpg'
     ],
     links: {
       
@@ -27,16 +27,16 @@ export const projectsData = [
     status: 'Mejorando',
     category: 'Programación',
     description: 'Sitio web personal para mostrar mi trabajo, experiencia y conocimientos aquiridos',
-    coverImage: 'proyects/02/02-0.jpg',
+    coverImage: 'projects/02/02-0.jpg',
     technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
     tags: ['web', 'react', 'javascript'],
     problem: 'Necesitaba una plataforma para mostrar mis proyectos, experiencia y conocimientos de forma profesional y accesible. Quería crear un sitio web personal que sirviera como portfolio y biblioteca de conocimientos, utilizando tecnologías modernas y siguiendo las mejores prácticas de desarrollo web.',
     solution: 'He desarrollado una página web personal de portfolio utilizando React, con un diseño moderno y responsive que se ajusta a mis necesidades.\n\nEl sitio incluye secciones para proyectos, artículos, habilidades y experiencia, con una navegación intuitiva y un diseño atractivo. He implementado funcionalidades como filtros de proyectos, búsqueda de anotaciones y manuales, y descarga de diseños 3D para imprimir.',
     result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y alacenar y compartir mis conocimientos. Actualmente estoy trabajando en la ampliación del contenido.<br />Características: <ul><li>Construido en React</li><li>Totalmente FrontEnd</li><li>ReactRouter para la navegación</li><li>Estilos CSS avanzados para el degradado con scroll y la iluminación latente</li><li>Modularidad usando Componentes y Widgets personales</li></ul><br />Más detalles proximamente.',
     images: [
-      'proyects/02/02-0.jpg',
-      'proyects/02/02-1.jpg',
-      'proyects/02/02-2.jpg'
+      'projects/02/02-0.jpg',
+      'projects/02/02-1.jpg',
+      'projects/02/02-2.jpg'
     ],
     links: {
       "Web": "https://rubenquila.pages.dev/"
@@ -69,16 +69,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'IoT',
     description: 'Red inalámbrica de sensores para la detección precoz de incendios forestales',
-    coverImage: 'proyects/04/04-0.png',
+    coverImage: 'projects/04/04-0.png',
     technologies: ['Arduino', 'Attiny85', 'IoT', 'Processing', 'Bluetooth'],
     tags: ['iot', 'hardware', 'sensores', 'medio ambiente', 'redes'],
     problem: 'Los incendios forestales en España son una amenaza crítica. Es necesario crear un sistema de detección precoz que recopile datos de temperatura, humedad y CO de zonas remotas sin infraestructura disponible.',
     solution: 'He desarrollado un prototipo de red inalámbrica de sensores para la detección temprana de incendios forestales como trabajo final de carrera.\n\nHe ustilizado Arduino y Attiny con Processing para la captura y análisis de datos, implementando una red en malla propia y gestionando el modo Sleep de cada nodo. Un sistema autosuficiente, modular y escalable con comunicación Bluetooth.',
     result: 'Prototipo funcional capaz de monitorear más de 50 nodos simultáneamente, con nodos de bajo consumo energético y autosuficientes gracias a baterías y carga solar.',
     images: [
-      'proyects/04/04-0.png',
-      'proyects/04/04-1.jpg',
-      'proyects/04/04-2.jpg'
+      'projects/04/04-0.png',
+      'projects/04/04-1.jpg',
+      'projects/04/04-2.jpg'
     ],
     links: {
       github: null
@@ -91,18 +91,18 @@ export const projectsData = [
     status: 'Completado',
     category: 'IoT',
     description: 'Dispositivo inhibidor de frecuencias para concienciación sobre la incomunicación y soledad de los refugiados',
-    coverImage: 'proyects/05/05-0.jpg',
+    coverImage: 'projects/05/05-0.jpg',
     technologies: ['ESP32', 'RF', 'WiFi', 'GSM'],
     tags: ['hardware', 'electrónica', 'hacking', 'arte'],
     problem: 'Simular la incomunicación sufrida por refugiados sirios usando una manta de emergencia isotérmica. Proyecto en colaboración con un alumno de Bellas Artes como proyecto final de máster.',
     solution: 'He programado un dispositivo inhibidor de frecuencias GSRM, 2G, 3G y wifi en colaboración con BBAA utilizando ESP32. El dispositivo simula un entorno de incomunicación dentro de un radio controlado, permitiendo experimentar la desconexión digital de forma segura.',
     result: 'Proyecto funcional utilizado en exposiciones de sensibilización en Fundación La Posta, el Centro Cultural del Carmen y en la UPV. Ha llegado a más de 500 personas permitiéndoles vivir brevemente la experiencia de incomunicación.',
     images: [
-      'proyects/05/05-0.jpg',
-      'proyects/05/05-1.jpg',
-      'proyects/05/05-2.jpg',
-      'proyects/05/05-3.jpg',
-      'proyects/05/05-4.jpg'
+      'projects/05/05-0.jpg',
+      'projects/05/05-1.jpg',
+      'projects/05/05-2.jpg',
+      'projects/05/05-3.jpg',
+      'projects/05/05-4.jpg'
     ],
     links: {
       "Web del proyecto": "https://miguelalejandrosisliansuez.wordpress.com/2018/09/15/primera-entrada-del-blog/",
@@ -116,16 +116,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'IoT',
     description: 'Comedero automático para mascotas conectado a smarthome y con alimentación ininterrumpida',
-    coverImage: 'proyects/06/06-0.jpg',
+    coverImage: 'projects/06/06-0.jpg',
     technologies: ['ESP32', 'IoT', 'ESPHome', 'Home Assistant'],
     tags: ['hardware', 'electrónica', 'domótica', 'animales'],
     problem: 'Debido a las obligaciones que te hacen estar fuera de casa durante el día, y la necesidad de controlar la alimentación de nuestras mascotas para evitar el sobrepeso, surge la necesidad de crear un comedero automático que permita programar horarios de alimentación, controlar las porciones y garantizar la alimentación incluso en caso de cortes de energía o conexión.',
     solution: 'He desarrollado un dispositivo de alimentación automática para mascotas mediante ESP32, capaz de programar horarios de dispensación, emitir sonidos de aviso y registrar el nivel de comida para evitar quedarse sin alimento.\n\nEl dispositivo se integra con el sistema domótico Home Assistant para permitir control remoto y notificaciones, y cuenta con una batería de respaldo para garantizar su funcionamiento incluso en caso de cortes de energía.',
     result: 'Se ha mejorado el control de las porciones de comida, consiguiendo disminuir el sobrepeso a lo largo de 3 meses. Además ha permitido liberar de una tarea presencial y esencial en la convivencia con mascotas.\n\nMas detalles por completar.',
     images: [
-      'proyects/06/06-0.jpg',
-      'proyects/06/06-1.jpg',
-      'proyects/06/06-2.jpg'
+      'projects/06/06-0.jpg',
+      'projects/06/06-1.jpg',
+      'projects/06/06-2.jpg'
     ],
     links: {
       github: null
@@ -178,15 +178,15 @@ export const projectsData = [
     status: 'Completado',
     category: 'Automoción',
     description: 'Diseño y construcción de un panel de control de la iluminación de un Peugeot 207',
-    coverImage: 'proyects/09/09-1.jpg',
+    coverImage: 'projects/09/09-1.jpg',
     technologies: ['LED', 'Peugeot 207'],
     tags: ['electrónica', 'iluminación', 'automoción'],
     problem: 'Dados los distintos proyectos realizados de iluminación en el coche, y los planificados por realizar, surge la necesidad de crear un centro de control minimalista, accesible y estético que reuna todas las conexiones y permita modificar la iluminación.',
     solution: 'He creado un panel de control de iluminación para un Pegueot 207, modificando el diseño original del plafón de techo delantero, añadiendo interruptores retroiluminados, potenciometros y un interruptor general con derivación a dos modos de iluminación. Además he usado un conector de varios pines para facilitar la conexión con las distintas secciones de iluminación del coche.',
     result: 'EL panel de control resulta muy atrativo y funcional, permitiendo un control total y rápido de cada sección de iluminación del coche.\n\nMas detalles por completar.',
     images: [
-      'proyects/09/09-1.jpg',
-      'proyects/09/09-2.jpg'
+      'projects/09/09-1.jpg',
+      'projects/09/09-2.jpg'
     ],
     links: {
       
@@ -199,16 +199,16 @@ export const projectsData = [
     status: 'Completado',
     category: 'Automoción',
     description: 'Instalación y control de puntos de luz LED en el marco de las puertas de un Peugeot 207',
-    coverImage: 'proyects/10/10-0.jpg',
+    coverImage: 'projects/10/10-0.jpg',
     technologies: ['LED', 'Peugeot 207'],
     tags: ['electrónica', 'iluminación', 'automoción'],
     problem: 'Una característica muy estética, y gratamente funcional en la noche, es la iluminación de los marcos de las puertas en el automóvil. Es por ello que se pretende crear un sistema de iluminación LED que se integre en los marcos y que pueda ser controlable.',
     solution: 'He diseñado y he instalado un sistema de iluminación LED para los marcos de las puertas de un Peugeot 207, integrando puntos de iluminación LED concretos, con embellecedores, iluminandose con distintos patronesy permitiendo su control desde el panel de control de iluminación.',
     result: 'El sistema de iluminación LED mejora significativamente la apariencia del coche y proporciona una iluminación funcional en entornos de baja iluminación.',
     images: [
-      'proyects/10/10-0.jpg',
-      'proyects/10/10-1.jpg',
-      'proyects/10/10-2.jpg'
+      'projects/10/10-0.jpg',
+      'projects/10/10-1.jpg',
+      'projects/10/10-2.jpg'
     ],
     links: {
       
