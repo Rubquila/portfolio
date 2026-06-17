@@ -92,7 +92,7 @@ export const ProjectDetailPage = () => {
           <section className="article-content-section problema-section">
             <h2 className="article-section-heading">
               <span className="heading-icon">❌</span>
-              Problema
+              Descripción
             </h2>
             <div className="article-section-text" 
               dangerouslySetInnerHTML={{ __html: formatContent(project.problem) }}>
@@ -108,6 +108,18 @@ export const ProjectDetailPage = () => {
             <div className="article-section-text" 
               dangerouslySetInnerHTML={{ __html: formatContent(project.solution) }}>
             </div>
+            {project.characteristics && (
+              <div>
+                <h3>Características:</h3>
+                <ul>
+                  {project.characteristics.split(". ").map((frase, index) => (
+                    <li key={index}>
+                      {frase.trim()}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
           </section>
 
           {/* RESULTADO */}

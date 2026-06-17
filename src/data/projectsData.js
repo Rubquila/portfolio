@@ -4,12 +4,13 @@ export const projectsData = [
     title: 'Raston: Sistema Domótico Inteligente',
     status: 'Mejorando',
     category: 'IoT',
-    description: 'Automatización inteligente del hogar con Home Assistant y Node-RED',
+    short: 'Automatización inteligente del hogar con Home Assistant y Node-RED',
     coverImage: 'projects/01/01-0.jpg',
     technologies: ['Raspberry Pi', 'IoT', 'Node-RED', 'ESP32', 'Home Assistant'],
     tags: ['domótica', 'automatización', 'hardware', 'iot'],
     problem: 'La automatización del hogar requeriere soluciones complejas y caras, que son ofrecidas por fabricantes que restringen el uso de dispositivos de su propia marca.\n\nSe plantea un sistema versátil que permita controlar electrodomésticos, iluminación, sensores, climatización y videovigilancia desde una única plataforma, y que además, permita programar automatizaciones complejas e incluso desarrollar dispositivos nuevos.',
     solution: 'He desarrollado un sistema local dómótico modular mediante Node-RED en la plataforma Home Assistant, que automatiza tareas y rutinas complejas propias de un smarthome. También he creado dispositivos hardware propios con microcontroladores ESP programados mediante ESPHome.\n\nEl sistema es completamente local, sin dependencia de la nube, y permite integración con una amplia variedad de dispositivos y protocolos. Además, he implementado un sistema de notificaciones personalizadas y control remoto seguro.',
+    characteristics: "Unidad de control centralizada. Raspberry PI 4. Node-RED y ESPHome. Conectividad Wifi, Zigbee, Bluetooth y Ethernet. Home Assistant. Compatibilidad multimarca. Integración con Google Home. Integración de dispositivos personalizados ESP. Control local de dispositivos y automatizaciones. Administración local y remota. Administración de usuarios. Speech synthesis. Integración de IA",
     result: 'Sistema completamente funcional que automatiza climatización, iluminación, limpieza y seguridad. Actualmente estoy integrando IA para respuesta conversacional y control avanzado de dispositivos. Reduce el consumo energético en un 30% y proporciona automatizaciones personalizadas.\n\nMas detalles por completar.',
     images: [
       'projects/01/01-0.jpg',
@@ -26,20 +27,22 @@ export const projectsData = [
     title: 'Página web personal de portfolio',
     status: 'Mejorando',
     category: 'Programación',
-    description: 'Sitio web personal para mostrar mi trabajo, experiencia y conocimientos aquiridos',
+    short: 'Sitio web personal para mostrar mi trabajo, experiencia y conocimientos aquiridos',
     coverImage: 'projects/02/02-0.jpg',
     technologies: ['React', 'JavaScript', 'CSS', 'HTML'],
     tags: ['web', 'react', 'javascript'],
     problem: 'Necesitaba una plataforma para mostrar mis proyectos, experiencia y conocimientos de forma profesional y accesible. Quería crear un sitio web personal que sirviera como portfolio y biblioteca de conocimientos, utilizando tecnologías modernas y siguiendo las mejores prácticas de desarrollo web.',
     solution: 'He desarrollado una página web personal de portfolio utilizando React, con un diseño moderno y responsive que se ajusta a mis necesidades.\n\nEl sitio incluye secciones para proyectos, artículos, habilidades y experiencia, con una navegación intuitiva y un diseño atractivo. He implementado funcionalidades como filtros de proyectos, búsqueda de anotaciones y manuales, y descarga de diseños 3D para imprimir.',
-    result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y alacenar y compartir mis conocimientos. Actualmente estoy trabajando en la ampliación del contenido.<br />Características: <ul><li>Construido en React</li><li>Totalmente FrontEnd</li><li>ReactRouter para la navegación</li><li>Estilos CSS avanzados para el degradado con scroll y la iluminación latente</li><li>Modularidad usando Componentes y Widgets personales</li></ul><br />Más detalles proximamente.',
+    characteristics: "React 19 + Vite 8. React Router. Definción de estructura de archivos clara y concreta. Componentes y Widgets. Especial enfoque en la UI. UX Responsive. Frame Motion para transiciones entre páginas. Uso avanzado de CSS con efectos de desenfoque por scroll y latencia de brillo",
+    result: 'El sitio web está completamente funcional y se ha convertido en una herramienta clave para mostrar mi trabajo y alacenar y compartir mis conocimientos. Actualmente estoy trabajando en la ampliación del contenido.<br />Más detalles proximamente.',
     images: [
       'projects/02/02-0.jpg',
       'projects/02/02-1.jpg',
       'projects/02/02-2.jpg'
     ],
     links: {
-      "Web": "https://rubenquila.pages.dev/"
+      "Web": "https://rubenquila.pages.dev/",
+      "GitHub": "https://github.com/Rubquila/portfolio"
     },
     relatedProjectIds: [3]
   },
@@ -48,12 +51,13 @@ export const projectsData = [
     title: 'IEPETer',
     status: 'Completado',
     category: 'Programación',
-    description: 'Generador automático de informes médicos estructirados en el diagnóstico de cáncer de pulmón',
+    short: 'Generador automático de informes médicos estructirados en el diagnóstico de cáncer de pulmón',
     coverImage: '/projects/iepeter.jpg',
     technologies: ['React', 'Node.JS', 'MySQL', 'Express', 'MDD'],
     tags: ['iot', 'hardware', 'sensores', 'medio ambiente', 'forestales'],
     problem: 'La generación de informes médicos para el diagnóstico de cáncer de pulmón es un proceso que consume mucho tiempo y es propenso a subjetividad y errores humanos.\n\nLos médicos necesitan una herramienta que les permita generar informes estructurados y claros de manera eficiente, integrando datos de pacientes, resultados de pruebas y recomendaciones médicas.',
     solution: 'He desarrollado una web-app de generación automática de informes médicos estructurados para el diagnóstico de cáncer de pulmón. El sistema integra datos de pacientes, resultados de pruebas y recomendaciones médicas en un formato claro y profesional, haciendo uso de tecnología React, Node.js y MysQL.',
+    characteristics: "React 17, Node.js y Express. React Router. Definción de estructura de archivos clara y concreta. APIs. Base de datos MySQL. OAuth 2.0. Material UI. Enfoque en una UI limpia y concisa",
     result: 'El sistema mejoró la eficiencia en la generación de informes médicos, reduciendo el tiempo necesario para crear un informe completo en un 50% y aumentando la claridad de la redacción e interpretación, reduciendo la subjetividad.\n\nLa aplicación se utilizó en entornos clínicos para mejorar la comunicación entre médicos y pacientes.\n\nMas detalles por completar.',
     images: [
       
@@ -68,12 +72,13 @@ export const projectsData = [
     title: 'Red inalámbrica de sensores forestales',
     status: 'Completado',
     category: 'IoT',
-    description: 'Red inalámbrica de sensores para la detección precoz de incendios forestales',
+    short: 'Red inalámbrica de sensores para la detección precoz de incendios forestales',
     coverImage: 'projects/04/04-0.png',
     technologies: ['Arduino', 'Attiny85', 'IoT', 'Processing', 'Bluetooth'],
     tags: ['iot', 'hardware', 'sensores', 'medio ambiente', 'redes'],
     problem: 'Los incendios forestales en España son una amenaza crítica. Es necesario crear un sistema de detección precoz que recopile datos de temperatura, humedad y CO de zonas remotas sin infraestructura disponible.',
-    solution: 'He desarrollado un prototipo de red inalámbrica de sensores para la detección temprana de incendios forestales como trabajo final de carrera.\n\nHe ustilizado Arduino y Attiny con Processing para la captura y análisis de datos, implementando una red en malla propia y gestionando el modo Sleep de cada nodo. Un sistema autosuficiente, modular y escalable con comunicación Bluetooth.',
+    solution: 'He desarrollado un prototipo de red inalámbrica de sensores para la detección temprana de incendios forestales como trabajo final de carrera.\n\nHe ustilizado Arduino y ATtiny con Processing para la captura y análisis de datos, implementando una red en malla propia y gestionando el modo Sleep de cada nodo. Un sistema autosuficiente, modular y escalable con comunicación Bluetooth.',
+    characteristics: "Red en malla. Prototipado con Arduino y ATtiny. Programado con Arduino, Processing y AT. Conectividad Bluetooth. Sensor de temperatura, humedad y CO. Energeticamente autónomo mediante batería y recarga solar. Balizas con modo Sleep. Visualización de datos por App desde cualquier nodo.",
     result: 'Prototipo funcional capaz de monitorear más de 50 nodos simultáneamente, con nodos de bajo consumo energético y autosuficientes gracias a baterías y carga solar.',
     images: [
       'projects/04/04-0.png',
@@ -81,7 +86,6 @@ export const projectsData = [
       'projects/04/04-2.jpg'
     ],
     links: {
-      github: null
     },
     relatedProjectIds: []
   },
@@ -90,7 +94,7 @@ export const projectsData = [
     title: 'Proyecto Contra',
     status: 'Completado',
     category: 'IoT',
-    description: 'Dispositivo inhibidor de frecuencias para concienciación sobre la incomunicación y soledad de los refugiados',
+    short: 'Dispositivo inhibidor de frecuencias para concienciación sobre la incomunicación y soledad de los refugiados',
     coverImage: 'projects/05/05-0.jpg',
     technologies: ['ESP32', 'RF', 'WiFi', 'GSM'],
     tags: ['hardware', 'electrónica', 'hacking', 'arte'],
@@ -106,7 +110,6 @@ export const projectsData = [
     ],
     links: {
       "Web del proyecto": "https://miguelalejandrosisliansuez.wordpress.com/2018/09/15/primera-entrada-del-blog/",
-      github: null
     },
     relatedProjectIds: []
   },
@@ -115,12 +118,13 @@ export const projectsData = [
     title: 'Comedero automático para mascotas',
     status: 'Completado',
     category: 'IoT',
-    description: 'Comedero automático para mascotas conectado a smarthome y con alimentación ininterrumpida',
+    short: 'Comedero automático para mascotas conectado a smarthome y con alimentación ininterrumpida',
     coverImage: 'projects/06/06-0.jpg',
-    technologies: ['ESP32', 'IoT', 'ESPHome', 'Home Assistant'],
+    technologies: ['ESP8266', 'IoT', 'ESPHome', 'Home Assistant'],
     tags: ['hardware', 'electrónica', 'domótica', 'animales'],
     problem: 'Debido a las obligaciones que te hacen estar fuera de casa durante el día, y la necesidad de controlar la alimentación de nuestras mascotas para evitar el sobrepeso, surge la necesidad de crear un comedero automático que permita programar horarios de alimentación, controlar las porciones y garantizar la alimentación incluso en caso de cortes de energía o conexión.',
     solution: 'He desarrollado un dispositivo de alimentación automática para mascotas mediante ESP32, capaz de programar horarios de dispensación, emitir sonidos de aviso y registrar el nivel de comida para evitar quedarse sin alimento.\n\nEl dispositivo se integra con el sistema domótico Home Assistant para permitir control remoto y notificaciones, y cuenta con una batería de respaldo para garantizar su funcionamiento incluso en caso de cortes de energía.',
+    characteristics: "ESP8266. Alimentación a 5v. Batería de respaldo. Conectividad inalámbrica. Funcionamiento manual y automático. Funciones con/sin conectividad. Interruptor de apagado. Sensor de nivel de comida por ultrasonidos. Dos botones de función. Sonido personalizado. Reloj interno.",
     result: 'Se ha mejorado el control de las porciones de comida, consiguiendo disminuir el sobrepeso a lo largo de 3 meses. Además ha permitido liberar de una tarea presencial y esencial en la convivencia con mascotas.\n\nMas detalles por completar.',
     images: [
       'projects/06/06-0.jpg',
@@ -128,7 +132,7 @@ export const projectsData = [
       'projects/06/06-2.jpg'
     ],
     links: {
-      github: null
+      "GitHub": "https://github.com/Rubquila/esphome-projects/blob/main/comedero.yaml"
     },
     relatedProjectIds: [1, 7]
   },
@@ -137,18 +141,24 @@ export const projectsData = [
     title: 'Controlador automático de estores',
     status: 'Completado',
     category: 'IoT',
-    description: 'Dispositivo automático para el control de estores de ventana, integrado con Home Assistant y capaz de funcionar de forma autónoma.',
-    coverImage: '/projects/contra-project.jpg',
+    short: 'Dispositivo automático para el control de estores de ventana, integrado con Home Assistant y capaz de funcionar de forma autónoma.',
+    coverImage: 'projects/07/07-0.jpg',
     technologies: ['ESP8266', 'WeMOS', 'ESPHome', 'Home Assistant'],
     tags: ['hardware', 'electrónica', 'domótica'],
     problem: 'El manejo de los estores de ventana puede ser una acción rutinaria, bastante simple pero especialmente tediosa en hogares con múltiples ventanas. Se busca crear un sistema automatizado que permita controlar los estores de forma remota y programada, integrándose con el sistema domótico del hogar para mejorar la comodidad y eficiencia energética.',
     solution: 'He desarrollado un controlador automático de estores utilizando ESP32, que permite programar horarios de apertura y cierre, puede funcionar de forma independiente, así como controlado remotamente a través de la plataforma Home Assistant.\n\nEl dispositivo cuenta con sensores para detectar la posición y así controlar en qué grado se encuentran abiertos.',
+    characteristics: "ESP8266. Alimentación a 5v. Conectividad inalámbrica. Funcionamiento manual y automático. Funciones con/sin conectividad. Botón doble para apertura / cierre. Tipos de pulsación. Sensores de cierre. Reloj interno.",
     result: 'El dispositivo se integra con el sistema domótico Home Assistant para permitir control remoto y automatización basada en horarios, condiciones climáticas o presencia. Utiliza unos servomotores para mover las cadenas de los estores, permitiendo la acción manual y automática de los mismos.\n\nMas detalles por completar. ',
     images: [
-      
+      'projects/07/07-0.jpg',
+      'projects/07/07-1.jpg',
+      'projects/07/07-2.jpg',
+      'projects/07/07-3.jpg',
+      'projects/07/07-4.jpg',
+      'projects/07/07-5.jpg'
     ],
     links: {
-      
+      "GitHub": "https://github.com/Rubquila/esphome-projects/blob/main/estores.yaml"
     },
     relatedProjectIds: [1, 6]
   },
@@ -157,12 +167,13 @@ export const projectsData = [
     title: 'Instalación de pantalla Android en Peugeot 207',
     status: 'Completado',
     category: 'Automoción',
-    description: 'Sustitución de la radio original de un Peugeot 207 por una pantalla Android Junsun v2 Plus',
+    short: 'Sustitución de la radio original de un Peugeot 207 por una pantalla Android Junsun v2 Plus',
     coverImage: '/projects/lab-management.jpg',
     technologies: ['Android', 'CAN-Bus', 'Peugeot 207'],
     tags: ['automoción', 'radio', 'pantalla'],
     problem: 'Dado que los coches Peugeot 207 son de alrededor del año 2008, el equipamiento del mismo se queda muy ajustado a día de hoy, sobretodo en lo que se refiere al equipamiento multimedia.\n\nSe busca actualizar la radio del coche con una con sistema Android, que permita reproducir musica, instalar aplicaciones y que permita visualizar cámaras de parking.',
     solution: 'Instalé una pantalla Android Junsun v2 Plus en un Peugeot 207, sustituyendo la radio original. El proceso implicó extraer la radio original, sustituir el panel de la consola del salpicadero, y configurar el sistema para que funcionara correctamente con las cámaras de parking y otras funciones multimedia.',
+    characteristics: "SO Android 13. Carcasa adaptador para Peugeot 207. Compatible con mandos del volante por CAN-BUS. Compatible con funcionalidades de la centralita de Peugeot 207. 4G, wifi, Bluetooth y GPS. Cámara delantera con funciones de ayuda a la conducción ADAS. Cámara trasera + líneas de parking. Detección de cambio de carril, proximidad, distancia entre vehículos.... Android Auto / CarPlay. GooglePlay. Radio",
     result: 'La pantalla Android se integra en gran medida con el sistema del coche, asimilando la mayoria de las funciones de origen, permitiendo el uso de los mandos del volante, a la vez que añadiendo las funcionalidades propias de un dispositivo Android.\n\nEl dispositivo permite visualizar la camara trasera y delantera, reproducir musica de diferentes fuentes e incluso planificar rutas y navegación mediante el GPS integrado.\n\nMas detalles por completar.',
     images: [
       
@@ -177,7 +188,7 @@ export const projectsData = [
     title: 'Panel de control de iluminación para Peugeot 207',
     status: 'Completado',
     category: 'Automoción',
-    description: 'Diseño y construcción de un panel de control de la iluminación de un Peugeot 207',
+    short: 'Diseño y construcción de un panel de control de la iluminación de un Peugeot 207',
     coverImage: 'projects/09/09-1.jpg',
     technologies: ['LED', 'Peugeot 207'],
     tags: ['electrónica', 'iluminación', 'automoción'],
@@ -198,7 +209,7 @@ export const projectsData = [
     title: 'Puntos de luz LED en el marco de las puertas para Peugeot 207',
     status: 'Completado',
     category: 'Automoción',
-    description: 'Instalación y control de puntos de luz LED en el marco de las puertas de un Peugeot 207',
+    short: 'Instalación y control de puntos de luz LED en el marco de las puertas de un Peugeot 207',
     coverImage: 'projects/10/10-0.jpg',
     technologies: ['LED', 'Peugeot 207'],
     tags: ['electrónica', 'iluminación', 'automoción'],

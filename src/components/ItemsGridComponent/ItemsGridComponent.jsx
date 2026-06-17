@@ -31,7 +31,7 @@ export default function ItemsGridComponent({ items, onItemClick }) {
             )}
           </div>
           <h3 className="gridItem-title">{item.title}</h3>
-          <p className="gridItem-description">{item.description}</p>
+          <p className="gridItem-description">{item.short}</p>
           <div className="gridItem-meta">
             <span className="category-badge gridItem-category">{item.category}</span>
           </div>
